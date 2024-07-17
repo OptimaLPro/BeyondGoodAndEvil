@@ -1,19 +1,51 @@
 @font-face {
     font-family: 'AeonikTRIAL-Light';
     src: url('/fonts/AeonikTRIAL-Light.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'AeonikTRIAL-Regular';
-    src: url('/public/fonts/AeonikTRIAL-Regular.otf') format('otf'),
+    src: url('/fonts/AeonikTRIAL-Regular.otf') format('opentype'),
 }
 
 @font-face {
     font-family: 'AeonikTRIAL-Bold';
-    src: url('/public/fonts/AeonikTRIAL-Bold.otf') format('opentype');
-    font-weight: normal;
+    src: url('/fonts/AeonikTRIAL-Bold.otf') format('opentype');
+
+}
+
+@font-face {
+    font-family: 'Joystix';
+    src: url('/fonts/joystix-monospace.otf') format('opentype');
+}
+
+.bold-font {
+    font-family: 'AeonikTRIAL-Bold', sans-serif;
     font-style: normal;
-    
+}
+
+.light-font {
+    font-family: 'AeonikTRIAL-Light', sans-serif;
+    font-style: normal;
+}
+
+.regular-font {
+    font-family: 'AeonikTRIAL-Regular', sans-serif;
+    font-style: normal;
+}
+
+.joystix-font {
+    font-family: 'Joystix', sans-serif;
+    font-style: normal;
+}
+
+.testing-font {
+    color: #131313;
+    font-family: 'AeonikTRIAL-Regular', sans-serif;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.76px;
+    line-height: 40px;
+    text-transform: capitalize;
 }

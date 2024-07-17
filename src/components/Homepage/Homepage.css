@@ -1,0 +1,13 @@
+.homepage-bg {
+    background: linear-gradient(180deg, #57B4F7 -7.42%, #F6F3F1 100%);
+}
+
+.gif1 {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 61px;
+    z-index: 100;
+}
+
+
