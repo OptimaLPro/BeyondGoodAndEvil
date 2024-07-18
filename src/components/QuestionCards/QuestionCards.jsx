@@ -17,7 +17,7 @@ const QuestionCards = () => {
                         <div className="w-1/3">
                         </div>
                     </div>
-                    <div className="mt-[44px] flex ">
+                    <div className="mt-[20px] flex ">
                         <Advanced />
                     </div>
                 </div>

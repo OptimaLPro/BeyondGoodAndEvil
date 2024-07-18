@@ -1,103 +1,88 @@
-import React, { useState, useMemo, useRef } from 'react'
-import TinderCard from 'react-tinder-card'
-import './Cards.css'
+import React, { useState, useMemo, useRef } from 'react';
+import TinderCard from 'react-tinder-card';
+import './Cards.css';
+import CardSVG from './CardSVG/CardSVG';
 
-const db = [
+const cards = [
     {
-        name: 'Richard Hendricks',
-        url: 'https://picsum.photos/200/300'
+        id: 1,
+        color: "#FD9DAF",
+        text: "Do you think ethics is subjective?",
+        subtext: null,
+        textColor: "#000000"
     },
     {
-        name: 'Erlich Bachman',
-        url: 'https://picsum.photos/200/300'
-    },
-    {
-        name: 'Monica Hall',
-        url: 'https://picsum.photos/200/300'
-    },
-    {
-        name: 'Jared Dunn',
-        url: 'https://picsum.photos/200/300'
-    },
-    {
-        name: 'Dinesh Chugtai',
-        url: 'https://picsum.photos/200/300'
+        id: 2,
+        color: "#FCD290",
+        text: "A party member donates a large sum of money to a charity but only to increase his chances of winning. Is he a good person?",
+        subtext: null,
+        textColor: "#000000"
     }
-]
+];
 
 function Advanced() {
-    const [currentIndex, setCurrentIndex] = useState(db.length - 1)
-    const [lastDirection, setLastDirection] = useState()
-    // used for outOfFrame closure
-    const currentIndexRef = useRef(currentIndex)
+    const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
+    const [lastDirection, setLastDirection] = useState();
+    const currentIndexRef = useRef(currentIndex);
 
     const childRefs = useMemo(
         () =>
-            Array(db.length)
+            Array(cards.length)
                 .fill(0)
                 .map((i) => React.createRef()),
         []
-    )
+    );
 
     const updateCurrentIndex = (val) => {
-        setCurrentIndex(val)
-        currentIndexRef.current = val
-    }
+        setCurrentIndex(val);
+        currentIndexRef.current = val;
+    };
 
-    const canGoBack = currentIndex < db.length - 1
+    const canGoBack = currentIndex < cards.length - 1;
 
-    const canSwipe = currentIndex >= 0
+    const canSwipe = currentIndex >= 0;
 
-    // set last direction and decrease current index
     const swiped = (direction, nameToDelete, index) => {
-        setLastDirection(direction)
-        updateCurrentIndex(index - 1)
-    }
+        setLastDirection(direction);
+        updateCurrentIndex(index - 1);
+    };
 
     const outOfFrame = (name, idx) => {
-        console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
-        // handle the case in which go back is pressed before card goes outOfFrame
-        currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
-        // TODO: when quickly swipe and restore multiple times the same card,
-        // it happens multiple outOfFrame events are queued and the card disappear
-        // during latest swipes. Only the last outOfFrame event should be considered valid
-    }
+        console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current);
+        currentIndexRef.current >= idx && childRefs[idx].current.restoreCard();
+    };
 
     const swipe = async (dir) => {
-        if (canSwipe && currentIndex < db.length) {
-            await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
+        if (canSwipe && currentIndex < cards.length) {
+            await childRefs[currentIndex].current.swipe(dir);
         }
-    }
+    };
 
-    // increase current index and show card
     const goBack = async () => {
-        if (!canGoBack) return
-        const newIndex = currentIndex + 1
-        updateCurrentIndex(newIndex)
-        await childRefs[newIndex].current.restoreCard()
-    }
+        if (!canGoBack) return;
+        const newIndex = currentIndex + 1;
+        updateCurrentIndex(newIndex);
+        await childRefs[newIndex].current.restoreCard();
+    };
 
     return (
         <div className='flex flex-col justify-center w-full'>
             <div className='cardContainer'>
-                {db.map((character, index) => (
+                {cards.map((card, index) => (
                     <TinderCard
                         ref={childRefs[index]}
                         className='swipe'
-                        key={character.name}
-                        onSwipe={(dir) => swiped(dir, character.name, index)}
-                        onCardLeftScreen={() => outOfFrame(character.name, index)}
+                        key={card.id}
+                        onSwipe={(dir) => swiped(dir, card.id, index)}
+                        onCardLeftScreen={() => outOfFrame(card.id, index)}
                     >
-                        <div
-                            style={{ backgroundImage: 'url(' + character.url + ')' }}
-                            className='card'
-                        >
-                            <h3>{character.name}</h3>
+                        <div className='w-full flex justify-center'>
+                            <CardSVG color={card.color} className="h-[90%]" />
                         </div>
                     </TinderCard>
                 ))}
             </div>
-            <div className='buttons '>
+            <div className='buttons mx-auto'>
                 <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
                 <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
                 <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
@@ -108,11 +93,11 @@ function Advanced() {
                 </h2>
             ) : (
                 <h2 className='infoText'>
-                    Swipe a card or press a button to get Restore Card button visible!
+                    Swipe a card or press
                 </h2>
             )}
         </div>
-    )
+    );
 }
 
-export default Advanced
+export default Advanced;
