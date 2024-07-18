@@ -1,3 +1,7 @@
+:root {
+    overflow: hidden;
+}
+
 @font-face {
     font-family: 'AeonikTRIAL-Light';
     src: url('/fonts/AeonikTRIAL-Light.otf') format('opentype');

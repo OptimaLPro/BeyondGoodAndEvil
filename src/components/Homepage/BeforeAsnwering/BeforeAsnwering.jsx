@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 const BeforeAsnwering = () => {
     return (
         <>
-            <div className="bg-[#6CB9F1] h-screen">
+            <div className="bg-[#6CB9F1] h-dvh">
                 <div className="flex flex-col justify-center mx-[21px]">
-                    <div className="mt-[101px] flex flex-col">
+                    <div className="mt-[40px] flex flex-col">
                         <span className="bold-font text-[38px]">Before Answering</span>
                         <span className="text-[16px] regular-font text-white">(Please follow these rules)</span>
                     </div>
@@ -59,7 +59,7 @@ const BeforeAsnwering = () => {
                     </div>
                     <div>
                         <Link to="/question-cards">
-                            <div className="bg-[#131313] mt-[65px] w-fit p-[14px] flex gap-4 cursor-pointer">
+                            <div className="bg-[#131313] mt-[50px] w-fit p-[14px] flex gap-4 cursor-pointer">
                                 <span className="onboarding text-[20px] text-[#F6F3F1]">Start</span>
                                 <img src={FindOut} alt="Find Out" />
                             </div>

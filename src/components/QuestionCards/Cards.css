@@ -31,12 +31,6 @@ h2 {
   position: absolute;
 }
 
-.cardContainer {
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
 
 .card {
   position: relative;
@@ -132,6 +126,21 @@ h2 {
   }
 }
 
-.card-bg{
+.card-bg {
   background-color: linear-gradient(180deg, #FD9DAF 28.49%, #F6F3F1 100%);
+}
+
+.right-icon {
+  width: 71px;
+  height: 52px;
+}
+
+.left-icon {
+  width: 58px;
+  height: 44px;
+}
+
+.skip-icon {
+  width: 68px;
+  height: 68px;
 }

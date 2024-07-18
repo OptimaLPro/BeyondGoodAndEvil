@@ -1,0 +1,24 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gradient-text {
+    background-image: linear-gradient(180deg, var(--primary-color) 28.49%, #F6F3F1 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.card-bg {
+    background: rgb(0, 45, 27);
+    background: linear-gradient(129deg, rgba(0, 45, 27, 1) 0%, rgba(30, 82, 48, 1) 35%, rgba(41, 109, 55, 1) 53%, rgba(80, 170, 81, 1) 84%);
+}
+
+.gif2 {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 85px;
+    z-index: 100;
+}
