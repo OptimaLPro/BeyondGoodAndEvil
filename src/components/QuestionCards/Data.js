@@ -5,7 +5,7 @@ export const Cards = [
         text: "Do you think ethics is subjective?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 15,
@@ -13,7 +13,7 @@ export const Cards = [
         text: "Would you build a profitable factory that will create many jobs but will cause significant environmental damage?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 14,
@@ -71,7 +71,7 @@ export const Cards = [
         text: "You're at the beach when you see a child drowning in the ocean. Attempting a rescue could endanger your own life. Would you try to save the boy?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 11,
@@ -79,7 +79,7 @@ export const Cards = [
         text: "As a military commander, would you proceed with an operation in a densely populated area despite the risk of civilian casualties?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 10,
@@ -112,7 +112,7 @@ export const Cards = [
         text: "Would you kill someone who can't stop coughing while your group hides quietly from a dangerous enemy?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 8,
@@ -120,7 +120,7 @@ export const Cards = [
         text: "Would you save a sinking ship carrying 15 young high-class students over a ship with 30 laborers aged 45 and more?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 7,
@@ -153,7 +153,7 @@ export const Cards = [
         text: "You accidentally break a valuable item belonging to someone else. It's easy to cover it up. Would you confess to them?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 5,
@@ -161,7 +161,7 @@ export const Cards = [
         text: "You witness a parent physically disciplining their child in public. Would you intervene?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
 
     },
     {
@@ -195,7 +195,7 @@ export const Cards = [
         text: "You have the option to steal expensive medication to save your dying partner's life. Would you steal it?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 2,
@@ -203,7 +203,7 @@ export const Cards = [
         text: "A party member donates a large sum of money to a charity but only to increase his chances of winning. Is he a good person?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
     },
     {
         id: 1,
@@ -211,7 +211,7 @@ export const Cards = [
         text: "Do you think ethics is subjective?",
         subtext: null,
         textColor: "#000000",
-        subquestions: []
+        subquestions: null
 
     },
 ];
