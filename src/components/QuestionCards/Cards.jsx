@@ -149,9 +149,9 @@ function Advanced() {
                     </TinderCard>
                 ))}
             </div>
-            <div>
-                <div className='flex justify-center'>
-                    <img src={SendQuestion} alt="SendQuestion" className="mt-[200px]" />
+            <div className='h-[66px] flex justify-center'>
+                <div className=''>
+                    <img src={SendQuestion} alt="SendQuestion" className="" />
                 </div>
             </div>
             <div className='w-full flex flex-col justify-end flex-grow fixed bottom-0'>

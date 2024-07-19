@@ -19,3 +19,7 @@
     z-index: 100;
 
 }
+
+.h-screen-minus-74 {
+    height: calc(100vh - 74px);
+}
