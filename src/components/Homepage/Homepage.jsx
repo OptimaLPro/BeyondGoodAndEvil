@@ -1,6 +1,5 @@
 import "./Homepage.css";
 import Logo from "/images/Logo.svg";
-import BurgerMenu from "/icons/BurgerMenu.svg";
 import { Link } from "react-router-dom";
 import FindOut from "/icons/FindOutWhite.svg";
 import HomePagePink from "/images/HomePagePink.svg";
@@ -8,6 +7,7 @@ import GIF1 from "/gifs/1.gif";
 import GIF2 from "/gifs/2.gif";
 import GIF3 from "/gifs/3.gif";
 import GIF4 from "/gifs/4.gif";
+import Menu from "../Menu/Menu";
 
 const Homepage = () => {
     return (
@@ -16,7 +16,7 @@ const Homepage = () => {
                 <div className="h-screen flex flex-col">
                     <div className="flex justify-between px-[20px] py-[11px]">
                         <img src={Logo} alt="logo" className="" />
-                        <img src={BurgerMenu} alt="burger menu" className="" />
+                        <Menu />
                     </div>
                     <div>
                         <div className="flex flex-col gap-4 mt-[25px] px-[20px] w-[85%]">

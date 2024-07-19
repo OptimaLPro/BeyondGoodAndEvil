@@ -8,6 +8,7 @@ import RightIcon from "/icons/Right.png";
 import SkipIcon from "/icons/Skip.png";
 import SendQuestion from "/icons/SendQuestion.png";
 import CarsData from './Data';
+import { Link } from 'react-router-dom';
 
 function Advanced() {
     const [cards, setCards] = useState([...CarsData]);
@@ -123,7 +124,9 @@ function Advanced() {
             <div className="flex flex-col">
                 <div className="mx-4 mt-4 mb-[20px] flex items-center">
                     <div className="w-1/3">
-                        <img src={BackIcon} alt="Back Icon" className="" width={11} height={15} />
+                        <Link to="/">
+                            <img src={BackIcon} alt="Back Icon" className="" width={11} height={15} />
+                        </Link>
                     </div>
                     <div className="w-1/3 justify-center flex">
                         <span className="joystix-font text-white tracking-widest">
