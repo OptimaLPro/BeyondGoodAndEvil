@@ -8,7 +8,7 @@ import RightIcon from "/icons/Right.png";
 import SkipIcon from "/icons/Skip.png";
 import SendQuestion from "/icons/SendQuestion.png";
 import CarsData from './Data';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Advanced() {
     const [cards, setCards] = useState([...CarsData]);
@@ -19,6 +19,7 @@ function Advanced() {
     const [questionIndex, setQuestionIndex] = useState(1);
     const [currentID, setCurrentID] = useState(questionNumer[0]);
     const totalQuestions = useRef(cards.length);
+    const navigateTo = useNavigate();
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -31,6 +32,15 @@ function Advanced() {
         currentIndexRef.current = val;
     };
 
+    useEffect(() => {
+        if (currentID == totalQuestions.current) {
+            navigateTo('/user-data')
+        }
+    }, [currentID]);
+
+
+
+
     const addHalfCard = (subquestion, cardID) => {
         setCards((prevCards) => {
             const newCards = [...prevCards];
@@ -38,15 +48,9 @@ function Advanced() {
             newCards.splice(cardIndex, 0, subquestion); // Insert subquestion before the current card
             return newCards;
         });
-
-        // var newCards = [...cards];
-        // const cardIndex = newCards.findIndex((card) => card.id === cardID);
-        // newCards[cardIndex] = subquestion;
-        // setCards(newCards);
     };
 
     const canGoBack = currentIndex < cards.length - 1;
-
     const canSwipe = currentIndex >= 0;
 
     const swiped = (direction, cardID, index) => {
