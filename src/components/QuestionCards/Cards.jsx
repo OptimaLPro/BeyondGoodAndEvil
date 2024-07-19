@@ -151,7 +151,7 @@ function Advanced() {
             </div>
             <div>
                 <div className='flex justify-center'>
-                    <img src={SendQuestion} alt="SendQuestion" className="mt-2" />
+                    <img src={SendQuestion} alt="SendQuestion" className="mt-[200px]" />
                 </div>
             </div>
             <div className='w-full flex flex-col justify-end flex-grow fixed bottom-0'>
