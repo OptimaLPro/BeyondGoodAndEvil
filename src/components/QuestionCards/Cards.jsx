@@ -66,7 +66,6 @@ function Advanced() {
                                 changed = true;
                                 setQuestionIndex(questionIndex + 1);
                                 setCurrentID(questionNumer[questionIndex]);
-                                console.log(cards);
                                 return;
                             }
                         });
@@ -78,18 +77,15 @@ function Advanced() {
                                 changed = true;
                                 setQuestionIndex(questionIndex + 1);
                                 setCurrentID(questionNumer[questionIndex]);
-                                console.log(cards);
                                 return;
                             }
                         });
                     }
                     else if (direction === "up") {
-                        console.log("up");
                         changed = true;
                         setQuestionIndex(questionIndex + 2);
                         setCurrentID(questionNumer[questionIndex]);
                         updateCurrentIndex(index - 1);
-                        console.log(cards);
                         return;
                     }
                 }
@@ -102,7 +98,6 @@ function Advanced() {
         setCurrentID(questionNumer[questionIndex]);
         setLastDirection(direction);
         updateCurrentIndex(index - 1);
-        console.log(cards);
     };
 
     const outOfFrame = (name, idx) => {
@@ -132,8 +127,8 @@ function Advanced() {
                             <img src={BackIcon} alt="Back Icon" className="" width={11} height={15} />
                         </Link>
                     </div>
-                    <div className="w-1/3 justify-center flex">
-                        <span className="joystix-font text-white tracking-widest">
+                    <div className="flex justify-center w-1/3">
+                        <span className="tracking-widest text-white joystix-font">
                             {currentID <= totalQuestions.current ? `${currentID}/${totalQuestions.current}` : ""}
                         </span>                    </div>
                     <div className="w-1/3">
@@ -150,7 +145,7 @@ function Advanced() {
                         onSwipe={(dir) => swiped(dir, card.id, index)}
                         onCardLeftScreen={() => outOfFrame(card.id, index)}
                     >
-                        <div className='w-full flex justify-center'>
+                        <div className='flex justify-center w-full'>
                             <CardPNG card={card} />
                         </div>
                     </TinderCard>
@@ -161,12 +156,12 @@ function Advanced() {
                     <img src={SendQuestion} alt="SendQuestion" className="" />
                 </div>
             </div>
-            <div className='w-full flex flex-col justify-end flex-grow fixed bottom-0'>
+            <div className='fixed bottom-0 flex flex-col justify-end flex-grow w-full'>
                 <div className=' h-[74px] bg-[#F6F3F1] flex' >
-                    <div className='flex w-full justify-between mx-5'>
-                        <img src={LeftIcon} alt="Left Icon" className="left-icon mt-[15px]" onClick={() => swipe('left')} />
-                        <img src={SkipIcon} alt="Skip Icon" className="skip-icon mt-[4px]" onClick={() => swipe('up')} />
-                        <img src={RightIcon} alt="Right Icon" className="right-icon mt-[9px]" onClick={() => swipe('right')} />
+                    <div className='flex justify-between w-full mx-5'>
+                        <img src={LeftIcon} alt="Left Icon" className="left-icon mt-[15px] cursor-pointer" onClick={() => swipe('left')} />
+                        <img src={SkipIcon} alt="Skip Icon" className="skip-icon mt-[4px] cursor-pointer" onClick={() => swipe('up')} />
+                        <img src={RightIcon} alt="Right Icon" className="right-icon mt-[9px] cursor-pointer" onClick={() => swipe('right')} />
                     </div>
                 </div>
             </div>

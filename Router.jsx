@@ -5,6 +5,7 @@ import Homepage from "./src/components/Homepage/Homepage";
 import BeforeAsnwering from "./src/components/Homepage/BeforeAsnwering/BeforeAsnwering";
 import QuestionCards from "./src/components/QuestionCards/QuestionCards";
 import UserData from "./src/components/UserData/UserData";
+import ThankYou from "./src/components/ThankYou/ThankYou";
 
 const Router = () => {
     return (
@@ -17,6 +18,8 @@ const Router = () => {
                 <Route path="/before-answering" element={<BeforeAsnwering />} />
                 <Route path="/question-cards" element={<QuestionCards />} />
                 <Route path="/user-data" element={<UserData />} />
+                <Route path="/thank-you" element={<ThankYou />} />
+                <Route path="*" element={<Onboarding />} />
             </Routes>
         </>
     );

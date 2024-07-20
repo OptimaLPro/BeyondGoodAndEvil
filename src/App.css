@@ -51,3 +51,7 @@
     line-height: 40px;
     text-transform: capitalize;
 }
+
+.blue-gradient-bg {
+    background: linear-gradient(180deg, #57B4F7 -7.42%, #F6F3F1 100%);
+}

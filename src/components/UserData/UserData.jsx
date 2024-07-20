@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const UserData = () => {
     return (
         <>
-            <div className="h-screen bg-[#6CB9F1]">
+            <div className="bg-[#6CB9F1] min-h-screen">
                 <div className="flex flex-col mx-[25px] text-[#131313]">
                     <div>
                         <Link to="/">
@@ -28,13 +28,13 @@ const UserData = () => {
                             </div>
                             <div className=" flex items-center align-middle gap-[10px] mt-[11px]">
                                 <img src={Checkbox} alt="Checkbox" className="checkbox-icon " />
-                                <span className="capitalize regular-font text-white text-[20px]">Female</span>
+                                <span className="capitalize regular-font text-white text-[20px]">Male</span>
                             </div>
                         </div>
                         <div>
                             <div className=" flex items-center align-middle gap-[10px] mt-[22px]">
                                 <img src={Checkbox} alt="Checkbox" className="checkbox-icon " />
-                                <span className="capitalize regular-font text-white text-[20px]">Female</span>
+                                <span className="capitalize regular-font text-white text-[20px]">Other</span>
                             </div>
                         </div>
                     </div>
@@ -50,11 +50,13 @@ const UserData = () => {
                         <span className="capitalize text-[20px] regular-font mt-[40px]">in what country do you live?</span>
                         <span className="capitalize text-[20px] text-white bold-font border-b-[1.7px] pb-2 border-black mr-[20px]">select</span>
                     </div>
-                    <div className="w-full flex mt-[50px]">
-                        <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer">
-                            <span className="regular-font text-[18px] text-[#F6F3F1]">Submit</span>
-                            <img src={FindOut} alt="Find Out" />
-                        </div>
+                    <div className="w-full flex mt-[50px] mb-[4 0px] mb-[40px]">
+                        <Link to="/thank-you">
+                            <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer">
+                                <span className="regular-font text-[18px] text-[#F6F3F1]">Submit</span>
+                                <img src={FindOut} alt="Find Out" />
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

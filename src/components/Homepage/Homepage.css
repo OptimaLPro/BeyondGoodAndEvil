@@ -1,7 +1,3 @@
-.homepage-bg {
-    background: linear-gradient(180deg, #57B4F7 -7.42%, #F6F3F1 100%);
-}
-
 .gif1 {
     position: absolute;
     bottom: 0;
@@ -10,4 +6,19 @@
     z-index: 100;
 }
 
+.grid2-background {
+    position: relative;
+    z-index: 1;
+}
 
+.grid2-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Background.svg');
+    opacity: 1;
+    z-index: -1;
+}

@@ -1,23 +1,19 @@
-import "./Homepage.css";
-import Logo from "/images/Logo.svg";
 import { Link } from "react-router-dom";
-import FindOut from "/icons/FindOutWhite.svg";
-import HomePagePink from "/images/HomePagePink.svg";
+import Navbar from "../Navbar/Navbar";
+import "./Homepage.css";
 import GIF1 from "/gifs/1.gif";
 import GIF2 from "/gifs/2.gif";
 import GIF3 from "/gifs/3.gif";
 import GIF4 from "/gifs/4.gif";
-import Menu from "../Menu/Menu";
+import FindOut from "/icons/FindOutWhite.svg";
+import HomePagePink from "/images/HomePagePink.svg";
 
 const Homepage = () => {
     return (
         <>
-            <div className="h-screen homepage-bg">
-                <div className="h-screen flex flex-col">
-                    <div className="flex justify-between px-[20px] py-[11px]">
-                        <img src={Logo} alt="logo" className="" />
-                        <Menu />
-                    </div>
+            <div className="h-screen blue-gradient-bg grid2-background">
+                <div className="flex flex-col h-screen">
+                    <Navbar />
                     <div>
                         <div className="flex flex-col gap-4 mt-[25px] px-[20px] w-[85%]">
                             <span className="capitalize bold-font text-[20px]">dear Human n. 20895,</span>
