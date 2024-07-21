@@ -9,8 +9,10 @@ import SkipIcon from "/icons/Skip.png";
 import SendQuestion from "/icons/SendQuestion.png";
 import CarsData from './Data';
 import { Link, useNavigate } from 'react-router-dom';
+import TransitionSlide from './TransitionSlides/TransitionSlide';
+import ShareQuestion from './ShareQuestion/ShareQuestion';
 
-function Advanced() {
+function Cards() {
     const [cards, setCards] = useState([...CarsData]);
     const questionNumer = [1, 2, 3, 4, 4.5, 5, 6, 7, 7.5, 8, 9, 10, 10.5, 11, 12, 13, 13.5, 14, 14.5, 15, 16];
     const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
@@ -18,7 +20,9 @@ function Advanced() {
     const currentIndexRef = useRef(currentIndex);
     const [questionIndex, setQuestionIndex] = useState(1);
     const [currentID, setCurrentID] = useState(questionNumer[0]);
+    const [showTransition, setShowTransition] = useState(false);
     const totalQuestions = useRef(cards.length);
+    const [openShare, setOpenShare] = useState(false);
     const navigateTo = useNavigate();
 
     const childRefs = useMemo(() => {
@@ -38,8 +42,11 @@ function Advanced() {
         }
     }, [currentID]);
 
-
-
+    useEffect(() => {
+        if (questionIndex % 6 === 0 && questionIndex <= cards.length) {
+            setShowTransition(true);
+        }
+    }, [questionIndex]);
 
     const addHalfCard = (subquestion, cardID) => {
         setCards((prevCards) => {
@@ -90,7 +97,6 @@ function Advanced() {
                     }
                 }
             }
-            // return card;
         });
 
         if (changed) return;
@@ -108,7 +114,6 @@ function Advanced() {
         if (canSwipe && currentIndex < cards.length) {
             await childRefs[currentIndex].current.swipe(dir);
         }
-        console.log("swipe");
     };
 
     const goBack = async () => {
@@ -118,55 +123,72 @@ function Advanced() {
         await childRefs[newIndex].current.restoreCard();
     };
 
+    const handleCloseTransition = () => {
+        setShowTransition(false);
+    };
+
+    const toggleShare = () => {
+        setOpenShare(!openShare);
+    }
+
     return (
-        <div className='flex flex-col w-full h-full'>
-            <div className="flex flex-col">
-                <div className="mx-4 mt-4 mb-[20px] flex items-center">
-                    <div className="w-1/3">
-                        <Link to="/">
-                            <img src={BackIcon} alt="Back Icon" className="" width={11} height={15} />
-                        </Link>
-                    </div>
-                    <div className="flex justify-center w-1/3">
-                        <span className="tracking-widest text-white joystix-font">
-                            {currentID <= totalQuestions.current ? `${currentID}/${totalQuestions.current}` : ""}
-                        </span>                    </div>
-                    <div className="w-1/3">
-                    </div>
-                </div>
-            </div>
-            <div className='flex flex-col h-[480px] items-center'>
-                {cards.map((card, index) => (
-                    <TinderCard
-                        ref={childRefs[index]}
-                        className='swipe'
-                        key={card.id}
-                        preventSwipe={['up', 'down']}
-                        onSwipe={(dir) => swiped(dir, card.id, index)}
-                        onCardLeftScreen={() => outOfFrame(card.id, index)}
-                    >
-                        <div className='flex justify-center w-full'>
-                            <CardPNG card={card} />
+        <>
+            {showTransition && <TransitionSlide handleCloseTransition={handleCloseTransition} num={questionIndex / 6} />}
+            <div className='flex flex-col w-full h-full h-screen-minus-74'>
+                <div className="flex flex-col">
+                    <div className="mx-4 mt-4 mb-[20px] flex items-center">
+                        <div className="w-1/3">
+                            <Link to="/">
+                                <img src={BackIcon} alt="Back Icon" width={11} height={15} />
+                            </Link>
                         </div>
-                    </TinderCard>
-                ))}
-            </div>
-            <div className='h-[66px] flex justify-center'>
-                <div className=''>
-                    <img src={SendQuestion} alt="SendQuestion" className="" />
-                </div>
-            </div>
-            <div className='fixed bottom-0 flex flex-col justify-end flex-grow w-full'>
-                <div className=' h-[74px] bg-[#F6F3F1] flex' >
-                    <div className='flex justify-between w-full mx-5'>
-                        <img src={LeftIcon} alt="Left Icon" className="left-icon mt-[15px] cursor-pointer" onClick={() => swipe('left')} />
-                        <img src={SkipIcon} alt="Skip Icon" className="skip-icon mt-[4px] cursor-pointer" onClick={() => swipe('up')} />
-                        <img src={RightIcon} alt="Right Icon" className="right-icon mt-[9px] cursor-pointer" onClick={() => swipe('right')} />
+                        <div className="flex justify-center w-1/3">
+                            <span className="tracking-widest text-white joystix-font">
+                                {currentID <= totalQuestions.current ? `${currentID}/${totalQuestions.current}` : ""}
+                            </span>
+                        </div>
+                        <div className="w-1/3" />
                     </div>
                 </div>
+                <div className='flex flex-col h-[480px] items-center'>
+                    {cards.map((card, index) => (
+                        <TinderCard
+                            ref={childRefs[index]}
+                            className='swipe'
+                            key={card.id}
+                            preventSwipe={['up', 'down']}
+                            onSwipe={(dir) => swiped(dir, card.id, index)}
+                            onCardLeftScreen={() => outOfFrame(card.id, index)}
+                        >
+                            <div className='flex justify-center w-full'>
+                                <CardPNG card={card} />
+                            </div>
+                        </TinderCard>
+                    ))}
+                </div>
+                <div className='h-[66px] flex justify-center mx-auto items-center' onClick={() => setOpenShare(true)}>
+                    {currentID == 1 && (<div>
+                        <span className='text-[12px] text-white bold-font'>Share this question</span>
+                    </div>)}
+                    <div>
+                        <img src={SendQuestion} alt="SendQuestion" />
+                    </div>
+                </div>
+                {!showTransition &&
+                    (<div className='fixed bottom-0 flex flex-col justify-end flex-grow w-full'>
+                        <div className='h-[74px] bg-[#F6F3F1] flex'>
+                            <div className='flex justify-between w-full mx-5'>
+                                <img src={LeftIcon} alt="Left Icon" className="left-icon mt-[15px] cursor-pointer" onClick={() => swipe('left')} />
+                                <img src={SkipIcon} alt="Skip Icon" className="skip-icon mt-[4px] cursor-pointer" onClick={() => swipe('up')} />
+                                <img src={RightIcon} alt="Right Icon" className="right-icon mt-[9px] cursor-pointer" onClick={() => swipe('right')} />
+                            </div>
+                        </div>
+                    </div>)
+                }
             </div>
-        </div>
+            <ShareQuestion isOpen={openShare} toggleShare={toggleShare} />
+        </>
     );
 }
 
-export default Advanced;
+export default Cards;

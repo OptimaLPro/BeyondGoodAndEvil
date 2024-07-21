@@ -16,20 +16,20 @@ const Homepage = () => {
                     <Navbar />
                     <div>
                         <div className="flex flex-col gap-4 mt-[25px] px-[20px] w-[85%]">
-                            <span className="capitalize bold-font text-[20px]">dear Human n. 20895,</span>
-                            <span className="testing-font ">ready to make some tough moral decisions?</span>
+                            <span className="capitalize bold-font text-[20px]">dear Human n. 29348,</span>
+                            <span className="testing-font ">Discover which ethical principles guide your choices</span>
                         </div>
                     </div>
                     <div>
                         <Link to="/before-answering">
                             <div className="bg-[#131313] ml-[20px] mt-[19px] w-fit p-[14px] flex gap-4 cursor-pointer">
-                                <span className="onboarding text-[20px] text-[#F6F3F1]">Answer Questionary</span>
+                                <span className="onboarding text-[14px] text-[#F6F3F1]">Answer Questionary</span>
                                 <img src={FindOut} alt="Find Out" />
                             </div>
                         </Link>
                     </div>
                     <div className="mt-auto ">
-                        <img src={HomePagePink} alt="Homepage Pink" className="w-full homepage-pink" />
+                        <img src={HomePagePink} alt="Homepage Pink" className="w-full" />
                         <img src={GIF1} alt="GIF1" className="gif1 mb-[152px] ml-[60px]" />
                         <img src={GIF2} alt="GIF2" className="gif1 mb-[121px] ml-[100px]" />
                         <img src={GIF3} alt="GIF2" className="gif1 mb-[62px] ml-[262px]" />

@@ -1,5 +1,5 @@
 import "./QuestionCards.css";
-import Advanced from "./Cards";
+import Cards from "./Cards";
 import CardPopup from "/images/CardPopup.png";
 import TouchIcon from "/icons/TouchIcon.svg";
 import ExitIcon from "/icons/Exit.png";
@@ -55,9 +55,9 @@ const QuestionCards = () => {
 
     return (
         <>
-            <div className="h-screen-minus-74 bg-[#131313] grid-background overflow-x-hidden overflow-y-hidden relative">
+            <div className="h-screen bg-[#131313] grid-background overflow-x-hidden overflow-y-hidden relative">
                 <div className="flex flex-col h-full">
-                    <Advanced />
+                    <Cards />
                 </div>
                 <AnimatePresence>
                     {isOpen && (

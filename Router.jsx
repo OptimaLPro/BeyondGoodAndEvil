@@ -6,6 +6,7 @@ import BeforeAsnwering from "./src/components/Homepage/BeforeAsnwering/BeforeAsn
 import QuestionCards from "./src/components/QuestionCards/QuestionCards";
 import UserData from "./src/components/UserData/UserData";
 import ThankYou from "./src/components/ThankYou/ThankYou";
+import TransitionSlide from "./src/components/QuestionCards/TransitionSlides/TransitionSlide";
 
 const Router = () => {
     return (
@@ -20,6 +21,7 @@ const Router = () => {
                 <Route path="/user-data" element={<UserData />} />
                 <Route path="/thank-you" element={<ThankYou />} />
                 <Route path="*" element={<Onboarding />} />
+                <Route path="/transition-slide" element={<TransitionSlide />} />
             </Routes>
         </>
     );

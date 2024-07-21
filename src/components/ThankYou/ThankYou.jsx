@@ -35,7 +35,7 @@ const ThankYou = () => {
                         </div>
                     </div>
                     <div className="mx-[20px]">
-                        <div className="bg-[#FA839F] py-[12px] w-full mt-[15px] flex flex-col">
+                        <div className="bg-[#FA839F] pt-[12px] w-full mt-[15px] flex flex-col">
                             <div className="mx-[14px]">
                                 <div className="flex flex-col capitalize">
                                     <span className="bold-font text-white text-[20px]">Compare Globally</span>
@@ -45,7 +45,7 @@ const ThankYou = () => {
                                 <Link to="/global-data" >
                                     <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer mt-[20px]">
                                         <span className="capitalize regular-font text-[12px] text-[#F6F3F1]">see global data</span>
-                                        <img src={FindOut} alt="Find Out" />
+                                        <img src={FindOut} alt="Find Out"/>
                                     </div>
                                 </Link>
                             </div>
