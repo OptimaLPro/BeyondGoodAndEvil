@@ -114,7 +114,7 @@ const QuestionCards = ({ CardsData }) => {
                                         </div>
                                     </div>
                                 </>) : (<>
-                                    <span className="absolute bottom-0 left-0 text-[37px] bold-font w-[350px] mb-[370px] ml-[30px] leading-[40px]">Can you answer this moral dilemma?</span>
+                                    <span className="absolute bottom-0 left-0 text-[37px] bold-font w-[90%] mb-[370px] ml-[30px] leading-[40px]">Can you answer this moral dilemma?</span>
                                     <div className="absolute z-[100] bottom-0 w-full flex justify-start mb-[60px] ml-[30px]">
                                         <div
                                             className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer"
