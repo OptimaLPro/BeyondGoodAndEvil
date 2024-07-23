@@ -4,8 +4,13 @@ import TouchIcon from "/icons/TouchIcon.svg";
 import ExitIcon from "/icons/Exit.png";
 import FindOut from "/icons/FindOutWhite.svg";
 import { AnimatePresence, motion } from "framer-motion";
+import SendQuestionWhite from "/icons/SendQuestionWhite.png";
+import ShareCard from "/images/ShareCard.svg";
+import SendQuestion from "/icons/SendQuestion.png";
+import "./ShareQuestion.css";
+import "../QuestionCards.css";
 
-const ShareQuestion = ({ isOpen, toggleShare }) => {
+const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
 
     const variants = {
         hidden: {
@@ -50,6 +55,25 @@ const ShareQuestion = ({ isOpen, toggleShare }) => {
         }
     };
 
+    const handleShare = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Check out this question!',
+                url: `https://beyondgoodandevil.vercel.app${"/question-cards/" + cardUrl}`
+            })
+            .then(() => {
+                console.log('Successfully shared');
+            })
+            .catch((error) => {
+                console.error('Nothing shared:', error);
+                alert('Nothing shared: ' + error.message);
+            });
+        } else {
+            console.log('Web Share API not supported in this browser');
+            alert('Web Share API not supported in this browser');
+        }
+    };
+
     return (
         <>
             <AnimatePresence>
@@ -69,23 +93,21 @@ const ShareQuestion = ({ isOpen, toggleShare }) => {
                             animate="visible"
                             exit="exit"
                         >
-                            <img src={CardPopup} alt="CardPopup" className="w-full h-[500px]" />
+                            <img src={ShareCard} alt="CardPopup" className="w-full" />
                             <img
                                 src={ExitIcon}
                                 alt="ExitIcon"
-                                className="exit-icon right-0 mb-[455px] mr-[13px] cursor-pointer"
+                                className="exit-icon right-0 mb-[265px] mr-[13px] cursor-pointer"
                                 onClick={toggleShare}
                             />
-                            <img src={TouchIcon} alt="TouchIcon" className="touch-icon mx-auto w-full mt-2 mb-[330px]" />
-                            <span className="capitalize absolute bottom-0 left-0 text-[20px] bold-font w-[91px] mb-[220px] ml-[45px]">slide left for “no”</span>
-                            <span className="capitalize absolute bottom-0 right-0 text-[20px] bold-font w-[114px] text-right mb-[220px] mr-[45px]">slide right for “yes”</span>
-                            <div className="absolute z-[100] bottom-0 w-full flex justify-center mb-[80px]">
+                            <span className="absolute bottom-0 left-0 text-[20px] bold-font w-[80%] mb-[140px] ml-[45px]">Want a friend's perspective on this question? Share it now!</span>
+                            <div className="absolute z-[100] bottom-0 w-full flex ml-[45px] mb-[50px]">
                                 <div
-                                    className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer"
-                                    onClick={toggleShare}
+                                    className="bg-[#DCECA1] w-fit p-[14px] flex cursor-pointer border-black border-2"
+                                    onClick={handleShare}
                                 >
-                                    <span className="regular-font text-[20px] text-[#F6F3F1]">Got It</span>
-                                    <img src={FindOut} alt="Find Out" />
+                                    <span className="bold-font text-[14px] text-[#131313]">Share This Question</span>
+                                    <img src={SendQuestionWhite} alt="SendQuestionWhite" className='send-question mt-[2px]' />
                                 </div>
                             </div>
                         </motion.div>

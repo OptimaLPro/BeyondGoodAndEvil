@@ -11,28 +11,33 @@ const TransitionSlide = ({ handleCloseTransition, num }) => {
         <>
             <div className="z-[999]">
                 {num === 1 && <TS1 handleCloseTransition={handleCloseTransition} />}
-                {num === 2 && <TS2 handleClosePopup={handleCloseTransition} />}
-                {num === 3 && <TS3 handleClosePopup={handleCloseTransition} />}
+                {num === 2 && <TS2 handleCloseTransition={handleCloseTransition} />}
+                {num === 3 && <TS3 handleCloseTransition={handleCloseTransition} />}
             </div>
         </>
     );
 };
 
 const TS1 = ({ handleCloseTransition }) => {
+    const stopPropagation = (e) => e.stopPropagation();
+
     return (
         <>
-            <div className="h-screen bg-[#FA839F]">
-                <div className="flex flex-col">
+            <div className="h-screen bg-[#FA839F]" onClick={handleCloseTransition}>
+                <div className="flex flex-col" onClick={stopPropagation}>
                     <div className="flex justify-end w-full p-3">
                         <img
                             src={ExitIcon}
                             alt="ExitIcon"
-                            onClick={handleCloseTransition}
+                            onClick={(e) => {
+                                e.stopPropagation(); // Stop propagation here as well
+                                handleCloseTransition();
+                            }}
                         />
                     </div>
                     <div className="flex flex-col mx-auto" style={{ marginTop: '60px' }}>
                         <div>
-                            <span className="regular-font text-[20px]">So far you answered like</span>
+                            <span className="regular-font text-[20px] leading-[23px]">So far you answered like</span>
                         </div>
                         <div className="text-[43px] bold-font flex flex-col mt-[17px] text-ts1">
                             <span className="mt-[10px]">Women<span className="text-white"> who are</span></span>
@@ -51,20 +56,25 @@ const TS1 = ({ handleCloseTransition }) => {
     );
 };
 
-const TS2 = ({ handleClosePopup }) => {
+const TS2 = ({ handleCloseTransition }) => {
+    const stopPropagation = (e) => e.stopPropagation();
+
     return (
         <>
-            <div className="h-screen bg-[#6CB9F1]">
-                <div className="flex flex-col">
+            <div className="h-screen bg-[#6CB9F1]" onClick={handleCloseTransition}>
+                <div className="flex flex-col" onClick={stopPropagation}>
                     <div className="flex justify-end w-full p-3">
-                        <img
+                    <img
                             src={ExitIcon}
                             alt="ExitIcon"
-                            onClick={handleClosePopup}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleCloseTransition();
+                            }}
                         />
                     </div>
                     <div className="flex flex-col mx-auto" style={{ marginTop: '60px' }}>
-                        <div className="w-[300px]">
+                        <div className="w-[300px] leading-[23px]">
                             <span className="regular-font text-[20px]">So far your answers align with these values</span>
                         </div>
                         <div className="flex flex-col justify-center mt-[74px]">
@@ -88,20 +98,25 @@ const TS2 = ({ handleClosePopup }) => {
     );
 };
 
-const TS3 = ({ handleClosePopup }) => {
+const TS3 = ({ handleCloseTransition }) => {
+    const stopPropagation = (e) => e.stopPropagation();
+
     return (
         <>
-            <div className="h-screen bg-[#FA839F]">
-                <div className="flex flex-col">
+            <div className="h-screen bg-[#FA839F]" onClick={handleCloseTransition}>
+                <div className="flex flex-col" onClick={stopPropagation}>
                     <div className="flex justify-end w-full p-3">
                         <img
                             src={ExitIcon}
                             alt="ExitIcon"
-                            onClick={handleClosePopup}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleCloseTransition();
+                            }}
                         />
                     </div>
                     <div className="flex flex-col mx-auto" style={{ marginTop: '60px' }}>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col leading-[23px]">
                             <span className="regular-font text-[20px]">On <span className="bold-font">the last question,</span></span>
                             <span className="regular-font text-[20px]">you answered like</span>
                         </div>

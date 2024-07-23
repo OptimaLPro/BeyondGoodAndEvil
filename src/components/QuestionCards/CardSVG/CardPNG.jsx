@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./CardPNG.css";
 import GIF5 from "/gifs/5.gif";
 import ProgressBar from "/images/ProgressBar.svg";
@@ -23,11 +23,11 @@ const CardPNG = ({ card }) => {
             <div className='flex flex-col'>
                 <div style={{ position: 'relative' }}>
                     <img src={`/cards/${card.color}.png`} alt='Card' style={cardStyle} />
-                    <div className={`text-[28px] regular-font mt-[20px] leading-[32px] tracking-[-0.3px] z-50 capitalize`} style={{ ...textStyle, color: card.textColor }}>
+                    <div className={`text-[28px] regular-font mt-[20px] leading-[32px] tracking-[-0.3px] z-50`} style={{ ...textStyle, color: card.textColor }}>
                         {card.text}
                         <div>
-                            { card.subtext && 
-                            <div className='mt-[17px] text-[20px] text-black lowercase bold-font'>{card.subtext}</div>}
+                            {card.subtext &&
+                                <div className='mt-[17px] text-[20px] text-black lowercase bold-font'>{card.subtext}</div>}
                         </div>
                     </div>
                     <img src={GIF5} alt="GIF5" className="gif2 mb-[45px] ml-[280px]" />

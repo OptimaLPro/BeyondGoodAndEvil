@@ -3,17 +3,17 @@ import TinderCard from 'react-tinder-card';
 import './Cards.css';
 import CardPNG from './CardSVG/CardPNG';
 import BackIcon from "/icons/Back.svg";
-import LeftIcon from "/icons/Left.png";
-import RightIcon from "/icons/Right.png";
-import SkipIcon from "/icons/Skip.png";
+import LeftIcon from "/icons/Left.svg";
+import RightIcon from "/icons/Right.svg";
+import SkipIcon from "/icons/Skip.svg";
 import SendQuestion from "/icons/SendQuestion.png";
-import CarsData from './Data';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import TransitionSlide from './TransitionSlides/TransitionSlide';
 import ShareQuestion from './ShareQuestion/ShareQuestion';
+import { motion } from 'framer-motion';
 
-function Cards() {
-    const [cards, setCards] = useState([...CarsData]);
+function Cards({ CardsData }) {
+    const [cards, setCards] = useState(CardsData);
     const questionNumer = [1, 2, 3, 4, 4.5, 5, 6, 7, 7.5, 8, 9, 10, 10.5, 11, 12, 13, 13.5, 14, 14.5, 15, 16];
     const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
     const [lastDirection, setLastDirection] = useState();
@@ -23,7 +23,11 @@ function Cards() {
     const [showTransition, setShowTransition] = useState(false);
     const totalQuestions = useRef(cards.length);
     const [openShare, setOpenShare] = useState(false);
+    const [cardUrl, setCardUrl] = useState("");
     const navigateTo = useNavigate();
+    const location = useLocation();
+    const [isDynamicCard, setIsDynamicCard] = useState(false);
+    const [lastCard, setLastCard] = useState(false);
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -37,9 +41,35 @@ function Cards() {
     };
 
     useEffect(() => {
-        if (currentID == totalQuestions.current) {
-            navigateTo('/user-data')
+        if (lastCard) {
+            navigateTo('/user-data');
         }
+
+        const pathSegments = location.pathname.split('/');
+        const questionCardsIndex = pathSegments.findIndex(segment => segment === 'question-cards') + 1;
+
+        console.log(pathSegments);
+        console.log(pathSegments[questionCardsIndex]);
+
+        if (pathSegments[questionCardsIndex]) {
+            console.log('Showing specific card:', pathSegments[questionCardsIndex]);
+            setIsDynamicCard(true);
+        }
+        // if (currentID == totalQuestions.current) {
+        //     navigateTo('/user-data')
+        // }
+
+
+        if (!isDynamicCard) {
+            console.log(currentID, totalQuestions.current);
+            if (currentID == totalQuestions.current) {
+                setLastCard(true);
+            }
+        }
+        else {
+
+        }
+
     }, [currentID]);
 
     useEffect(() => {
@@ -129,25 +159,46 @@ function Cards() {
 
     const toggleShare = () => {
         setOpenShare(!openShare);
-    }
+    };
+
+    const shareQuestion = () => {
+        const currentCardUrl = cards[currentIndex]?.url;
+        console.log(currentCardUrl);
+        setCardUrl(currentCardUrl);
+        toggleShare();
+    };
 
     return (
         <>
             {showTransition && <TransitionSlide handleCloseTransition={handleCloseTransition} num={questionIndex / 6} />}
             <div className='flex flex-col w-full h-full h-screen-minus-74'>
                 <div className="flex flex-col">
-                    <div className="mx-4 mt-4 mb-[20px] flex items-center">
+                    <div className="mx-6 mt-[23px] mb-[23px] flex items-center">
                         <div className="w-1/3">
                             <Link to="/">
                                 <img src={BackIcon} alt="Back Icon" width={11} height={15} />
                             </Link>
                         </div>
                         <div className="flex justify-center w-1/3">
-                            <span className="tracking-widest text-white joystix-font">
+                            {!isDynamicCard && (<span className="tracking-widest text-white joystix-font">
                                 {currentID <= totalQuestions.current ? `${currentID}/${totalQuestions.current}` : ""}
-                            </span>
+                            </span>)}
                         </div>
-                        <div className="w-1/3" />
+                        <div className="w-1/3">
+                            <div className='flex items-center justify-end mx-auto' onClick={shareQuestion}>
+                                {(currentID == 1 || currentID == 2) &&
+                                    (<motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 }}
+                                        className=''>
+                                        <span className='text-[16px] text-white bold-font mr-2'>Share</span>
+                                    </motion.div>)}
+                                <div>
+                                    <img src={SendQuestion} alt="SendQuestion" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className='flex flex-col h-[480px] items-center'>
@@ -166,27 +217,20 @@ function Cards() {
                         </TinderCard>
                     ))}
                 </div>
-                <div className='h-[66px] flex justify-center mx-auto items-center' onClick={() => setOpenShare(true)}>
-                    {currentID == 1 && (<div>
-                        <span className='text-[12px] text-white bold-font'>Share this question</span>
-                    </div>)}
-                    <div>
-                        <img src={SendQuestion} alt="SendQuestion" />
-                    </div>
-                </div>
+
                 {!showTransition &&
                     (<div className='fixed bottom-0 flex flex-col justify-end flex-grow w-full'>
                         <div className='h-[74px] bg-[#F6F3F1] flex'>
-                            <div className='flex justify-between w-full mx-5'>
-                                <img src={LeftIcon} alt="Left Icon" className="left-icon mt-[15px] cursor-pointer" onClick={() => swipe('left')} />
-                                <img src={SkipIcon} alt="Skip Icon" className="skip-icon mt-[4px] cursor-pointer" onClick={() => swipe('up')} />
-                                <img src={RightIcon} alt="Right Icon" className="right-icon mt-[9px] cursor-pointer" onClick={() => swipe('right')} />
+                            <div className={!isDynamicCard ? 'flex justify-between w-full mx-5' : 'flex justify-around w-full mx-5'}>
+                                <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon" onClick={() => swipe('left')} />
+                                {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />}
+                                <img src={RightIcon} alt="Right Icon" className="cursor-pointer right-icon" onClick={() => swipe('right')} />
                             </div>
                         </div>
                     </div>)
                 }
             </div>
-            <ShareQuestion isOpen={openShare} toggleShare={toggleShare} />
+            <ShareQuestion isOpen={openShare} toggleShare={toggleShare} cardUrl={cardUrl} />
         </>
     );
 }

@@ -5,7 +5,8 @@ export const Cards = [
         text: "Do you think ethics is subjective?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "ethics-subjective"
     },
     {
         id: 15,
@@ -13,7 +14,8 @@ export const Cards = [
         text: "Would you build a profitable factory that will create many jobs but will cause significant environmental damage?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "profitable-factory-environmental-damage"
     },
     {
         id: 14,
@@ -25,20 +27,23 @@ export const Cards = [
             {
                 id: 14.5,
                 color: "Grey",
-                from: "yes",
+                from: "no",
                 text: "What if you are the only suitable donor?",
                 subtext: "(Donate you kidney?)",
-                textColor: "#DE305A"
+                textColor: "#DE305A",
+                url: "only-suitable-donor"
             },
             {
                 id: 14.5,
                 color: "Grey",
-                from: "no",
+                from: "yes",
                 text: "What if the recipient has a history of criminal activity?",
                 subtext: "(Donate your kidney?)",
-                textColor: "#8EBD5F"
+                textColor: "#8EBD5F",
+                url: "recipient-criminal-history"
             },
-        ]
+        ],
+        url: "donate-kidney-stranger"
     },
     {
         id: 13,
@@ -50,20 +55,23 @@ export const Cards = [
             {
                 id: 13.5,
                 color: "Grey",
-                from: "yes",
+                from: "no",
                 text: "And what if these five people are surgeons who save lives on a daily basis?",
                 subtext: "(Save the five people?)",
-                textColor: "#DE305A"
+                textColor: "#DE305A",
+                url: "five-surgeons-save-lives"
             },
             {
                 id: 13.5,
                 color: "Grey",
-                from: "no",
+                from: "yes",
                 text: "What if you know this one person?",
                 subtext: "(Save the one person?)",
-                textColor: "#8EBD5F"
+                textColor: "#8EBD5F",
+                url: "know-one-person"
             },
-        ]
+        ],
+        url: "runaway-trolley-dilemma"
     },
     {
         id: 12,
@@ -71,7 +79,8 @@ export const Cards = [
         text: "You're at the beach when you see a child drowning in the ocean. Attempting a rescue could endanger your own life. Would you try to save the boy?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "child-drowning-rescue"
     },
     {
         id: 11,
@@ -79,7 +88,8 @@ export const Cards = [
         text: "As a military commander, would you proceed with an operation in a densely populated area despite the risk of civilian casualties?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "military-operation-civilian-casualties"
     },
     {
         id: 10,
@@ -94,17 +104,20 @@ export const Cards = [
                 from: "yes",
                 text: "If the patient recovers, does that change your answer?",
                 subtext: null,
-                textColor: "#DE305A"
+                textColor: "#DE305A",
+                url: "patient-recovers-placebo"
             },
             {
                 id: 10.5,
                 color: "Grey",
                 from: "no",
-                text: "If the patient Dies, does that change your answer?",
+                text: "If the patient dies, does that change your answer?",
                 subtext: null,
-                textColor: "#8EBD5F"
+                textColor: "#8EBD5F",
+                url: "patient-dies-placebo"
             },
-        ]
+        ],
+        url: "doctor-prescribes-placebo"
     },
     {
         id: 9,
@@ -112,7 +125,8 @@ export const Cards = [
         text: "Would you kill someone who can't stop coughing while your group hides quietly from a dangerous enemy?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "kill-coughing-person"
     },
     {
         id: 8,
@@ -120,7 +134,8 @@ export const Cards = [
         text: "Would you save a sinking ship carrying 15 young high-class students over a ship with 30 laborers aged 45 and more?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "save-high-class-students"
     },
     {
         id: 7,
@@ -132,20 +147,23 @@ export const Cards = [
             {
                 id: 7.5,
                 color: "Grey",
-                from: "yes",
+                from: "no",
                 text: "What if the animals are genetically modified to feel less pain?",
                 subtext: "(Proceed with the project?)",
-                textColor: "#DE305A"
+                textColor: "#DE305A",
+                url: "animals-genetically-modified"
             },
             {
                 id: 7.5,
                 color: "Grey",
-                from: "no",
+                from: "yes",
                 text: "What if the tested animals are dogs?",
                 subtext: "(Proceed with the project?)",
-                textColor: "#8EBD5F"
+                textColor: "#8EBD5F",
+                url: "tested-animals-dogs"
             },
-        ]
+        ],
+        url: "life-saving-animal-testing"
     },
     {
         id: 6,
@@ -153,7 +171,8 @@ export const Cards = [
         text: "You accidentally break a valuable item belonging to someone else. It's easy to cover it up. Would you confess to them?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "confess-break-item"
     },
     {
         id: 5,
@@ -161,8 +180,8 @@ export const Cards = [
         text: "You witness a parent physically disciplining their child in public. Would you intervene?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
-
+        subquestions: null,
+        url: "intervene-disciplining-child"
     },
     {
         id: 4,
@@ -174,20 +193,23 @@ export const Cards = [
             {
                 id: 4.5,
                 color: "Grey",
-                from: "yes",
+                from: "no",
                 text: "What if the pedestrian is a 6 YO kid?",
                 subtext: "(save the pedestrian?)",
-                textColor: "#DE305A"
+                textColor: "#DE305A",
+                url: "pedestrian-6yo-kid"
             },
             {
                 id: 4.5,
                 color: "Grey",
-                from: "no",
+                from: "yes",
                 text: "What if the passengers are a young couple with a baby?",
                 subtext: "(save the passengers?)",
-                textColor: "#8EBD5F"
+                textColor: "#8EBD5F",
+                url: "passengers-young-couple"
             },
-        ]
+        ],
+        url: "autonomous-car-prioritize"
     },
     {
         id: 3,
@@ -195,7 +217,8 @@ export const Cards = [
         text: "You have the option to steal expensive medication to save your dying partner's life. Would you steal it?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "steal-medication-partner"
     },
     {
         id: 2,
@@ -203,7 +226,8 @@ export const Cards = [
         text: "A party member donates a large sum of money to a charity but only to increase his chances of winning. Is he a good person?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
+        subquestions: null,
+        url: "donate-money-win"
     },
     {
         id: 1,
@@ -211,8 +235,8 @@ export const Cards = [
         text: "Do you think ethics is subjective?",
         subtext: null,
         textColor: "#000000",
-        subquestions: null
-
+        subquestions: null,
+        url: "ethics-subjective"
     },
 ];
 
