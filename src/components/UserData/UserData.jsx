@@ -5,13 +5,39 @@ import Checkbox from "/rect/Checkbox.svg";
 import BlackBox from "/rect/Blackbox.svg";
 import FindOut from "/icons/FindOutWhite.svg";
 import { Link } from "react-router-dom";
+import PopupMenu from "./PopupMenu/PopupMenu";
 
 const UserData = () => {
     const [selectedGender, setSelectedGender] = useState(null);
+    const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+    const [ageMenu, setAgeMenu] = useState(false);
+    const [lifeSituationMenu, setLifeSituationMenu] = useState(false);
+    const [countryMenu, setCountryMenu] = useState(false);
+    const [currentCountry, setCurrentCountry] = useState("Select");
+    const [currentAge, setCurrentAge] = useState("just give us a range");
+    const [currentLifeSituation, setCurrentLifeSituation] = useState("Select");
 
     const handleGenderClick = (gender) => {
         setSelectedGender(selectedGender === gender ? null : gender);
     };
+
+    const handleAgeClick = (e) => {
+        const rect = e.target.getBoundingClientRect();
+        setMenuPosition({ top: rect.bottom, left: rect.left });
+        setAgeMenu(!ageMenu);
+    };
+
+    const handleLifeSituationClick = (e) => {
+        const rect = e.target.getBoundingClientRect();
+        setMenuPosition({ top: rect.bottom, left: rect.left });
+        setLifeSituationMenu(!lifeSituationMenu);
+    }
+
+    const handleCountryClick = (e) => {
+        const rect = e.target.getBoundingClientRect();
+        setMenuPosition({ top: rect.bottom, left: rect.left });
+        setCountryMenu(!countryMenu);
+    }
 
     return (
         <>
@@ -48,15 +74,19 @@ const UserData = () => {
                     </div>
                     <div className="flex flex-col gap-[8px]">
                         <span className="capitalize text-[20px] regular-font mt-[40px]">How old are you?</span>
-                        <span className="capitalize text-[20px] text-white bold-font border-b-[1.7px] pb-2 border-black mr-[20px]">just give us a range</span>
+                        <span className="capitalize text-[20px] text-white bold-font border-b-[1.7px] pb-2 border-black mr-[20px]" onClick={handleAgeClick}>{currentAge}</span>
+                        {ageMenu && <PopupMenu labels={["all ages", "17 and under", "18-24", "25-29", "30-39", "40-59", "60 and over"]} setCurrentAge={setCurrentAge} setAgeMenu={setAgeMenu} currentAge={currentAge} position={menuPosition} />}
                     </div>
                     <div className="flex flex-col gap-[8px]">
                         <span className="capitalize text-[20px] regular-font mt-[40px]">What’s your life situation like?</span>
-                        <span className="capitalize text-[20px] text-white bold-font border-b-[1.7px] pb-2 border-black mr-[20px]">select</span>
+                        <span className="capitalize text-[20px] text-white bold-font border-b-[1.7px] pb-2 border-black mr-[20px]" onClick={handleLifeSituationClick}>{currentLifeSituation}</span>
+                        {lifeSituationMenu && <PopupMenu labels={["any life situation", "single", "Married/coupled", "Married/coupled with children", "single parent", "divorced", "widowed"]} setCurrentAge={setCurrentLifeSituation} setAgeMenu={setLifeSituationMenu} currentAge={currentLifeSituation} position={menuPosition} />}
                     </div>
                     <div className="flex flex-col gap-[8px]">
                         <span className="capitalize text-[20px] regular-font mt-[40px]">in what country do you live?</span>
-                        <span className="capitalize text-[20px] text-white bold-font border-b-[1.7px] pb-2 border-black mr-[20px]">select</span>
+                        <span className="capitalize text-[20px] text-white bold-font border-b-[1.7px] pb-2 border-black mr-[20px]" onClick={handleCountryClick}>{currentCountry}</span>
+                        {countryMenu && <PopupMenu setCurrentAge={setCurrentCountry} setAgeMenu={setCountryMenu} currentAge={currentCountry} position={menuPosition} countryMenu={true} />}
+
                     </div>
                     <div className="w-full flex mt-[50px] mb-[40px]">
                         <Link to="/thank-you">
