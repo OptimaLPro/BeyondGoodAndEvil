@@ -16,7 +16,8 @@
     "react-country-flag": "^3.1.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.0",
-    "react-tinder-card": "^1.6.4"
+    "react-tinder-card": "^1.6.4",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

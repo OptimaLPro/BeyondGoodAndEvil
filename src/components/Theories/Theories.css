@@ -1,0 +1,4 @@
+.grid-background {
+    background-image: url('/rect/GridBG.svg');
+    z-index: 1;
+}

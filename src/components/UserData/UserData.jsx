@@ -4,8 +4,10 @@ import BackIcon from "/icons/Back.svg";
 import Checkbox from "/rect/Checkbox.svg";
 import BlackBox from "/rect/Blackbox.svg";
 import FindOut from "/icons/FindOutWhite.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PopupMenu from "./PopupMenu/PopupMenu";
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserData = () => {
     const [selectedGender, setSelectedGender] = useState(null);
@@ -16,6 +18,7 @@ const UserData = () => {
     const [currentCountry, setCurrentCountry] = useState("Select");
     const [currentAge, setCurrentAge] = useState("just give us a range");
     const [currentLifeSituation, setCurrentLifeSituation] = useState("Select");
+    const navigateTo = useNavigate();
 
     const handleGenderClick = (gender) => {
         setSelectedGender(selectedGender === gender ? null : gender);
@@ -39,8 +42,46 @@ const UserData = () => {
         setCountryMenu(!countryMenu);
     }
 
+
+    const checkForm = () => {
+        if (selectedGender === null
+            || currentAge === "just give us a range"
+            || currentLifeSituation === "Select"
+            || currentCountry === "Select") {
+            toast.error('Please fill all the fields', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            console.log("Please fill all the fields");
+        }
+        else {
+            navigateTo("/thank-you");
+            console.log("Form submitted successfully");
+        }
+    }
+
+
     return (
         <>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition:Bounce />
+
             <div className="bg-[#6CB9F1] min-h-screen">
                 <div className="flex flex-col mx-[25px] text-[#131313]">
                     <div>
@@ -89,12 +130,10 @@ const UserData = () => {
 
                     </div>
                     <div className="w-full flex mt-[50px] mb-[40px]">
-                        <Link to="/thank-you">
-                            <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer">
-                                <span className="regular-font text-[18px] text-[#F6F3F1]">Submit</span>
-                                <img src={FindOut} alt="Find Out" />
-                            </div>
-                        </Link>
+                        <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer" onClick={() => checkForm()}>
+                            <span className="regular-font text-[18px] text-[#F6F3F1]">Submit</span>
+                            <img src={FindOut} alt="Find Out" />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -5,3 +5,32 @@
     line-height: 105.479%;
     text-transform: capitalize;
 }
+
+/* Onboarding.css */
+@keyframes blurInOut {
+    0% {
+        filter: blur(10px);
+        transform: scale(1);
+    }
+
+    /* 20%{
+        filter: blur(3px);
+    } */
+    50% {
+        filter: blur(0px);
+        /* transform: scale(1.2); */
+    }
+    100% {
+        filter: blur(10px);
+        transform: scale(1);
+    }
+}
+
+.onboarding {
+    display: inline-block;
+}
+
+.transition-text {
+    animation: blurInOut 1s ease-in-out infinite;
+}
+

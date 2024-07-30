@@ -90,15 +90,18 @@ const countryPopupMenu = ({ countries, onClickCountryHandler, currentAge, search
             </div>
             {filteredCountries.map((country, index) => (
                 <div key={index} className="py-[10px] px-[14px] flex items-center">
-                    <div className="flex items-center">
+                    <div className="flex">
                         <ReactCountryFlag
                             countryCode={country.code}
                             svg
                             style={{ width: '40px', height: '40px' }}
                             title={country.name}
+                            onClick={() => onClickCountryHandler(country.name)}
                         />
                     </div>
-                    <span className="capitalize text-[16px] regular-font ml-[14px]" onClick={() => onClickCountryHandler(country.name)}>{country.name}</span>
+                    <div className="w-full">
+                        <span className="capitalize text-[16px] regular-font ml-[14px]" onClick={() => onClickCountryHandler(country.name)}>{country.name}</span>
+                    </div>
                 </div>
             ))}
             {fillers.map((_, index) => (

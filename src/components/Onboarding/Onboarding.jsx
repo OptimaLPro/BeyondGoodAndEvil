@@ -1,14 +1,27 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Onboarding.css";
 import FindOut from "/icons/FindOutWhite.svg";
 
 const Onboarding = () => {
+    const [isGood, setIsGood] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsGood((prev) => !prev);
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="bg-[#f5f3f1] h-screen">
             <div className="flex flex-col h-full">
                 <div className="flex flex-col justify-end h-[30%] ml-[26px]">
                     <span className="onboarding text-[43px]">Am I</span>
-                    <span className="onboarding text-[43px]">A Good</span>
+                    <span className={`onboarding text-[43px] transition-text ${isGood ? 'text-good' : 'text-bad'}`}>
+                        {isGood ? 'A Good' : 'A Bad'}
+                    </span>
                     <span className="onboarding text-[43px]">Person?</span>
                 </div>
                 <div className="h-[50%] justify-end flex flex-col ml-[26px]">

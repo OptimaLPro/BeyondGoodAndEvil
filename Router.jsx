@@ -8,6 +8,7 @@ import UserData from "./src/components/UserData/UserData";
 import ThankYou from "./src/components/ThankYou/ThankYou";
 import TransitionSlide from "./src/components/QuestionCards/TransitionSlides/TransitionSlide";
 import CardsData from './src/components/QuestionCards/Data';
+import Theories from "./src/components/Theories/Theories";
 
 const Router = () => {
     return (
@@ -24,6 +25,7 @@ const Router = () => {
                 <Route path="*" element={<Onboarding />} />
                 <Route path="/transition-slide" element={<TransitionSlide />} />
                 <Route path="/question-cards/:cardID" element={<QuestionCards CardsData={CardsData} />} />
+                <Route path="/ethical-theories" element={<Theories />} />
             </Routes>
         </>
     );

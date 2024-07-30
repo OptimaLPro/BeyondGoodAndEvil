@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Menu.css";
 import BurgerMenu from "/icons/BurgerMenu.svg";
+import BurgerMenuWhite from "/icons/BurgerMenuWhite.svg";
 import BackIcon from "/icons/Back.svg";
 import PinkNext from "/icons/PinkNext.svg";
 import OrangeNext from "/icons/OrangeNext.svg";
@@ -9,7 +10,7 @@ import GreenNext from "/icons/GreenNext.svg";
 import BlueNext from "/icons/BlueNext.svg";
 import { Link } from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({ darkMode }) => {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
     const burgerIconRef = useRef(null); // Reference for the burger icon
@@ -39,13 +40,20 @@ const Menu = () => {
     return (
         <>
             <div>
-                <img
+                {!darkMode && <img
                     src={BurgerMenu}
                     alt="burger menu"
                     className="cursor-pointer"
                     onClick={toggleMenu}
                     ref={burgerIconRef} // Assign the ref here
-                />
+                />}
+                {darkMode && <img
+                    src={BurgerMenuWhite}
+                    alt="burger menu"
+                    className="cursor-pointer"
+                    onClick={toggleMenu}
+                    ref={burgerIconRef} // Assign the ref here
+                />}
                 {isOpen && (
                     <motion.div
                         initial={{ y: 0, opacity: 0 }}
@@ -62,7 +70,7 @@ const Menu = () => {
                                     <div className="text-[#F6F3F1] bold-font">Home Page</div>
                                 </div>
                             </Link>
-                            <Link to="before-answering">
+                            <Link to="/before-answering">
                                 <div className="flex cursor-pointer p-[14px] flex-row-">
                                     <div className="text-[#FD9DAF] bold-font ml-[30px]">Answer Questionary</div>
                                     <img src={PinkNext} alt="Pink Next Icon" className="ml-[19px]" />
@@ -72,10 +80,12 @@ const Menu = () => {
                                 <div className="text-[#FCD290] bold-font ml-[30px]">Global Data</div>
                                 <img src={OrangeNext} alt="Orange Next Icon" className="ml-[19px]" />
                             </div>
-                            <div className="flex cursor-pointer p-[14px] flex-row-">
-                                <div className="text-[#DCECA1] bold-font ml-[30px]">Ethical Theories</div>
-                                <img src={GreenNext} alt="Green Next Icon" className="ml-[19px]" />
-                            </div>
+                            <Link to="/ethical-theories">
+                                <div className="flex cursor-pointer p-[14px] flex-row-">
+                                    <div className="text-[#DCECA1] bold-font ml-[30px]">Ethical Theories</div>
+                                    <img src={GreenNext} alt="Green Next Icon" className="ml-[19px]" />
+                                </div>
+                            </Link>
                             <div className="flex cursor-pointer p-[14px] flex-row-">
                                 <div className="text-[#89CDFF] bold-font ml-[30px]">About</div>
                                 <img src={BlueNext} alt="Blue Next Icon" className="ml-[19px]" />

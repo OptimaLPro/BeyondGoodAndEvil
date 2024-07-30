@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import Logo from "/images/Logo.svg";
+import LogoWhite from "/images/LogoWhite.svg";
 
-const Navbar = () => {
+const Navbar = ({ darkMode }) => {
     return (
         <>
             <div className="flex justify-between px-[20px] py-[11px]">
                 <Link to="/">
-                    <img src={Logo} alt="logo" className="" />
+                    {!darkMode && <img src={Logo} alt="logo" className="" />}
+                    {darkMode && <img src={LogoWhite} alt="logo" className="" />}
                 </Link>
-                <Menu />
+                <Menu darkMode={darkMode} />
             </div>
         </>
     );
