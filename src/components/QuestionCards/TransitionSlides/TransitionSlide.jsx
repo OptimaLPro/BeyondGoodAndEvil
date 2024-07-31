@@ -123,7 +123,7 @@ const TS3 = ({ handleCloseTransition }) => {
                         <div className="text-[43px] bold-font flex flex-col mt-[17px] text-ts1">
                             <span className="mt-[10px]">Man<span className="text-white"> who are</span></span>
                             <span className="">20-30<span className="text-white">, and are</span></span>
-                            <span className="">Single<span className="text-white">, from</span></span>
+                        <span className="">Single<span className="text-white">, from</span></span>
                             <span>The Middle East <span className="text-white">,</span></span>
                             <span className="text-white">on average.</span>
                         </div>

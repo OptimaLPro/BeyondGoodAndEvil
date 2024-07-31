@@ -1,0 +1,30 @@
+.grid2-background {
+    position: relative;
+    z-index: 1;
+}
+
+.grid2-background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #57B4F7 -7.42%, #F6F3F1 100%);
+    opacity: 1;
+    z-index: -1;
+}
+
+.grid2-background::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: -1;
+}

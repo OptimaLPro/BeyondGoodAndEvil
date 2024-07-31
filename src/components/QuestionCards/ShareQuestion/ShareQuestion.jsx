@@ -11,7 +11,6 @@ import "./ShareQuestion.css";
 import "../QuestionCards.css";
 
 const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
-
     const variants = {
         hidden: {
             y: "100%",

@@ -1,0 +1,4 @@
+.special-char::before {
+    font-family: 'Tahoma';
+    content: attr(data-char);
+}

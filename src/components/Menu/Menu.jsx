@@ -86,10 +86,12 @@ const Menu = ({ darkMode }) => {
                                     <img src={GreenNext} alt="Green Next Icon" className="ml-[19px]" />
                                 </div>
                             </Link>
-                            <div className="flex cursor-pointer p-[14px] flex-row-">
-                                <div className="text-[#89CDFF] bold-font ml-[30px]">About</div>
-                                <img src={BlueNext} alt="Blue Next Icon" className="ml-[19px]" />
-                            </div>
+                            <Link to="/about">
+                                <div className="flex cursor-pointer p-[14px] flex-row-">
+                                    <div className="text-[#89CDFF] bold-font ml-[30px]">About</div>
+                                    <img src={BlueNext} alt="Blue Next Icon" className="ml-[19px]" />
+                                </div>
+                            </Link>
                         </div>
                     </motion.div>
                 )}

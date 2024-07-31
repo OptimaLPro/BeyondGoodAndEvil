@@ -10,6 +10,8 @@ import TransitionSlide from "./src/components/QuestionCards/TransitionSlides/Tra
 import CardsData from './src/components/QuestionCards/Data';
 import Theories from "./src/components/Theories/Theories";
 import ThanksAnswering from "./src/components/ThanksAnswering/ThanksAnswering";
+import About from "./src/components/About/About";
+import "./styles.css"
 
 const Router = () => {
     return (
@@ -28,7 +30,13 @@ const Router = () => {
                 <Route path="/question-cards/:cardID" element={<QuestionCards CardsData={CardsData} />} />
                 <Route path="/ethical-theories" element={<Theories />} />
                 <Route path="/thanks-answering" element={<ThanksAnswering />} />
+                <Route path="/about" element={<About />} />
             </Routes>
+            <div>
+                Example: <span className="special-char" data-char="%"></span>
+                <span className="special-char" data-char="?"></span>
+                <span className="special-char" data-char="!"></span>
+            </div>
         </>
     );
 }

@@ -20,7 +20,7 @@ export const Cards = [
     {
         id: 14,
         color: "Orange",
-        text: "Would you donate your kidney to save a stranger's life, despite the risks?",
+        text: "Would you donate your kidney to save a stranger's life, despite the risks?", 
         subtext: null,
         textColor: "#000000",
         subquestions: [
