@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const CompareGlobally = () => {
     return (
-        <div className="bg-[#FA839F] pt-[12px] w-full mt-[15px] flex flex-col">
+        <div className="bg-[#FA839F] pt-[12px] w-full mt-[15px] flex flex-col relative">
             <div className="mx-[14px]">
                 <div className="flex flex-col">
                     <span className="bold-font text-white text-[20px]">Compare Globally</span>
@@ -25,9 +25,9 @@ const CompareGlobally = () => {
                 <img src={PixelArt} alt="Pixel Art" className="w-full mt-[12px]" />
             </div>
             <div>
-                <img src={GIF1} alt="GIF1" className="mb-[96px] ml-[81px] gif " />
-                <img src={GIF2} alt="GIF2" className="mb-[170px] ml-[218px] gif " />
-                <img src={GIF3} alt="GIF3" className="mb-[90px] ml-[285px] gif " />
+                <img src={GIF1} alt="GIF1" className="mb-[76px] ml-[81px] gif " />
+                <img src={GIF2} alt="GIF2" className="mb-[150px] ml-[218px] gif " />
+                <img src={GIF3} alt="GIF3" className="mb-[70px] ml-[285px] gif " />
             </div>
         </div>
     )
