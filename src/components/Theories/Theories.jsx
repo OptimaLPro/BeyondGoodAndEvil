@@ -103,18 +103,18 @@ const AllFour = ({ onClickAllFour }) => {
     return (
         <div className="flex flex-col justify-center mt-[18px]">
             <div className="flex justify-center">
-                <div className="bg-[#FD9DAF] w-[175px] h-[177px] flex justify-center" onClick={() => onClickAllFour("Utilitarianism")}>
+                <div className="bg-[#FD9DAF] w-full h-[177px] flex ml-[20px] justify-center" onClick={() => onClickAllFour("Utilitarianism")}>
                     <img src={Utilitarianism} alt="Utilitarianism" className="mt-[8px] w-[155.09px] h-[143px]" />
                 </div>
-                <div className="bg-[#89CDFF] w-[175px] h-[177px] flex justify-center" onClick={() => onClickAllFour("Deontology")}>
+                <div className="bg-[#89CDFF] w-full h-[177px] flex mr-[20px] justify-center" onClick={() => onClickAllFour("Deontology")}>
                     <img src={Deontology} alt="Deontology" className="mt-[8px] w-[155.09px] h-[143px]" />
                 </div>
             </div>
             <div className="flex justify-center">
-                <div className="bg-[#DCECA1] w-[175px] h-[177px] flex justify-center" onClick={() => onClickAllFour("Virtue")}>
+                <div className="bg-[#DCECA1] w-full h-[177px] flex ml-[20px] justify-center" onClick={() => onClickAllFour("Virtue")}>
                     <img src={Virtue} alt="Virtue" className="mt-[8px] w-[155.09px] h-[143px]" />
                 </div>
-                <div className="bg-[#FCD290] w-[175px] h-[177px] flex justify-center" onClick={() => onClickAllFour("Coin")}>
+                <div className="bg-[#FCD290] w-full h-[177px] flex mr-[20px] justify-center" onClick={() => onClickAllFour("Coin")}>
                     <img src={Coin} alt="Coin" className="mt-[8px] w-[155.09px] h-[143px]" />
                 </div>
             </div>
@@ -128,7 +128,7 @@ const MainTheory = ({ theoryname, closeTheory, prevTheory, nextTheory }) => {
     return (
         <>
             <div className="flex justify-center mt-[18px]" >
-                <div className="w-[350px] h-[353px] flex flex-col justify-between" style={{ background: theory.color }}>
+                <div className="mx-[20px] w-full h-[354px] flex flex-col justify-between" style={{ background: theory.color }}>
                     <div className="flex flex-col">
                         <div className="flex justify-between px-[14px] mt-[17px]">
                             <span className="bold-font text-[20px]">{theory.name}</span>

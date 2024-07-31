@@ -19,6 +19,25 @@ const randomUrl = () => {
     return urls[Math.floor(Math.random() * urls.length)];
 }
 
+const handleShare = () => {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Beyond Food & Evil',
+            url: `https://beyondgoodandevil.vercel.app`
+        })
+            .then(() => {
+                console.log('Successfully shared');
+            })
+            .catch((error) => {
+                console.error('Nothing shared:', error);
+                alert('Nothing shared: ' + error.message);
+            });
+    } else {
+        console.log('Web Share API not supported in this browser');
+        alert('Web Share API not supported in this browser');
+    }
+};
+
 const ThankYou = () => {
     return (
         <>
@@ -29,21 +48,6 @@ const ThankYou = () => {
                         <span className="capitalize bold-font text-[28px] leading-[30px]">Thank you human n. 20895 for joining our global data</span>
                     </div>
                     <div className="mx-[20px] ">
-                        {/* <div className="bg-[#F6F3F1] py-[12px] w-full mt-[13px] border-black border-2">
-                            <div className="mx-[14px]">
-                                <span className="regular-font text-[16px]">Based on your answers, here's how you align with different ethical theories:</span>
-                                <img src={Utilitarianism} alt="Utilitarianism" className="mt-[20px]" />
-                                <img src={Deontology} alt="Deontology" />
-                                <img src={Virtue} alt="Virtue" />
-                                <img src={Coin} alt="Coin" />
-                                <Link to="/ethical-theories">
-                                    <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer mt-[20px]">
-                                        <span className="regular-font text-[14px] capitalize text-[#F6F3F1]">Explore ethical theories</span>
-                                        <img src={FindOut} alt="Find Out" />
-                                    </div>
-                                </Link>
-                            </div>
-                        </div> */}
                         <div className="bg-[#F6F3F1] flex flex-col justify-end py-[12px] mt-[13px] w-full h-[345px]" style={{ backgroundImage: `url(${Background})` }}>
                             <div className="mx-[14px]">
                                 <div className="flex justify-center scale-[1.07]">
@@ -58,11 +62,11 @@ const ThankYou = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mx-[20px]">
+                    <div className="mx-[20px] mb-[80px]">
                         <CompareGlobally />
-                    </div>
-                    <div>
-                        <div className="flex h-[57px] mt-[50px] justify-center items-center w-full bg-[#DCECA1]">
+                    </div> 
+                    <div className="fixed bottom-0 w-full z-[999]">
+                        <div onClick={handleShare} className="flex h-[57px] mt-[50px] justify-center items-center w-full bg-[#DCECA1]">
                             <img src={SendQuestionWhite} alt="Send Question White" className=" w-[83px] h-[29px]" />
                         </div>
                     </div>

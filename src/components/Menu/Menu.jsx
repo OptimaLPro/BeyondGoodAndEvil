@@ -39,7 +39,7 @@ const Menu = ({ darkMode }) => {
 
     return (
         <>
-            <div>
+            <div className="z-[999]">
                 {!darkMode && <img
                     src={BurgerMenu}
                     alt="burger menu"
