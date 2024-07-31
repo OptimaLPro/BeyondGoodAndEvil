@@ -9,6 +9,7 @@ import ThankYou from "./src/components/ThankYou/ThankYou";
 import TransitionSlide from "./src/components/QuestionCards/TransitionSlides/TransitionSlide";
 import CardsData from './src/components/QuestionCards/Data';
 import Theories from "./src/components/Theories/Theories";
+import ThanksAnswering from "./src/components/ThanksAnswering/ThanksAnswering";
 
 const Router = () => {
     return (
@@ -26,6 +27,7 @@ const Router = () => {
                 <Route path="/transition-slide" element={<TransitionSlide />} />
                 <Route path="/question-cards/:cardID" element={<QuestionCards CardsData={CardsData} />} />
                 <Route path="/ethical-theories" element={<Theories />} />
+                <Route path="/thanks-answering" element={<ThanksAnswering />} />
             </Routes>
         </>
     );

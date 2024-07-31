@@ -41,8 +41,11 @@ function Cards({ CardsData }) {
     };
 
     useEffect(() => {
-        if (lastCard) {
+        if (lastCard && !isDynamicCard) {
             navigateTo('/user-data');
+        }
+        else if (isDynamicCard) {
+            navigateTo('/thanks-answering');
         }
 
         const pathSegments = location.pathname.split('/');

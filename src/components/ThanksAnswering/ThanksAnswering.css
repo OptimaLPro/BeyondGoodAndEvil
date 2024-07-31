@@ -1,0 +1,32 @@
+.gif1 {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 61px;
+    z-index: 100;
+}
+
+.grid2-background {
+    position: relative;
+    z-index: 1;
+}
+
+.grid2-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Background.svg');
+    opacity: 1;
+    z-index: -1;
+}
+
+.logo-svg {
+    position: absolute;
+    bottom: 0;
+    width: 169.047px;
+    height: 62px;
+    z-index: 100;
+}

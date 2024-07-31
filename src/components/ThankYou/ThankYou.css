@@ -1,0 +1,7 @@
+.gif {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 61px;
+    z-index: 100;
+}
