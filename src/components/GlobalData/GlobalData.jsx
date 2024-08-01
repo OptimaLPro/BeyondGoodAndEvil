@@ -3,9 +3,14 @@ import Navbar from "../Navbar/Navbar";
 import "./GlobalData.css";
 import FilterBox from "./components/FilterBox/FilterBox";
 import ShowGifs from "./components/ShowGifs/ShowGifs";
+import Utilitarianism from "/globaldata/gifs/Utilitarianism.gif";
+import Deontology from "/globaldata/gifs/Deontology.gif";
+import Virtue from "/globaldata/gifs/Virtue.gif";
+import Coin from "/globaldata/gifs/Coin.gif";
+import QuestionData from "./components/QuestionData/QuestionData";
 
 const GlobalData = () => {
-    const [filterBy, setFilterBy] = useState("theory")
+    const [filterBy, setFilterBy] = useState("question")
     const [precentUtilitarianism, setPrecentUtilitarianism] = useState(25)
     const [precentDeontology, setPrecentDeontology] = useState(25)
     const [precentVirtue, setPrecentVirtue] = useState(25)
@@ -24,6 +29,7 @@ const GlobalData = () => {
                         <span className="text-[14px] text-[#131313] regular-font">Explore choices of other humans</span>
                     </div>
                     <div className="flex text-center border-2 border-black divide-x-2 divide-black mt-[17px]">
+
                         <div className="w-1/2 p-[6px] text-[16px] bold-font" onClick={() => setFilterBy("theory")} style={{ backgroundColor: filterBy == "theory" ? '#FA839F' : '' }}>
                             <span style={{ color: filterBy == "theory" ? 'white' : '#131313' }}>By Theory</span>
                         </div>
@@ -31,16 +37,47 @@ const GlobalData = () => {
                             <span style={{ color: filterBy == "question" ? 'white' : '#131313' }}>By Question</span>
                         </div>
                     </div>
+                    {filterBy === "theory" && <>
+
+                        <div>
+                            <FilterBox setPrecentUtilitarianism={setPrecentUtilitarianism} setPrecentDeontology={setPrecentDeontology} setPrecentVirtue={setPrecentVirtue} setPrecentCoin={setPrecentCoin} setMenOrWomen={setMenOrWomen} />
+                        </div>
+                        <div>
+                            <ShowPrecentage precentUtilitarianism={precentUtilitarianism} precentDeontology={precentDeontology} precentVirtue={precentVirtue} precentCoin={precentCoin} />
+                        </div>
+                        <div className="mt-[20px]">
+                            <ShowGifs precentUtilitarianism={precentUtilitarianism} precentDeontology={precentDeontology} precentVirtue={precentVirtue} precentCoin={precentCoin} menOrWomen={menOrWomen} />
+                        </div>
+                    </>}
                     <div>
-                        <FilterBox setPrecentUtilitarianism={setPrecentUtilitarianism} setPrecentDeontology={setPrecentDeontology} setPrecentVirtue={setPrecentVirtue} setPrecentCoin={setPrecentCoin} setMenOrWomen={setMenOrWomen} />
-                    </div>
-                    <div>
-                        <ShowPrecentage precentUtilitarianism={precentUtilitarianism} precentDeontology={precentDeontology} precentVirtue={precentVirtue} precentCoin={precentCoin} />
-                    </div>
-                    <div className="mt-[20px]">
-                        <ShowGifs precentUtilitarianism={precentUtilitarianism} precentDeontology={precentDeontology} precentVirtue={precentVirtue} precentCoin={precentCoin} menOrWomen={menOrWomen} />
+                        {filterBy === "question" && <><div className="flex flex-col mt-[12px]">
+                            <div className="flex justify-between">
+                                <div className="flex items-center">
+                                    <img src={Utilitarianism} alt="Utilitarianism" className="gif-question" />
+                                    <span className="ml-[3px] text-[#131313] bold-font text-[12px] ">Utilitarianism</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <img src={Deontology} alt="Deontology" className="gif-question" />
+                                    <span className="ml-[3px] text-[#131313] bold-font text-[12px] ">Deontology</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <img src={Virtue} alt="Virtue" className="gif-question" />
+                                    <span className="ml-[3px] text-[#131313] bold-font text-[12px] ">Virtue</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <img src={Coin} alt="Coin" className="gif-question" />
+                                    <span className="ml-[3px] text-[#131313] bold-font text-[12px] ">Coin</span>
+                                </div>
+                            </div>
+                            <div>
+                                <QuestionData />
+                            </div>
+
+                        </div>
+                        </>}
                     </div>
                 </div>
+
             </div>
         </div>
     )
