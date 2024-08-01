@@ -10,7 +10,7 @@ const GlobalData = () => {
     const [precentDeontology, setPrecentDeontology] = useState(25)
     const [precentVirtue, setPrecentVirtue] = useState(25)
     const [precentCoin, setPrecentCoin] = useState(25)
-    const [menOrWomen, setMenOrWomen] = useState("");
+    const [menOrWomen, setMenOrWomen] = useState("Other");
 
     return (
         <div className="h-screen grid2-background">
