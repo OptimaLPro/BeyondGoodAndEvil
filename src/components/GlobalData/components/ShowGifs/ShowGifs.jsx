@@ -1,7 +1,7 @@
 import React from 'react';
 import { TheoryData } from '../../ThoeryData';
 
-const ShowGifs = ({ precentUtilitarianism, precentDeontology, precentVirtue, precentCoin }) => {
+const ShowGifs = ({ precentUtilitarianism, precentDeontology, precentVirtue, precentCoin, menOrWomen }) => {
     const getRandomGifs = (gifs, count) => {
         let shuffled = gifs.sort(() => 0.5 - Math.random());
         if (shuffled.length < count) {
@@ -13,9 +13,21 @@ const ShowGifs = ({ precentUtilitarianism, precentDeontology, precentVirtue, pre
 
     const getGifsByTheory = (theory, percentage) => {
         const { gifs } = TheoryData.find(t => t.name === theory);
-        const combinedGifs = [...gifs.women, ...gifs.men];
-        const count = Math.round(percentage); // Multiply by 25 and round
-        return getRandomGifs(combinedGifs, count);
+        const count = Math.round(percentage);
+
+        if (menOrWomen === "Men") {
+            console.log("Men");
+            return getRandomGifs([...gifs.men], count);
+        }
+        else if (menOrWomen === "Women") {
+            console.log("Women");
+            return getRandomGifs([...gifs.women], count);
+        }
+        else if (menOrWomen === "Other") {
+            const combinedGifs = [...gifs.women, ...gifs.men];
+            console.log("Other");
+            return getRandomGifs(combinedGifs, count);
+        }
     };
 
     const utilitarianismGifs = getGifsByTheory("Utilitarianism", precentUtilitarianism);

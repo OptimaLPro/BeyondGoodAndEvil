@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PopupMenu from '../../../UserData/PopupMenu/PopupMenu';
 import { PercentData } from '../../ThoeryData';
 
-const FilterBox = ({ setPrecentUtilitarianism, setPrecentDeontology, setPrecentVirtue, setPrecentCoin }) => {
+const FilterBox = ({ setPrecentUtilitarianism, setPrecentDeontology, setPrecentVirtue, setPrecentCoin, setMenOrWomen }) => {
     const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
     const [genderMenu, setGenderMenu] = useState(false);
     const [ageMenu, setAgeMenu] = useState(false);
@@ -19,6 +19,15 @@ const FilterBox = ({ setPrecentUtilitarianism, setPrecentDeontology, setPrecentV
             setModified(true);
         } else {
             console.log("reset");
+        }
+
+        if (currentGender === "Men") {
+            setMenOrWomen("Men");
+        } else if (currentGender === "Women") {
+            setMenOrWomen("Women");
+        }
+        else {
+            setMenOrWomen("Other");
         }
 
         const randomIndex = Math.floor(Math.random() * PercentData.length);

@@ -10,6 +10,7 @@ const GlobalData = () => {
     const [precentDeontology, setPrecentDeontology] = useState(25)
     const [precentVirtue, setPrecentVirtue] = useState(25)
     const [precentCoin, setPrecentCoin] = useState(25)
+    const [menOrWomen, setMenOrWomen] = useState("");
 
     return (
         <div className="h-screen grid2-background">
@@ -31,13 +32,13 @@ const GlobalData = () => {
                         </div>
                     </div>
                     <div>
-                        <FilterBox setPrecentUtilitarianism={setPrecentUtilitarianism} setPrecentDeontology={setPrecentDeontology} setPrecentVirtue={setPrecentVirtue} setPrecentCoin={setPrecentCoin} />
+                        <FilterBox setPrecentUtilitarianism={setPrecentUtilitarianism} setPrecentDeontology={setPrecentDeontology} setPrecentVirtue={setPrecentVirtue} setPrecentCoin={setPrecentCoin} setMenOrWomen={setMenOrWomen} />
                     </div>
                     <div>
                         <ShowPrecentage precentUtilitarianism={precentUtilitarianism} precentDeontology={precentDeontology} precentVirtue={precentVirtue} precentCoin={precentCoin} />
                     </div>
                     <div className="mt-[20px]">
-                        <ShowGifs precentUtilitarianism={precentUtilitarianism} precentDeontology={precentDeontology} precentVirtue={precentVirtue} precentCoin={precentCoin} />
+                        <ShowGifs precentUtilitarianism={precentUtilitarianism} precentDeontology={precentDeontology} precentVirtue={precentVirtue} precentCoin={precentCoin} menOrWomen={menOrWomen} />
                     </div>
                 </div>
             </div>
