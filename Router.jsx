@@ -34,11 +34,6 @@ const Router = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/global-data" element={<GlobalData />} />
             </Routes>
-            <div>
-                Example: <span className="special-char" data-char="%"></span>
-                <span className="special-char" data-char="?"></span>
-                <span className="special-char" data-char="!"></span>
-            </div>
         </>
     );
 }

@@ -55,7 +55,7 @@ const PopupMenu = ({ labels = [], setCurrentAge, setAgeMenu, currentAge, positio
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.2 }}
             style={menuStyle}
-            className="absolute bg-[#f6f3f1] w-[251px] flex flex-col shadow-lg text-[#131313] divide-y-2 divide-[#131313] max-h-[352px] overflow-y-auto">
+            className="absolute bg-[#f6f3f1] w-[251px] flex flex-col shadow-lg text-[#131313] divide-y-2 divide-[#131313] max-h-[352px] overflow-y-auto z-[999]">
             {countryMenu ? countryPopupMenu({ countries, currentAge, onClickCountryHandler, searchTerm, setSearchTerm }) : regularPopupMenu({ labels, currentAge, onClickHandler })}
         </motion.div>
     );
