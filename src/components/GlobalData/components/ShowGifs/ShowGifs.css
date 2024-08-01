@@ -1,0 +1,13 @@
+/* Add this CSS to your stylesheet */
+
+.gif-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap as needed */
+}
+
+.gif-globaldata {
+    max-width: 100px; /* Adjust the size as needed */
+    height: auto;
+}

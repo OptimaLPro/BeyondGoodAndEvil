@@ -76,10 +76,12 @@ const Menu = ({ darkMode }) => {
                                     <img src={PinkNext} alt="Pink Next Icon" className="ml-[19px]" />
                                 </div>
                             </Link>
-                            <div className="flex cursor-pointer p-[14px] flex-row-">
-                                <div className="text-[#FCD290] bold-font ml-[30px]">Global Data</div>
-                                <img src={OrangeNext} alt="Orange Next Icon" className="ml-[19px]" />
-                            </div>
+                            <Link to="/global-data">
+                                <div className="flex cursor-pointer p-[14px] flex-row-">
+                                    <div className="text-[#FCD290] bold-font ml-[30px]">Global Data</div>
+                                    <img src={OrangeNext} alt="Orange Next Icon" className="ml-[19px]" />
+                                </div>
+                            </Link>
                             <Link to="/ethical-theories">
                                 <div className="flex cursor-pointer p-[14px] flex-row-">
                                     <div className="text-[#DCECA1] bold-font ml-[30px]">Ethical Theories</div>

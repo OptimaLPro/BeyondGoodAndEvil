@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Checked from "/icons/Checked.svg";
 import { motion } from "framer-motion";
 import ReactCountryFlag from "react-country-flag";
@@ -9,6 +9,7 @@ const PopupMenu = ({ labels = [], setCurrentAge, setAgeMenu, currentAge, positio
     const [checkedLabel, setCheckedLabel] = useState(null);
     const [menuStyle, setMenuStyle] = useState({});
     const [searchTerm, setSearchTerm] = useState("");
+    const menuRef = useRef(null);
 
     useEffect(() => {
         const viewportHeight = window.innerHeight;
@@ -20,6 +21,19 @@ const PopupMenu = ({ labels = [], setCurrentAge, setAgeMenu, currentAge, positio
             setMenuStyle({ top: position.top + 'px', left: position.left + 'px' });
         }
     }, [position, countryMenu, labels.length]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setAgeMenu(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [menuRef]);
 
     const onClickHandler = (label) => {
         setCurrentAge(label);
@@ -35,6 +49,7 @@ const PopupMenu = ({ labels = [], setCurrentAge, setAgeMenu, currentAge, positio
 
     return (
         <motion.div
+            ref={menuRef}
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}

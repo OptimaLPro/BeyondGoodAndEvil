@@ -11,6 +11,7 @@ import CardsData from './src/components/QuestionCards/Data';
 import Theories from "./src/components/Theories/Theories";
 import ThanksAnswering from "./src/components/ThanksAnswering/ThanksAnswering";
 import About from "./src/components/About/About";
+import GlobalData from "./src/components/GlobalData/GlobalData";
 import "./styles.css"
 
 const Router = () => {
@@ -31,6 +32,7 @@ const Router = () => {
                 <Route path="/ethical-theories" element={<Theories />} />
                 <Route path="/thanks-answering" element={<ThanksAnswering />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/global-data" element={<GlobalData />} />
             </Routes>
             <div>
                 Example: <span className="special-char" data-char="%"></span>

@@ -1,5 +1,5 @@
-import Navbar from "../Navbar/Navbar"
-import "./About.css"
+import Navbar from "../Navbar/Navbar";
+import "./About.css";
 import Card from "/about/Card.png";
 import SendQuestionWhite from "/icons/SendQuestionWhite.png";
 
@@ -31,9 +31,6 @@ const About = () => {
                     <Navbar />
                     <div className="mx-[20px] leading-[35px] mt-[14px]">
                         <span className="text-[42px] bold-font text-[#131313] capitalize">about ‘Beyond good & evil’</span>
-                    </div>
-                    <div className="mx-[20px] leading-[35px] mt-[14px]">
-                        <span className="text-[42px] bold-font text-[#131313] capitalize">!!!!!!!!!????????????</span>
                     </div>
                     <div className="text-[20px] regular-font text-[#131313] mt-5 mx-5">
                         <p>

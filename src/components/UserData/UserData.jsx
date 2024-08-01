@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import PopupMenu from "./PopupMenu/PopupMenu";
 import "./UserData.css";
 import BackIcon from "/icons/Back.svg";
-import Checkbox from "/rect/Checkbox.svg";
-import BlackBox from "/rect/Blackbox.svg";
 import FindOut from "/icons/FindOutWhite.svg";
-import { Link, useNavigate } from "react-router-dom";
-import PopupMenu from "./PopupMenu/PopupMenu";
-import { Bounce, ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import BlackBox from "/rect/Blackbox.svg";
+import Checkbox from "/rect/Checkbox.svg";
 
 const UserData = () => {
     const [selectedGender, setSelectedGender] = useState(null);
@@ -65,7 +65,6 @@ const UserData = () => {
             console.log("Form submitted successfully");
         }
     }
-
 
     return (
         <>
