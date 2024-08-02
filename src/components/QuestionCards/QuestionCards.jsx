@@ -1,12 +1,12 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./QuestionCards.css";
 import Cards from "./Cards";
-import CardPopup from "/images/CardPopup.png";
-import TouchIcon from "/icons/TouchIcon.svg";
+import "./QuestionCards.css";
 import ExitIcon from "/icons/Exit.png";
 import FindOut from "/icons/FindOutWhite.svg";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import TouchIcon from "/icons/TouchIcon.svg";
+import CardPopup from "/images/CardPopup.png";
 
 const QuestionCards = ({ CardsData }) => {
     const { cardID } = useParams();

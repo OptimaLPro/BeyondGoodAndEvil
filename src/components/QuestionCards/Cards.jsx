@@ -28,6 +28,7 @@ function Cards({ CardsData }) {
     const location = useLocation();
     const [isDynamicCard, setIsDynamicCard] = useState(false);
     const [lastCard, setLastCard] = useState(false);
+    const [timer, setTimer] = useState(22);
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -43,34 +44,21 @@ function Cards({ CardsData }) {
     useEffect(() => {
         if (lastCard && !isDynamicCard) {
             navigateTo('/user-data');
-        }
-        else if (isDynamicCard) {
+        } else if (isDynamicCard) {
             navigateTo('/thanks-answering');
         }
 
         const pathSegments = location.pathname.split('/');
         const questionCardsIndex = pathSegments.findIndex(segment => segment === 'question-cards') + 1;
 
-        console.log(pathSegments);
-        console.log(pathSegments[questionCardsIndex]);
-
         if (pathSegments[questionCardsIndex]) {
-            console.log('Showing specific card:', pathSegments[questionCardsIndex]);
             setIsDynamicCard(true);
         }
-        // if (currentID == totalQuestions.current) {
-        //     navigateTo('/user-data')
-        // }
-
 
         if (!isDynamicCard) {
-            console.log(currentID, totalQuestions.current);
             if (currentID == totalQuestions.current) {
                 setLastCard(true);
             }
-        }
-        else {
-
         }
 
     }, [currentID]);
@@ -80,6 +68,21 @@ function Cards({ CardsData }) {
             setShowTransition(true);
         }
     }, [questionIndex]);
+
+    useEffect(() => {
+        const timerId = setInterval(() => {
+            setTimer((prevTimer) => {
+                if (prevTimer === 1) {
+                    swipe('up'); // Automatically skip the question
+                    return 23; // Reset timer for the next question
+                } else {
+                    return prevTimer - 1;
+                }
+            });
+        }, 1000);
+
+        return () => clearInterval(timerId); // Cleanup interval on component unmount or when question changes
+    }, [currentID]);
 
     const addHalfCard = (subquestion, cardID) => {
         setCards((prevCards) => {
@@ -109,8 +112,7 @@ function Cards({ CardsData }) {
                                 return;
                             }
                         });
-                    }
-                    else if (direction === "left") {
+                    } else if (direction === "left") {
                         card.subquestions.forEach((subquestion) => {
                             if (subquestion.from === "no") {
                                 addHalfCard(subquestion, cardID);
@@ -120,8 +122,7 @@ function Cards({ CardsData }) {
                                 return;
                             }
                         });
-                    }
-                    else if (direction === "up") {
+                    } else if (direction === "up") {
                         changed = true;
                         setQuestionIndex(questionIndex + 2);
                         setCurrentID(questionNumer[questionIndex]);
@@ -137,6 +138,7 @@ function Cards({ CardsData }) {
         setCurrentID(questionNumer[questionIndex]);
         setLastDirection(direction);
         updateCurrentIndex(index - 1);
+        setTimer(22);
     };
 
     const outOfFrame = (name, idx) => {
@@ -149,13 +151,6 @@ function Cards({ CardsData }) {
         }
     };
 
-    const goBack = async () => {
-        if (!canGoBack) return;
-        const newIndex = currentIndex + 1;
-        updateCurrentIndex(newIndex);
-        await childRefs[newIndex].current.restoreCard();
-    };
-
     const handleCloseTransition = () => {
         setShowTransition(false);
     };
@@ -166,7 +161,6 @@ function Cards({ CardsData }) {
 
     const shareQuestion = () => {
         const currentCardUrl = cards[currentIndex]?.url;
-        console.log(currentCardUrl);
         setCardUrl(currentCardUrl);
         toggleShare();
     };
@@ -215,7 +209,7 @@ function Cards({ CardsData }) {
                             onCardLeftScreen={() => outOfFrame(card.id, index)}
                         >
                             <div className='flex justify-center w-full'>
-                                <CardPNG card={card} />
+                                <CardPNG card={card} currentID={currentID} />
                             </div>
                         </TinderCard>
                     ))}
@@ -230,10 +224,9 @@ function Cards({ CardsData }) {
                                 <img src={RightIcon} alt="Right Icon" className="cursor-pointer right-icon" onClick={() => swipe('right')} />
                             </div>
                         </div>
-                    </div>)
-                }
+                    </div>)}
             </div>
-            <ShareQuestion isOpen={openShare} toggleShare={toggleShare} cardUrl={cardUrl} />
+            {openShare && <ShareQuestion openShare={openShare} setOpenShare={setOpenShare} cardUrl={cardUrl} />}
         </>
     );
 }

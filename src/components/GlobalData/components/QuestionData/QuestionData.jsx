@@ -55,13 +55,6 @@ const QuestionData = () => {
         setOpenIndexes(newOpenIndexes);
     }
 
-
-    // const toggleData = (index) => {
-    //     const newOpenIndexes = [...openIndexes];
-    //     newOpenIndexes[index] = !newOpenIndexes[index];
-    //     setOpenIndexes(newOpenIndexes);
-    // }
-
     const handleTypeClick = (e, index) => {
         const rect = e.target.getBoundingClientRect();
         const fixedTop = rect.bottom + window.scrollY;
@@ -85,11 +78,11 @@ const QuestionData = () => {
                             />
                             {openIndexes[index] && (
                                 <>
-                                     <img
-                                    src={images[dataTypes]} // Use the image based on the selected type
-                                    alt={`Question ${index + 1} ${dataTypes}`}
-                                    className="w-full mb-[15px]"
-                                />
+                                    <img
+                                        src={images[dataTypes]}
+                                        alt={`Question ${index + 1} ${dataTypes}`}
+                                        className="w-full mb-[15px]"
+                                    />
                                     <div className="relative">
                                         <div className="w-fit bold-font bg-[#F6F3F1] text-[#131313] text-[12px] px-2 py-1 border-2 border-[#131313] absolute bottom-0 mb-[310px] ml-[8px]" onClick={(e) => handleTypeClick(e, index)}>
                                             <span>Gender</span>
