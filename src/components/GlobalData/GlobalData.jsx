@@ -10,7 +10,7 @@ import Coin from "/globaldata/gifs/Coin.gif";
 import QuestionData from "./components/QuestionData/QuestionData";
 
 const GlobalData = () => {
-    const [filterBy, setFilterBy] = useState("question")
+    const [filterBy, setFilterBy] = useState("theory")
     const [precentUtilitarianism, setPrecentUtilitarianism] = useState(25)
     const [precentDeontology, setPrecentDeontology] = useState(25)
     const [precentVirtue, setPrecentVirtue] = useState(25)

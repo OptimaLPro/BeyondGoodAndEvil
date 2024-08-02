@@ -7,7 +7,6 @@ import donate_kidney_stranger from "/gifs/questions/donate_kidney_stranger.gif";
 import donate_money_win from "/gifs/questions/donate_money_win.gif";
 import ethics_subjective from "/gifs/questions/ethics_subjective.gif";
 import ethics_subjective_end from "/gifs/questions/ethics_subjective_end.gif";
-import filename from "/gifs/questions/filename.txt";
 import five_surgeons_save_lives from "/gifs/questions/five_surgeons_save_lives.gif";
 import intervene_disciplining_child from "/gifs/questions/intervene_disciplining_child.gif";
 import kill_coughing_person from "/gifs/questions/kill_coughing_person.gif";
