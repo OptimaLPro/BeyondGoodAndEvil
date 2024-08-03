@@ -16,16 +16,13 @@ const ShowGifs = ({ precentUtilitarianism, precentDeontology, precentVirtue, pre
         const count = Math.round(percentage);
 
         if (menOrWomen === "Men") {
-            console.log("Men");
             return getRandomGifs([...gifs.men], count);
         }
         else if (menOrWomen === "Women") {
-            console.log("Women");
             return getRandomGifs([...gifs.women], count);
         }
         else if (menOrWomen === "Other") {
             const combinedGifs = [...gifs.women, ...gifs.men];
-            console.log("Other");
             return getRandomGifs(combinedGifs, count);
         }
     };

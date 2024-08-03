@@ -18,7 +18,7 @@ const FilterBox = ({ setPrecentUtilitarianism, setPrecentDeontology, setPrecentV
         if (currentGender !== "People" || currentAge !== "Of All Ages" || currentCountry !== "All Countries" || currentSituation !== "In Any Life Situation") {
             setModified(true);
         } else {
-            console.log("reset");
+            // console.log("reset");
         }
 
         if (currentGender === "Men") {

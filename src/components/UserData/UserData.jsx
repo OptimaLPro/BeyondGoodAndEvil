@@ -58,11 +58,9 @@ const UserData = () => {
                 progress: undefined,
                 theme: "light",
             });
-            console.log("Please fill all the fields");
         }
         else {
             navigateTo("/thank-you");
-            console.log("Form submitted successfully");
         }
     }
 

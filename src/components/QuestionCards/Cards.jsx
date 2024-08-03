@@ -70,19 +70,20 @@ function Cards({ CardsData }) {
     }, [questionIndex]);
 
     useEffect(() => {
-        const timerId = setInterval(() => {
-            setTimer((prevTimer) => {
-                if (prevTimer === 1) {
-                    swipe('up'); // Automatically skip the question
-                    return 23; // Reset timer for the next question
-                } else {
-                    return prevTimer - 1;
-                }
-            });
-        }, 1000);
-
-        return () => clearInterval(timerId); // Cleanup interval on component unmount or when question changes
-    }, [currentID]);
+        if (!showTransition) {
+            const timerId = setInterval(() => {
+                setTimer((prevTimer) => {
+                    if (prevTimer === 1) {
+                        swipe('up'); // Automatically skip the question
+                        return 23; // Reset timer for the next question
+                    } else {
+                        return prevTimer - 1;
+                    }
+                });
+            }, 1000);
+            return () => clearInterval(timerId); // Cleanup interval on component unmount or when question changes
+        }
+    }, [currentID, showTransition]);
 
     const addHalfCard = (subquestion, cardID) => {
         setCards((prevCards) => {
@@ -209,7 +210,7 @@ function Cards({ CardsData }) {
                             onCardLeftScreen={() => outOfFrame(card.id, index)}
                         >
                             <div className='flex justify-center w-full'>
-                                <CardPNG card={card} currentID={currentID} />
+                                <CardPNG card={card} currentID={currentID} showTransition={showTransition} />
                             </div>
                         </TinderCard>
                     ))}

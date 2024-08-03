@@ -17,10 +17,8 @@ const QuestionCards = ({ CardsData }) => {
     useEffect(() => {
         if (card) {
             setCurrentCardData([card]);
-            console.log('Showing specific card:');
         } else {
             setCurrentCardData(CardsData);
-            console.log('Showing all cards');
         }
         setCompleted(true);
     }, [card, CardsData]);

@@ -1,3 +1,8 @@
 .bg-questiondata {
     background: linear-gradient(180deg, #89CDFF 47%, #F6F3F1 100%);
 }
+
+.scaled-image {
+    transform: scale(1.3); /* Adjust the scale value as needed */
+    transform-origin: center;
+  }

@@ -4,22 +4,18 @@ import Card from "/about/Card.png";
 import SendQuestionWhite from "/icons/SendQuestionWhite.png";
 
 const handleShare = () => {
-    console.log('Share button clicked');
     if (navigator.share) {
         navigator.share({
             title: 'Check out this question!',
             url: `https://beyondgoodandevil.vercel.app`
         })
             .then(() => {
-                console.log('Successfully shared');
             })
             .catch((error) => {
-                console.error('Nothing shared:', error);
-                alert('Nothing shared: ' + error.message);
+                // alert('Nothing shared: ' + error.message);
             });
     } else {
-        console.log('Web Share API not supported in this browser');
-        alert('Web Share API not supported in this browser');
+        // alert('Web Share API not supported in this browser');
     }
 };
 

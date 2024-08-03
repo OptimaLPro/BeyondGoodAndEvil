@@ -60,16 +60,13 @@ const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
                 title: 'Check out this question!',
                 url: `https://beyondgoodandevil.vercel.app${"/question-cards/" + cardUrl}`
             })
-            .then(() => {
-                console.log('Successfully shared');
-            })
-            .catch((error) => {
-                console.error('Nothing shared:', error);
-                alert('Nothing shared: ' + error.message);
-            });
+                .then(() => {
+                })
+                .catch((error) => {
+                    // alert('Nothing shared: ' + error.message);
+                });
         } else {
-            console.log('Web Share API not supported in this browser');
-            alert('Web Share API not supported in this browser');
+            // alert('Web Share API not supported in this browser');
         }
     };
 
