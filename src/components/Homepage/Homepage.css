@@ -1,8 +1,8 @@
-.gif1 {
+.gif-homepage {
     position: absolute;
     bottom: 0;
-    width: 30px;
-    height: 61px;
+    width: 34.918px;
+    height: 71px;
     z-index: 100;
 }
 
@@ -13,7 +13,7 @@
 
 .grid2-background::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;

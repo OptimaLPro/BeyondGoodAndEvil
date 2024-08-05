@@ -31,7 +31,7 @@ const CardPNG = ({ card, currentID, showTransition }) => {
     }, [currentID, card.id, showTransition]);
 
     useEffect(() => {
-        if (currentID == card.id) {
+        if (currentID === card.id) {
             setRectangles([rect1to18]);
             setRectIndex(0);
         }
@@ -51,20 +51,35 @@ const CardPNG = ({ card, currentID, showTransition }) => {
         textAlign: 'left',
     };
 
+    const highlightText = (text, boldTextArray) => {
+        if (!boldTextArray || boldTextArray.length === 0) return text;
+
+        // Escape regex special characters in boldTextArray
+        const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const boldTextPattern = new RegExp(`(${boldTextArray.map(escapeRegex).join('|')})`, 'gi');
+
+        // Split the text based on the bold text pattern
+        const parts = text.split(boldTextPattern);
+
+        return parts.map((part, index) => (
+            boldTextArray.includes(part) ? <span key={index} className='bold-font'>{part}</span> : part
+        ));
+    };
+
     return (
         <>
             <div className='flex flex-col'>
                 <div style={{ position: 'relative' }}>
                     <img src={`/cards/${card.color}.png`} alt='Card' style={cardStyle} />
                     <div className={`text-[28px] regular-font mt-[20px] leading-[32px] tracking-[-0.3px] z-50`} style={{ ...textStyle, color: card.textColor }}>
-                        {card.text}
+                        {highlightText(card.text, card.bold_text)}
                         <div>
                             {card.subtext &&
-                                <div className='mt-[17px] text-[20px] text-black lowercase bold-font'>{card.subtext}</div>}
+                                <div className='mt-[17px] text-[20px] text-black lowercase bold_font'>{card.subtext}</div>}
                         </div>
                     </div>
                     <img src={card.gif} alt="GIF5" className="gif2 mb-[45px] ml-[250px]" />
-                    {currentID === card.id && <div className="progress-bar mx-[10px] absolute bottom-[-6px] flex">
+                    {currentID === card.id && <div className="progress-bar mx-[10px] absolute bottom-[-1px] flex">
                         {rectangles.map((rect, index) => (
                             <img src={rect} alt={`rect${index}`} key={index} />
                         ))}

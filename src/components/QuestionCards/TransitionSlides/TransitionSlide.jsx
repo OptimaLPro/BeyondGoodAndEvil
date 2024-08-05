@@ -5,7 +5,7 @@ import GIF6 from "/transitionslide/6.gif";
 const TransitionSlide = ({ handleCloseTransition, num }) => {
     const ts1options = [
         <TS1 handleCloseTransition={handleCloseTransition} gener={"Men"} age={"40-59"} situation={"Divorced"} country={"United States"} />,
-        <TS1 handleCloseTransition={handleCloseTransition} gener={"Women"} age={"40-59"} situation={"Married With Children"} country={"Canada"} />,
+        <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"40-59"} situation={"Married With Children"} country={"Canada"} />,
         <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"18-24"} situation={"Single"} country={"North America"} />,
         <TS1 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"40-59"} situation={"Married With Children"} country={"Asia"} />,
     ]

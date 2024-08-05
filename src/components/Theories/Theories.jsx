@@ -20,7 +20,7 @@ const Theories = () => {
     const [DeontologyShown, setDeontologyShown] = useState(false);
     const [VirtueShown, setVirtueShown] = useState(false);
     const [CoinShown, setCoinShown] = useState(false);
-    const [theoryname, setTheoryName] = useState("Coin");
+    const [theoryname, setTheoryName] = useState("Utilitarianism");
 
     const onClickAllFour = (theory) => {
         setTheoryName(theory);

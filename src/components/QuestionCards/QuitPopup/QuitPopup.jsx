@@ -7,10 +7,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import SendQuestionWhite from "/icons/SendQuestionWhite.png";
 import ShareCard from "/images/ShareCard.svg";
 import SendQuestion from "/icons/SendQuestion.png";
-import "./ShareQuestion.css";
+import "./QuitPopup.css";
 import "../QuestionCards.css";
+import { Link } from 'react-router-dom';
 
-const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
+const QuitPopup = ({ quitPopup, setQuitPopup }) => {
     const variants = {
         hidden: {
             y: "100%",
@@ -54,26 +55,10 @@ const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
         }
     };
 
-    const handleShare = () => {
-        if (navigator.share) {
-            navigator.share({
-                title: 'Check out this question!',
-                url: `https://beyondgoodandevil.vercel.app${"/question-cards/" + cardUrl}`
-            })
-                .then(() => {
-                })
-                .catch((error) => {
-                    // alert('Nothing shared: ' + error.message);
-                });
-        } else {
-            // alert('Web Share API not supported in this browser');
-        }
-    };
-
     return (
         <>
             <AnimatePresence>
-                {isOpen && (
+                {quitPopup && (
                     <>
                         <motion.div
                             className="absolute inset-0 bg-black bg-opacity-50"
@@ -94,16 +79,24 @@ const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
                                 src={ExitIcon}
                                 alt="ExitIcon"
                                 className="exit-icon right-0 mb-[265px] mr-[13px] cursor-pointer"
-                                onClick={() => toggleShare(false)}
+                            onClick={() => setQuitPopup(false)}
                             />
-                            <span className="absolute bottom-0 left-0 text-[20px] bold-font w-[80%] mb-[140px] ml-[45px]">Want a friend's perspective on this question? Share it now!</span>
-                            <div className="absolute z-[100] bottom-0 w-full flex ml-[45px] mb-[50px]">
-                                <div
-                                    className="bg-[#DCECA1] w-fit p-[14px] flex cursor-pointer border-black border-2"
-                                    onClick={handleShare}
-                                >
-                                    <span className="bold-font text-[14px] text-[#131313]">Share This Question</span>
-                                    <img src={SendQuestionWhite} alt="SendQuestionWhite" className='send-question mt-[2px]' />
+                            <div className="absolute bottom-0 left-0   mb-[140px] ml-[30px] flex flex-col capitalize">
+                                <span className='text-[20px] bold-font w-[80%]'>Dear human n. 29348,</span>
+                                <span className='text-[16px] text-[#131313] regular-font w-[90%] mt-[5px]'>You haven't finished answering all the questions. are you sure you want to exit the questionnaire?</span>
+                            </div>
+                            <div className="absolute z-[100] bottom-0 w-full flex ml-[30px] mb-[35px] flex-col" onClick={() => setQuitPopup(false)}>
+                                <div>
+                                    <div className="bg-[#131313] mt-[10px] w-fit p-[14px] flex gap-4 cursor-pointer">
+                                        <span className="onboarding text-[14px] text-[#F6F3F1]">Continue Answering</span>
+                                        <img src={FindOut} alt="Find Out" />
+                                    </div>
+                                </div>
+                                <div className='mt-1'>
+                                    <Link to="/user-data">
+                                        <span className='text-white text-[12px] text-[#F6F3F1 regular-font capitalize'>yes, i had enough</span>
+                                    </Link>
+
                                 </div>
                             </div>
                         </motion.div>
@@ -114,4 +107,4 @@ const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
     );
 }
 
-export default ShareQuestion;
+export default QuitPopup;

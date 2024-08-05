@@ -69,7 +69,7 @@ const regularPopupMenu = ({ labels, currentAge, onClickHandler }) => {
                     <div className="flex items-center">
                         {currentAge === label && <img src={Checked} alt="Checkbox" className="checked-icon" />}
                     </div>
-                    <span className="capitalize text-[16px] regular-font ml-[14px]" onClick={() => onClickHandler(label)}>{label}</span>
+                    <span className="capitalize text-[16px] regular-font ml-[14px] w-full" onClick={() => onClickHandler(label)}>{label}</span>
                 </div>
             ))}
         </>
@@ -114,8 +114,8 @@ const countryPopupMenu = ({ countries, onClickCountryHandler, currentAge, search
                             onClick={() => onClickCountryHandler(country.name)}
                         />
                     </div>
-                    <div className="w-full">
-                        <span className="capitalize text-[16px] regular-font ml-[14px]" onClick={() => onClickCountryHandler(country.name)}>{country.name}</span>
+                    <div className="flex flex-grow">
+                        <span className="capitalize text-[16px] regular-font ml-[14px] w-full " onClick={() => onClickCountryHandler(country.name)}>{country.name}</span>
                     </div>
                 </div>
             ))}

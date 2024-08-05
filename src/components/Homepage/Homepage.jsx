@@ -27,13 +27,13 @@ const Homepage = () => {
                                 <img src={FindOut} alt="Find Out" />
                             </div>
                         </Link>
-                    </div>
+                    </div> 
                     <div className="mt-auto ">
                         <img src={HomePagePink} alt="Homepage Pink" className="w-full" />
-                        <img src={GIF1} alt="GIF1" className="gif1 mb-[232px] ml-[60px]" />
-                        <img src={GIF2} alt="GIF2" className="gif1 mb-[181px] ml-[100px]" />
-                        <img src={GIF3} alt="GIF2" className="gif1 mb-[122px] ml-[262px]" />
-                        <img src={GIF4} alt="GIF3" className="gif1 mb-[231px] ml-[300px]" />
+                        <img src={GIF1} alt="GIF1" className="gif-homepage mb-[232px] ml-[60px]" />
+                        <img src={GIF2} alt="GIF2" className="gif-homepage mb-[181px] ml-[100px]" />
+                        <img src={GIF3} alt="GIF2" className="gif-homepage mb-[122px] ml-[262px]" />
+                        <img src={GIF4} alt="GIF3" className="gif-homepage mb-[231px] ml-[300px]" />
                     </div>
                 </div>
             </div>

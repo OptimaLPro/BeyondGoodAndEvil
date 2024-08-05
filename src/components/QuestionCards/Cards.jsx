@@ -1,5 +1,7 @@
+import QuitPopup from './QuitPopup/QuitPopup';
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
+// import Onboarding from '../Onboarding/Onboarding';
 import './Cards.css';
 import CardPNG from './CardSVG/CardPNG';
 import BackIcon from "/icons/Back.svg";
@@ -29,6 +31,7 @@ function Cards({ CardsData }) {
     const [isDynamicCard, setIsDynamicCard] = useState(false);
     const [lastCard, setLastCard] = useState(false);
     const [timer, setTimer] = useState(22);
+    const [quitPopup, setQuitPopup] = useState(false);
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -164,7 +167,12 @@ function Cards({ CardsData }) {
         const currentCardUrl = cards[currentIndex]?.url;
         setCardUrl(currentCardUrl);
         toggleShare();
+        console.log("Share Question");
     };
+
+    const quitQuestion = () => {
+        setQuitPopup(!quitPopup);
+    }
 
     return (
         <>
@@ -173,9 +181,7 @@ function Cards({ CardsData }) {
                 <div className="flex flex-col">
                     <div className="mx-6 mt-[23px] mb-[23px] flex items-center">
                         <div className="w-1/3">
-                            <Link to="/">
-                                <img src={BackIcon} alt="Back Icon" width={11} height={15} />
-                            </Link>
+                            <img src={BackIcon} alt="Back Icon" width={11} height={15} onClick={() => quitQuestion()} />
                         </div>
                         <div className="flex justify-center w-1/3">
                             {!isDynamicCard && (<span className="tracking-widest text-white joystix-font">
@@ -227,7 +233,8 @@ function Cards({ CardsData }) {
                         </div>
                     </div>)}
             </div>
-            {openShare && <ShareQuestion openShare={openShare} setOpenShare={setOpenShare} cardUrl={cardUrl} />}
+            {openShare && <ShareQuestion isOpen={openShare} toggleShare={setOpenShare} cardUrl={cardUrl} />}
+            {quitPopup && <QuitPopup quitPopup={quitPopup} setQuitPopup={setQuitPopup} />}
         </>
     );
 }

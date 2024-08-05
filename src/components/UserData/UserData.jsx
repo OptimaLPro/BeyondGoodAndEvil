@@ -81,11 +81,11 @@ const UserData = () => {
 
             <div className="bg-[#6CB9F1] min-h-screen">
                 <div className="flex flex-col mx-[25px] text-[#131313]">
-                    <div>
+                    {/* <div>
                         <Link to="/">
                             <img src={BackIcon} alt="Back Icon" className="back-icon mt-[25px]" />
                         </Link>
-                    </div>
+                    </div> */}
                     <div className="mt-[30px] w-[300px]">
                         <span className="capitalize bold-font text-[28px] leading-[30px]">Now tell us a little bit about yourself</span>
                     </div>

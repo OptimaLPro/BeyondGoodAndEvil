@@ -106,7 +106,7 @@ const QuestionData = () => {
                         </div>
                         {menuOpenIndex === index && (
                             <PopupMenu
-                                labels={["Gender", "Age", "Situation", "Country"]}
+                                labels={["Country", "Gender", "Age", "Situation"]}
                                 setCurrentAge={(type) => handleMenuSelect(index, type)}
                                 setAgeMenu={setMenuOpenIndex}
                                 currentAge={dataTypes[index]}

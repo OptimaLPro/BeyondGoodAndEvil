@@ -6,19 +6,14 @@
     text-transform: capitalize;
 }
 
-/* Onboarding.css */
+/* Animation for blur effect */
 @keyframes blurInOut {
     0% {
         filter: blur(10px);
         transform: scale(1);
     }
-
-    /* 20%{
-        filter: blur(3px);
-    } */
     50% {
         filter: blur(0px);
-        /* transform: scale(1.2); */
     }
     100% {
         filter: blur(10px);
@@ -26,11 +21,46 @@
     }
 }
 
-.onboarding {
-    display: inline-block;
+/* Animation for pixelated frame */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.pixelated-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Transition effects based on state */
+.fade-in {
+    animation: fadeIn 0.25s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.25s ease-in-out forwards;
+}
+
+/* Transition effect for text */
 .transition-text {
     animation: blurInOut 1s ease-in-out infinite;
 }
-

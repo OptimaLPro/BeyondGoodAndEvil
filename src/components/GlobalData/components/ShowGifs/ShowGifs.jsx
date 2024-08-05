@@ -40,7 +40,7 @@ const ShowGifs = ({ precentUtilitarianism, precentDeontology, precentVirtue, pre
     ];
 
     return (
-        <div className='flex flex-wrap '>
+        <div className='flex flex-wrap justify-between'>
             {allGifs.map((gif, index) => (
                 <img key={index} src={gif} alt="gif" className="gif-globaldata mb-[9px]" />
             ))}
