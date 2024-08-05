@@ -4,6 +4,8 @@ import "./QuestionData.css";
 import { ImagesQuestions } from "./GlobalData";
 import Skip from "/icons/Skip.svg";
 import { motion } from "framer-motion";
+import MenuArrowDown from "/globaldata/MenuArrowDown.svg";
+import MenuArrowUp from "/globaldata/MenuArrowUp.svg";
 
 const QuestionData = () => {
     const [openIndexes, setOpenIndexes] = useState(Array(26).fill(false));
@@ -59,8 +61,9 @@ const QuestionData = () => {
                                         <div className="mt-[19px] mb-[20px] flex items-center justify-between">
                                             <div>
                                                 <div className="mx-[10px]">
-                                                    <div className="w-fit bold-font bg-[#F6F3F1] text-[#131313] text-[12px] px-2 py-1 border-2 border-[#131313]" onClick={(e) => handleTypeClick(e, index)}>
+                                                    <div className="w-fit bold-font bg-[#F6F3F1] flex text-[#131313] items-center text-[12px] px-2 py-1 border-2 border-[#131313]" onClick={(e) => handleTypeClick(e, index)}>
                                                         <span>{dataTypes[index]}</span>
+                                                        <img src={menuOpenIndex === index ? MenuArrowUp : MenuArrowDown} alt="Menu Arrow" className="w-[10px] h-[10px] ml-[7px]" />
                                                     </div>
                                                 </div>
                                             </div>
