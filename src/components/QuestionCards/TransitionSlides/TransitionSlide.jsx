@@ -4,7 +4,7 @@ import GIF6 from "/transitionslide/6.gif";
 
 const TransitionSlide = ({ handleCloseTransition, num }) => {
     const ts1options = [
-        <TS1 handleCloseTransition={handleCloseTransition} gener={"Men"} age={"40-59"} situation={"Divorced"} country={"United States"} />,
+        <TS1 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"40-59"} situation={"Divorced"} country={"United States"} />,
         <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"40-59"} situation={"Married With Children"} country={"Canada"} />,
         <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"18-24"} situation={"Single"} country={"North America"} />,
         <TS1 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"40-59"} situation={"Married With Children"} country={"Asia"} />,
@@ -17,7 +17,7 @@ const TransitionSlide = ({ handleCloseTransition, num }) => {
     ]
 
     const ts3options = [
-        <TS3 handleCloseTransition={handleCloseTransition} gener={"Women"} age={"17 and under"} situation={"Single"} country={"South America"} />,
+        <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"17 and under"} situation={"Single"} country={"South America"} />,
         <TS3 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"60 and over"} situation={"Widowed"} country={"Europe"} />,
         <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"25-39"} situation={"Single"} country={"Europe"} />,
         <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"30-39"} situation={"Single Parent"} country={"India"} />

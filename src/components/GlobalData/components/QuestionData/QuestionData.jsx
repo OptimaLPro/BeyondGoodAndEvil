@@ -6,6 +6,7 @@ import Skip from "/icons/Skip.svg";
 import { motion } from "framer-motion";
 import MenuArrowDown from "/globaldata/MenuArrowDown.svg";
 import MenuArrowUp from "/globaldata/MenuArrowUp.svg";
+import { data } from "autoprefixer";
 
 const QuestionData = () => {
     const [openIndexes, setOpenIndexes] = useState(Array(26).fill(false));
@@ -13,11 +14,15 @@ const QuestionData = () => {
     const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
     const [dataTypes, setDataTypes] = useState(Array(26).fill("Country"));
     const constraintsRef = useRef(null);
+    const [dataOpen, setDataOpen] = useState(Array(26).fill(false));
 
     const toggleData = (index) => {
         const newOpenIndexes = [...openIndexes];
         newOpenIndexes[index] = !newOpenIndexes[index];
         setOpenIndexes(newOpenIndexes);
+        const newData = [...dataOpen];
+        newData[index] = !newData[index];
+        setDataOpen(newData);
     }
 
     const handleTypeClick = (e, index) => {
@@ -43,7 +48,7 @@ const QuestionData = () => {
                     <>
                         <div className="relative w-full" key={index} >
                             <img
-                                src={question.main}
+                                src={dataOpen[index] ? question.main_open : question.main}
                                 alt={`Question ${index + 1}`}
                                 className="w-full mb-[15px]"
                                 onClick={() => toggleData(index)}
