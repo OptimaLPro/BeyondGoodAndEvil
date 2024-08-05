@@ -27,11 +27,11 @@ const Onboarding = () => {
                     </span>
                     <span className="onboarding text-[43px]">Person?</span>
                     {/* Pixelated Frame */}
-                    <img
+                    {/* <img
                         src={PixeledFrame}
                         alt="Pixelated Frame"
                         className={`h-[45.15px] w-[155px] cpixelated-frame ${isPixelated ? 'fade-in' : 'fade-out'}`}
-                    />
+                    /> */}
                 </div>
                 <div className="h-[50%] justify-end flex flex-col ml-[26px]">
                     <Link to="/video">

@@ -36,9 +36,9 @@ const Video = () => {
                     <div className="flex flex-col justify-end h-[30%] ml-[26px]">
                     </div>
                     <div className="h-[50%] justify-end flex flex-col z-50">
-                        <span onClick={toggleMute} className="text-white mute-button">
+                        {/* <span onClick={toggleMute} className="text-white mute-button">
                             {muted ? "Unmute" : "Mute"}
-                        </span>
+                        </span> */}
                         <Link to="/homepage" className="flex justify-end w-full">
 
                             <div className="bg-[#F6F3F1] w-fit p-[14px] mr-[26px] flex gap-4 cursor-pointer">
