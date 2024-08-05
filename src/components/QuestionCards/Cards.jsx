@@ -13,6 +13,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import TransitionSlide from './TransitionSlides/TransitionSlide';
 import ShareQuestion from './ShareQuestion/ShareQuestion';
 import { motion } from 'framer-motion';
+import ExitIcon from "/icons/ExitIcon.png";
 
 function Cards({ CardsData }) {
     const [cards, setCards] = useState(CardsData);
@@ -181,7 +182,7 @@ function Cards({ CardsData }) {
                 <div className="flex flex-col">
                     <div className="mx-6 mt-[23px] mb-[23px] flex items-center">
                         <div className="w-1/3">
-                            <img src={BackIcon} alt="Back Icon" width={11} height={15} onClick={() => quitQuestion()} />
+                            <img src={ExitIcon} alt="Exit Icon" width={26} height={24} onClick={() => quitQuestion()} />
                         </div>
                         <div className="flex justify-center w-1/3">
                             {!isDynamicCard && (<span className="tracking-widest text-white joystix-font">
