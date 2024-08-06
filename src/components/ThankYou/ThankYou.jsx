@@ -45,13 +45,15 @@ const ThankYou = () => {
                         <span className="capitalize bold-font text-[28px] leading-[30px]">Thank you human n. 20895 for joining our global data</span>
                     </div>
                     <div className="mx-[20px] ">
-                        <div className="bg-[#F6F3F1] flex flex-col justify-end py-[12px] mt-[13px] w-full h-[345px]" style={{ backgroundImage: `url(${Background})` }}>
+                        <div className="bg-[#F6F3F1] flex flex-col justify-between pb-[5px] mt-[13px] w-full h-[345px]" style={{ backgroundImage: `url(${Background})` }}>
                             <div className="mx-[14px]">
                                 <div className="flex justify-center scale-[1.07]">
-                                    <img src={randomUrl()} alt="Utilitarianism" className="mt-[20px]" />
+                                    <img src={randomUrl()} alt="Utilitarianism" className="mt-[10px] p-[10px]" />
                                 </div>
+                            </div>
+                            <div className="mx-[20px] mb-[20px]">
                                 <Link to="/ethical-theories">
-                                    <div className="bg-[#F6F3F1] w-fit p-[14px] flex gap-[8px] cursor-pointer mt-[35px]">
+                                    <div className="bg-[#F6F3F1] w-fit p-[14px] flex gap-[8px] cursor-pointer mt-[20px]">
                                         <span className="bold-font text-[14px] capitalize text-[#131313]">Know more</span>
                                         <img src={FindOutBlack} alt="Find Out" />
                                     </div>

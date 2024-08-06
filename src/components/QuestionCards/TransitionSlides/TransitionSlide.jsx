@@ -1,13 +1,20 @@
 import ExitIcon from "/icons/Exit.png";
 import "./TransitionSlide.css";
+import GIF1 from "/transitionslide/1.gif";
+import GIF2 from "/transitionslide/2.gif";
+import GIF3 from "/transitionslide/3.gif";
+import GIF4 from "/transitionslide/4.gif";
+import GIF5 from "/transitionslide/5.gif";
 import GIF6 from "/transitionslide/6.gif";
+import GIF7 from "/transitionslide/7.gif";
+import GIF8 from "/transitionslide/8.gif";
 
 const TransitionSlide = ({ handleCloseTransition, num }) => {
     const ts1options = [
-        <TS1 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"40-59"} situation={"Divorced"} country={"United States"} />,
-        <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"40-59"} situation={"Married With Children"} country={"Canada"} />,
-        <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"18-24"} situation={"Single"} country={"North America"} />,
-        <TS1 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"40-59"} situation={"Married With Children"} country={"Asia"} />,
+        <TS1 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"40-59"} situation={"Divorced"} country={"United States"} gif={GIF1} />,
+        <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"40-59"} situation={"Married With Children"} country={"Canada"} gif={GIF2} />,
+        <TS1 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"18-24"} situation={"Single"} country={"North America"} gif={GIF3} />,
+        <TS1 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"40-59"} situation={"Married With Children"} country={"Asia"} gif={GIF4} />,
     ]
 
     const ts2options = [
@@ -17,10 +24,10 @@ const TransitionSlide = ({ handleCloseTransition, num }) => {
     ]
 
     const ts3options = [
-        <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"17 and under"} situation={"Single"} country={"South America"} />,
-        <TS3 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"60 and over"} situation={"Widowed"} country={"Europe"} />,
-        <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"25-39"} situation={"Single"} country={"Europe"} />,
-        <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"30-39"} situation={"Single Parent"} country={"India"} />
+        <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"17 and under"} situation={"Single"} country={"South America"} gif={GIF5} />,
+        <TS3 handleCloseTransition={handleCloseTransition} gender={"Men"} age={"60 and over"} situation={"Widowed"} country={"Europe"} gif={GIF6} />,
+        <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"25-39"} situation={"Single"} country={"Europe"} gif={GIF7} />,
+        <TS3 handleCloseTransition={handleCloseTransition} gender={"Women"} age={"30-39"} situation={"Single Parent"} country={"India"} gif={GIF8} />
     ]
 
     const getRandomTS1Option = () => {
@@ -49,7 +56,7 @@ const TransitionSlide = ({ handleCloseTransition, num }) => {
     );
 };
 
-const TS1 = ({ handleCloseTransition, gender, age, situation, country }) => {
+const TS1 = ({ handleCloseTransition, gender, age, situation, country, gif }) => {
     const stopPropagation = (e) => e.stopPropagation();
 
     return (
@@ -79,7 +86,7 @@ const TS1 = ({ handleCloseTransition, gender, age, situation, country }) => {
                         </div>
                     </div>
                     <div className="flex justify-center">
-                        <img src={GIF6} alt="GIF6" className="gif6" />
+                        <img src={gif} alt="GIF6" className="gif6" />
                     </div>
                 </div>
             </div>
@@ -129,7 +136,7 @@ const TS2 = ({ handleCloseTransition, value1, value2, value3, value4 }) => {
     );
 };
 
-const TS3 = ({ handleCloseTransition, gender, age, situation, country }) => {
+const TS3 = ({ handleCloseTransition, gender, age, situation, country, gif }) => {
     const stopPropagation = (e) => e.stopPropagation();
 
     return (
@@ -160,7 +167,7 @@ const TS3 = ({ handleCloseTransition, gender, age, situation, country }) => {
                         </div>
                     </div>
                     <div className="flex justify-center">
-                        <img src={GIF6} alt="GIF6" className="gif6" />
+                        <img src={gif} alt="GIF6" className="gif6" />
                     </div>
                 </div>
             </div>
