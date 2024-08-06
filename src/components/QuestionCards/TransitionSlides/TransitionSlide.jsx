@@ -161,8 +161,8 @@ const TS3 = ({ handleCloseTransition, gender, age, situation, country, gif }) =>
                         <div className="text-[43px] bold-font flex flex-col mt-[17px] text-ts1">
                             <span className="mt-[10px]">{gender}<span className="text-white"> who are</span></span>
                             <span className="">{age}<span className="text-white">, and are</span></span>
-                            <span className="">{situation}<span className="text-white">, from</span></span>
-                            <span>{country}<span className="text-white">,</span></span>
+                            <span className="">{situation}<span className="text-white">, from  <span className="text-[#131313]">{country}<span className="text-white">,</span></span></span></span>
+                           
                             <span className="text-white">on average.</span>
                         </div>
                     </div>
