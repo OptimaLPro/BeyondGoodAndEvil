@@ -36,6 +36,7 @@ export const Cards = [
         subquestions: null,
         url: "ethics-subjective",
         gif: ethics_subjective_end,
+        class: "question16gif"
     },
     {
         id: 15,
@@ -47,6 +48,7 @@ export const Cards = [
         subquestions: null,
         url: "profitable-factory-environmental-damage",
         gif: profitable_factory_environmental_damage,
+        class: "question15gif"
     },
     {
         id: 14,
@@ -56,6 +58,7 @@ export const Cards = [
         subtext: null,
         textColor: "#000000",
         gif: donate_kidney_stranger,
+        class: "question14gif",
         subquestions: [
             {
                 id: 14.5,
@@ -66,6 +69,7 @@ export const Cards = [
                 textColor: "#DE305A",
                 url: "only-suitable-donor",
                 gif: only_suitable_donor,
+                class: "question145nogif"
             },
             {
                 id: 14.5,
@@ -76,6 +80,7 @@ export const Cards = [
                 textColor: "#8EBD5F",
                 url: "recipient-criminal-history",
                 gif: recipient_criminal_history,
+                class: "question145yesgif"
             },
         ],
         url: "donate-kidney-stranger"
@@ -88,6 +93,7 @@ export const Cards = [
         subtext: null,
         textColor: "#000000",
         gif: runaway_trolley_dilemma,
+        class: "question13gif",
         subquestions: [
             {
                 id: 13.5,
@@ -98,6 +104,7 @@ export const Cards = [
                 textColor: "#DE305A",
                 url: "five-surgeons-save-lives",
                 gif: five_surgeons_save_lives,
+                class: "question135nogif"
             },
             {
                 id: 13.5,
@@ -108,6 +115,7 @@ export const Cards = [
                 textColor: "#8EBD5F",
                 url: "know-one-person",
                 gif: know_one_person,
+                class: "question135yesgif"
             },
         ],
         url: "runaway-trolley-dilemma"
@@ -122,6 +130,7 @@ export const Cards = [
         subquestions: null,
         url: "child-drowning-rescue",
         gif: child_drowning_rescue,
+        class: "question12gif"
     },
     {
         id: 11,
@@ -133,6 +142,7 @@ export const Cards = [
         subquestions: null,
         url: "military-operation-civilian-casualties",
         gif: military_operation_civilian_casualties,
+        class: "question11gif"
     },
     {
         id: 10,
@@ -142,6 +152,7 @@ export const Cards = [
         subtext: null,
         textColor: "#000000",
         gif: doctor_prescribes_placebo,
+        class: "question10gif",
         subquestions: [
             {
                 id: 10.5,
@@ -152,6 +163,7 @@ export const Cards = [
                 textColor: "#DE305A",
                 url: "patient-recovers-placebo",
                 gif: patient_recovers_placebo,
+                class: "question105yesgif"
             },
             {
                 id: 10.5,
@@ -162,6 +174,7 @@ export const Cards = [
                 textColor: "#8EBD5F",
                 url: "patient-dies-placebo",
                 gif: patient_dies_placebo,
+                class: "question105nogif"
             },
         ],
         url: "doctor-prescribes-placebo"
@@ -175,7 +188,8 @@ export const Cards = [
         textColor: "#000000",
         subquestions: null,
         url: "kill-coughing-person",
-        gif: kill_coughing_person
+        gif: kill_coughing_person,
+        class: "question9gif"
     },
     {
         id: 8,
@@ -186,7 +200,8 @@ export const Cards = [
         textColor: "#000000",
         subquestions: null,
         url: "save-high-class-students",
-        gif: save_high_class_students
+        gif: save_high_class_students,
+        class: "question8gif"
     },
     {
         id: 7,
@@ -196,6 +211,7 @@ export const Cards = [
         subtext: null,
         textColor: "#000000",
         gif: life_saving_animal_testing,
+        class: "question7gif",
         subquestions: [
             {
                 id: 7.5,
@@ -205,7 +221,8 @@ export const Cards = [
                 subtext: "(Proceed with the project?)",
                 textColor: "#DE305A",
                 url: "animals-genetically-modified",
-                gif: animals_genetically_modified
+                gif: animals_genetically_modified,
+                class: "question75nogif"
             },
             {
                 id: 7.5,
@@ -215,7 +232,8 @@ export const Cards = [
                 subtext: "(Proceed with the project?)",
                 textColor: "#8EBD5F",
                 url: "tested-animals-dogs",
-                gif: tested_animals_dogs
+                gif: tested_animals_dogs,
+                class: "question75yesgif"
             },
         ],
         url: "life-saving-animal-testing"
@@ -229,7 +247,8 @@ export const Cards = [
         textColor: "#000000",
         subquestions: null,
         url: "confess-break-item",
-        gif: confess_break_item
+        gif: confess_break_item,
+        class: "question6gif"
     },
     {
         id: 5,
@@ -240,7 +259,8 @@ export const Cards = [
         textColor: "#000000",
         subquestions: null,
         url: "intervene-disciplining-child",
-        gif: intervene_disciplining_child
+        gif: intervene_disciplining_child,
+        class: "question5gif"
     },
     {
         id: 4,
@@ -250,6 +270,7 @@ export const Cards = [
         subtext: null,
         textColor: "#000000",
         gif: autonomous_car_prioritize,
+        class: "question4gif",
         subquestions: [
             {
                 id: 4.5,
@@ -259,7 +280,8 @@ export const Cards = [
                 subtext: "(save the pedestrian?)",
                 textColor: "#DE305A",
                 url: "pedestrian-6yo-kid",
-                gif: pedestrian_6yo_kid
+                gif: pedestrian_6yo_kid,
+                class: "question45nogif"
             },
             {
                 id: 4.5,
@@ -269,7 +291,8 @@ export const Cards = [
                 subtext: "(save the passengers?)",
                 textColor: "#8EBD5F",
                 url: "passengers-young-couple",
-                gif: passengers_young_couple
+                gif: passengers_young_couple,
+                class: "question45yesgif"
             },
         ],
         url: "autonomous-car-prioritize"
@@ -283,7 +306,8 @@ export const Cards = [
         textColor: "#000000",
         subquestions: null,
         url: "steal-medication-partner",
-        gif: steal_medication_partner
+        gif: steal_medication_partner,
+        class: "question3gif"
     },
     {
         id: 2,
@@ -294,7 +318,8 @@ export const Cards = [
         textColor: "#000000",
         subquestions: null,
         url: "donate-money-win",
-        gif: donate_money_win
+        gif: donate_money_win,
+        class: "question2gif"
     },
     {
         id: 1,
@@ -306,6 +331,7 @@ export const Cards = [
         subquestions: null,
         url: "ethics-subjective",
         gif: ethics_subjective,
+        class: "question1gif"
     },
 ];
 

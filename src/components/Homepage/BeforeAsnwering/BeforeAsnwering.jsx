@@ -25,7 +25,7 @@ const BeforeAsnwering = () => {
                                     </div>
                                     <span className="bold-font text-[20px] capitalize">be yourself. </span>
                                 </div>
-                                <div className="mt-[12px] w-[272px]">
+                                <div className="mt-[12px] w-[272px] leading-[16px]">
                                     <span className="regular-font text-[16px] ">Provide your genuine responses without overthinking.</span>
                                 </div>
                             </div>
@@ -38,8 +38,8 @@ const BeforeAsnwering = () => {
                                     </div>
                                     <span className="bold-font text-[20px] capitalize">Time Matters. </span>
                                 </div>
-                                <div className="mt-[12px] w-[272px]">
-                                    <span className="regular-font text-[16px]">Each question is timed to encourage fast and intuitive answers.</span>
+                                <div className="mt-[12px] w-[272px] leading-[16px]">
+                                    <span className="regular-font text-[16px] ">Each question is timed to encourage fast and intuitive answers.</span>
                                 </div>
                             </div>
 
@@ -51,8 +51,8 @@ const BeforeAsnwering = () => {
                                     </div>
                                     <span className="bold-font text-[20px] capitalize">Not choosing is still a choice.</span>
                                 </div>
-                                <div className="mt-[12px] w-[272px]">
-                                    <span className="regular-font text-[16px]">When undecided, you can toss a coin to make a choice.</span>
+                                <div className="mt-[12px] w-[272px] leading-[16px]">
+                                    <span className="regular-font text-[16px] ">When undecided, you can toss a coin to make a choice.</span>
                                 </div>
                             </div>
                         </div>

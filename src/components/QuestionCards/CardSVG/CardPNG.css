@@ -15,7 +15,208 @@
     background: linear-gradient(129deg, rgba(0, 45, 27, 1) 0%, rgba(30, 82, 48, 1) 35%, rgba(41, 109, 55, 1) 53%, rgba(80, 170, 81, 1) 84%);
 }
 
-.gif2 {
+.question1gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question2gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question3gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question4gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question45nogif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question45yesgif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+
+.question5gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question6gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question7gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question75nogif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question75yesgif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question8gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question9gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question10gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question105nogif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question105yesgif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question11gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question12gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question13gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question135nogif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question135yesgif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question14gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question145nogif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question145yesgif{
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question15gif {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 110px;
+    z-index: 100;
+}
+
+.question16gif {
     position: absolute;
     bottom: 0;
     width: 90px;

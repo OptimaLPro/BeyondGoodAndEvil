@@ -78,7 +78,7 @@ const CardPNG = ({ card, currentID, showTransition }) => {
                                 <div className='mt-[17px] text-[20px] text-black lowercase bold_font'>{card.subtext}</div>}
                         </div>
                     </div>
-                    <img src={card.gif} alt="GIF5" className="gif2 mb-[45px] ml-[250px]" />
+                    <img src={card.gif} alt="Card GIF" className={`${card.class} mb-[45px] ml-[250px]`} />
                     {currentID === card.id && <div className="progress-bar mx-[10px] absolute bottom-[-1px] flex">
                         {rectangles.map((rect, index) => (
                             <img src={rect} alt={`rect${index}`} key={index} />

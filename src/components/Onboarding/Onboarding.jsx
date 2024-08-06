@@ -12,7 +12,7 @@ const Onboarding = () => {
         const interval = setInterval(() => {
             setIsGood((prev) => !prev);
             setIsPixelated((prev) => !prev); // Toggle pixelated state
-        }, 1000);
+        }, 800);
 
         return () => clearInterval(interval);
     }, []);

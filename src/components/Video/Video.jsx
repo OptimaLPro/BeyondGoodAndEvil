@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Video.css";
-import BgVideo from "/video/video.mp4";
-import FindOut from "/icons/FindOutBlack.svg";
+import BgVideo from "/video/video2.mp4";
+import FindOut from "/icons/FindOutWhite.svg";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -35,15 +35,15 @@ const Video = () => {
                 <div className="flex flex-col h-full z-[9999]">
                     <div className="flex flex-col justify-end h-[30%] ml-[26px]">
                     </div>
-                    <div className="h-[50%] justify-end flex flex-col z-50">
+                    <div className="h-[65%] justify-end flex flex-col z-50">
                         {/* <span onClick={toggleMute} className="text-white mute-button">
                             {muted ? "Unmute" : "Mute"}
                         </span> */}
                         <Link to="/homepage" className="flex justify-end w-full">
 
-                            <div className="bg-[#F6F3F1] w-fit p-[14px] mr-[26px] flex gap-4 cursor-pointer">
+                            <div className="bg-[#131313] w-fit p-[14px] mr-[26px] flex gap-4 cursor-pointer">
 
-                                <span className="onboarding text-[20px] text-[#131313]">Skip</span>
+                                <span className="onboarding text-[20px] text-[#F6F3F1]">Skip</span>
                                 <img src={FindOut} alt="Skip" />
                             </div>
                         </Link>

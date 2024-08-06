@@ -62,5 +62,5 @@
 
 /* Transition effect for text */
 .transition-text {
-    animation: blurInOut 1s ease-in-out infinite;
+    animation: blurInOut 0.8s ease-in-out infinite;
 }

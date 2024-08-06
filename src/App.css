@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: 'AeonikTRIAL-Light';
-    src: url('/fonts/AeonikTRIAL-Light.otf') format('opentype');
+    src: url('/fonts/AeonikTRIAL-Light.ttf') format('opentype');
 }
 
 @font-face {
     font-family: 'AeonikTRIAL-Regular';
-    src: url('/fonts/AeonikTRIAL-Regular.otf') format('opentype'),
+    src: url('/fonts/AeonikTRIAL-Regular.ttf') format('opentype'),
 }
 
 @font-face {
     font-family: 'AeonikTRIAL-Bold';
-    src: url('/fonts/AeonikTRIAL-Bold.otf') format('opentype');
+    src: url('/fonts/AeonikTRIAL-Bold.ttf') format('opentype');
 
 }
 
@@ -25,6 +25,7 @@
     font-family: 'AeonikTRIAL-Bold', sans-serif;
     font-style: normal;
 }
+
 
 .light-font {
     font-family: 'AeonikTRIAL-Light', sans-serif;
