@@ -96,8 +96,8 @@ const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
                                 className="exit-icon right-0 mb-[265px] mr-[13px] cursor-pointer"
                                 onClick={() => toggleShare(false)}
                             />
-                            <span className="absolute bottom-0 left-0 text-[20px] bold-font w-[80%] mb-[140px] ml-[45px]">Want a friend's perspective on this question? Share it now!</span>
-                            <div className="absolute z-[100] bottom-0 w-full flex ml-[45px] mb-[50px]">
+                            <span className="absolute bottom-0 left-0 text-[20px] bold-font w-[80%] mb-[150px] ml-[45px] leading-[22px]">Want a friend's perspective on this question? Share it now!</span>
+                            <div className="absolute z-[100] bottom-0 w-full flex ml-[45px] mb-[60px]">
                                 <div
                                     className="bg-[#DCECA1] w-fit p-[14px] flex cursor-pointer border-black border-2"
                                     onClick={handleShare}

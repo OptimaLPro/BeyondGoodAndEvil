@@ -18,7 +18,7 @@ const ThanksAnswering = () => {
                     <Navbar />
                     <div>
                         <div className="flex flex-col gap-4 mt-[25px] px-[20px] ">
-                            <div className="leading-[33px] w-[85%]">
+                            <div className="leading-[28px] w-[85%]">
                                 <span className="capitalize bold-font text-[38px] ">Thank you for your answer!</span>
                             </div>
                             <div className="flex flex-col">
@@ -39,7 +39,7 @@ const ThanksAnswering = () => {
                         <img src={HomePagePinkLogo} alt="Homepage Pink" className="w-full" />
                         {/* <img src={Logo} alt="Logo" className="logo-svg mb-[151px] ml-[80px]" /> */}
                         <img src={GIF3} alt="GIF2" className="gif-thanksanswering mb-[150px] ml-[260px]" />
-                        <img src={GIF4} alt="GIF3" className="gif-thanksanswering mb-[265px] ml-[345px]" />
+                        <img src={GIF4} alt="GIF3" className="gif-thanksanswering mb-[265px] ml-[325px]" />
                     </div>
                 </div>
             </div>

@@ -79,13 +79,13 @@ const QuitPopup = ({ quitPopup, setQuitPopup }) => {
                                 src={ExitIcon}
                                 alt="ExitIcon"
                                 className="exit-icon right-0 mb-[265px] mr-[13px] cursor-pointer"
-                            onClick={() => setQuitPopup(false)}
+                                onClick={() => setQuitPopup(false)}
                             />
-                            <div className="absolute bottom-0 left-0   mb-[140px] ml-[30px] flex flex-col capitalize">
+                            <div className="absolute bottom-0 left-0 mb-[150px] ml-[30px] flex flex-col capitalize">
                                 <span className='text-[20px] bold-font w-[80%]'>Dear human n. 29348,</span>
-                                <span className='text-[16px] text-[#131313] regular-font w-[90%] mt-[5px]'>You haven't finished answering all the questions. are you sure you want to exit the questionnaire?</span>
+                                <span className='text-[16px] text-[#131313] regular-font w-[90%] mt-[5px] leading-[20px]'>You haven't finished answering all the questions. are you sure you want to exit the questionnaire?</span>
                             </div>
-                            <div className="absolute z-[100] bottom-0 w-full flex ml-[30px] mb-[35px] flex-col" onClick={() => setQuitPopup(false)}>
+                            <div className="absolute z-[100] bottom-0 w-full flex ml-[30px] mb-[48px] flex-col" onClick={() => setQuitPopup(false)}>
                                 <div>
                                     <div className="bg-[#131313] mt-[10px] w-fit p-[14px] flex gap-4 cursor-pointer">
                                         <span className="onboarding text-[14px] text-[#F6F3F1]">Continue Answering</span>

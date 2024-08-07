@@ -45,10 +45,10 @@ const About = () => {
                         <div className="my-[31px]">
                             <div className="bg-[#6CB9F1] flex flex-col">
                                 <span className="ml-[25px] mt-4 text-[20px] bold-font text-[#131313]">Share Beyond Good & Evil</span>
-                                <span className="ml-[25px] text-[14px] text-[#131313] regular-font">Invite your friends and family to explore their own moral perspectives.</span>
+                                <span className="ml-[25px] text-[14px] text-[#131313] regular-font leading-[18px] mt-[3px]">Invite your friends and family to explore their own moral perspectives.</span>
                                 <div className="ml-[25px] mt-[15px] mb-[21px]">
                                     <div
-                                        className="bg-[#DCECA1] w-fit p-[14px] flex cursor-pointer border-black border-2"
+                                        className="bg-[#DCECA1] w-fit p-[14px] mt-[10px] flex cursor-pointer border-black border-2"
                                         onClick={handleShare}
                                     >
                                         <span className="bold-font text-[14px] text-[#131313]">Share Us</span>

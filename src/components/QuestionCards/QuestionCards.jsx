@@ -99,7 +99,9 @@ const QuestionCards = ({ CardsData }) => {
                                     onClick={() => setIsOpen(false)}
                                 />
                                 {!card ? (<>
-                                    <img src={TouchIcon} alt="TouchIcon" className="touch-icon mx-auto w-fit mt-2 mb-[330px]" />
+                                    <div className="flex justify-center">
+                                        <img src={TouchIcon} alt="TouchIcon" className="touch-icon mx-auto w-fit mt-2 mb-[330px]" />
+                                    </div>
                                     <span className="capitalize absolute bottom-0 left-0 text-[20px] bold-font w-[91px] mb-[220px] ml-[45px]">slide left for “no”</span>
                                     <span className="capitalize absolute bottom-0 right-0 text-[20px] bold-font w-[114px] text-right mb-[220px] mr-[45px]">slide right for “yes”</span>
                                     <div className="absolute z-[100] bottom-0 w-full flex justify-center mb-[80px]">

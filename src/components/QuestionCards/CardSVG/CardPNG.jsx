@@ -54,11 +54,9 @@ const CardPNG = ({ card, currentID, showTransition }) => {
     const highlightText = (text, boldTextArray) => {
         if (!boldTextArray || boldTextArray.length === 0) return text;
 
-        // Escape regex special characters in boldTextArray
         const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const boldTextPattern = new RegExp(`(${boldTextArray.map(escapeRegex).join('|')})`, 'gi');
 
-        // Split the text based on the bold text pattern
         const parts = text.split(boldTextPattern);
 
         return parts.map((part, index) => (

@@ -122,6 +122,19 @@ const AllFour = ({ onClickAllFour }) => {
     );
 }
 
+const highlightText = (text, boldTextArray) => {
+    if (!boldTextArray || boldTextArray.length === 0) return text;
+
+    const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const boldTextPattern = new RegExp(`(${boldTextArray.map(escapeRegex).join('|')})`, 'gi');
+
+    const parts = text.split(boldTextPattern);
+
+    return parts.map((part, index) => (
+        boldTextArray.includes(part) ? <span key={index} className='bold-font'>{part}</span> : part
+    ));
+};
+
 const MainTheory = ({ theoryname, closeTheory, prevTheory, nextTheory }) => {
     const theory = theories.find(t => t.name === theoryname);
 
@@ -135,7 +148,7 @@ const MainTheory = ({ theoryname, closeTheory, prevTheory, nextTheory }) => {
                             <img src={CloseIcon} alt="Close" className="close-icon" onClick={closeTheory} />
                         </div>
                         <div className="px-[14px] mt-[22px]">
-                            <p className="regular-font text-[20px] tracking-[0.5px] leading-[22px]">{theory.description}</p>
+                            <p className="regular-font text-[20px] tracking-[0.5px] leading-[22px]">{highlightText(theory.description, theory.bold_description)}</p>
                         </div>
                     </div>
                     <div>
