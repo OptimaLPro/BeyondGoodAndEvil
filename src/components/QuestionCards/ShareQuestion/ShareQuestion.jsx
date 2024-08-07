@@ -10,7 +10,7 @@ import SendQuestion from "/icons/SendQuestion.png";
 import "./ShareQuestion.css";
 import "../QuestionCards.css";
 
-const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
+const ShareQuestion = ({ isOpen, toggleShare, cardUrl, setAnyMenuOpen }) => {
     const variants = {
         hidden: {
             y: "100%",
@@ -94,7 +94,10 @@ const ShareQuestion = ({ isOpen, toggleShare, cardUrl }) => {
                                 src={ExitIcon}
                                 alt="ExitIcon"
                                 className="exit-icon right-0 mb-[265px] mr-[13px] cursor-pointer"
-                                onClick={() => toggleShare(false)}
+                                onClick={() => {
+                                    toggleShare(false)
+                                    setAnyMenuOpen(false)
+                                }}
                             />
                             <span className="absolute bottom-0 left-0 text-[20px] bold-font w-[80%] mb-[150px] ml-[45px] leading-[22px]">Want a friend's perspective on this question? Share it now!</span>
                             <div className="absolute z-[100] bottom-0 w-full flex ml-[45px] mb-[60px]">

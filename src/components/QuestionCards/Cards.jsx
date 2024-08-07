@@ -1,21 +1,19 @@
-import QuitPopup from './QuitPopup/QuitPopup';
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import TinderCard from 'react-tinder-card';
-// import Onboarding from '../Onboarding/Onboarding';
 import './Cards.css';
 import CardPNG from './CardSVG/CardPNG';
-import BackIcon from "/icons/Back.svg";
+import QuitPopup from './QuitPopup/QuitPopup';
+import ShareQuestion from './ShareQuestion/ShareQuestion';
+import TransitionSlide from './TransitionSlides/TransitionSlide';
+import ExitIcon from "/icons/ExitIcon.png";
 import LeftIcon from "/icons/Left.svg";
 import RightIcon from "/icons/Right.svg";
-import SkipIcon from "/icons/Skip.svg";
 import SendQuestion from "/icons/SendQuestion.png";
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import TransitionSlide from './TransitionSlides/TransitionSlide';
-import ShareQuestion from './ShareQuestion/ShareQuestion';
-import { motion } from 'framer-motion';
-import ExitIcon from "/icons/ExitIcon.png";
+import SkipIcon from "/icons/Skip.svg";
 
-function Cards({ CardsData }) {
+function Cards({ CardsData, isTouchOpen }) {
     const [cards, setCards] = useState(CardsData);
     const questionNumer = [1, 2, 3, 4, 4.5, 5, 6, 7, 7.5, 8, 9, 10, 10.5, 11, 12, 13, 13.5, 14, 14.5, 15, 16];
     const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
@@ -34,6 +32,7 @@ function Cards({ CardsData }) {
     const [timer, setTimer] = useState(22);
     const [quitPopup, setQuitPopup] = useState(false);
     const [numOfTransition, setNumOfTransition] = useState(1);
+    const [anyMenuOpen, setAnyMenuOpen] = useState(true);
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -84,7 +83,14 @@ function Cards({ CardsData }) {
     }, [questionIndex]);
 
     useEffect(() => {
-        if (!showTransition) {
+        if (!isTouchOpen) {
+            setAnyMenuOpen(false);
+            console.log("isTouchOpen", isTouchOpen);
+        }
+    }, [isTouchOpen]);
+
+    useEffect(() => {
+        if (!showTransition && !anyMenuOpen) {
             const timerId = setInterval(() => {
                 setTimer((prevTimer) => {
                     if (prevTimer === 1) {
@@ -97,7 +103,7 @@ function Cards({ CardsData }) {
             }, 1000);
             return () => clearInterval(timerId); // Cleanup interval on component unmount or when question changes
         }
-    }, [currentID, showTransition]);
+    }, [currentID, showTransition, anyMenuOpen]);
 
     const addHalfCard = (subquestion, cardID) => {
         setCards((prevCards) => {
@@ -178,11 +184,12 @@ function Cards({ CardsData }) {
         const currentCardUrl = cards[currentIndex]?.url;
         setCardUrl(currentCardUrl);
         toggleShare();
-        console.log("Share Question");
+        setAnyMenuOpen(true);
     };
 
     const quitQuestion = () => {
         setQuitPopup(!quitPopup);
+        setAnyMenuOpen(true);
     }
 
     return (
@@ -227,7 +234,7 @@ function Cards({ CardsData }) {
                             onCardLeftScreen={() => outOfFrame(card.id, index)}
                         >
                             <div className='flex justify-center w-full'>
-                                <CardPNG card={card} currentID={currentID} showTransition={showTransition} />
+                                <CardPNG card={card} currentID={currentID} showTransition={showTransition} anyMenuOpen={anyMenuOpen} />
                             </div>
                         </TinderCard>
                     ))}
@@ -244,8 +251,8 @@ function Cards({ CardsData }) {
                         </div>
                     </div>)}
             </div>
-            {openShare && <ShareQuestion isOpen={openShare} toggleShare={setOpenShare} cardUrl={cardUrl} />}
-            {quitPopup && <QuitPopup quitPopup={quitPopup} setQuitPopup={setQuitPopup} />}
+            {openShare && <ShareQuestion isOpen={openShare} toggleShare={setOpenShare} cardUrl={cardUrl} setAnyMenuOpen={setAnyMenuOpen} />}
+            {quitPopup && <QuitPopup quitPopup={quitPopup} setQuitPopup={setQuitPopup} setAnyMenuOpen={setAnyMenuOpen} />}
         </>
     );
 }

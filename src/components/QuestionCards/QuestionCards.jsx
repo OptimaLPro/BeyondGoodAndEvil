@@ -72,7 +72,7 @@ const QuestionCards = ({ CardsData }) => {
         <>
             <div className="h-dvh bg-[#131313] grid-background overflow-x-hidden overflow-y-hidden relative">
                 <div className="flex flex-col h-full">
-                    {completed && <Cards CardsData={currentCardData} />}
+                    {completed && <Cards CardsData={currentCardData} isTouchOpen={isOpen} />}
                 </div>
                 <AnimatePresence>
                     {isOpen && (

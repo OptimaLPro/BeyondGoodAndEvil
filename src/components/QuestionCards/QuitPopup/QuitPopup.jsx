@@ -11,7 +11,7 @@ import "./QuitPopup.css";
 import "../QuestionCards.css";
 import { Link } from 'react-router-dom';
 
-const QuitPopup = ({ quitPopup, setQuitPopup }) => {
+const QuitPopup = ({ quitPopup, setQuitPopup, setAnyMenuOpen }) => {
     const variants = {
         hidden: {
             y: "100%",
@@ -79,7 +79,10 @@ const QuitPopup = ({ quitPopup, setQuitPopup }) => {
                                 src={ExitIcon}
                                 alt="ExitIcon"
                                 className="exit-icon right-0 mb-[265px] mr-[13px] cursor-pointer"
-                                onClick={() => setQuitPopup(false)}
+                                onClick={() => {
+                                    setQuitPopup(false)
+                                    setAnyMenuOpen(false)
+                                }}
                             />
                             <div className="absolute bottom-0 left-0 mb-[150px] ml-[30px] flex flex-col capitalize">
                                 <span className='text-[20px] bold-font w-[80%]'>Dear human n. 29348,</span>

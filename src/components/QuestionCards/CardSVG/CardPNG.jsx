@@ -7,12 +7,12 @@ import rect20 from "/timer/20.svg";
 import rect21 from "/timer/21.svg";
 import rect22 from "/timer/22.svg";
 
-const CardPNG = ({ card, currentID, showTransition }) => {
+const CardPNG = ({ card, currentID, showTransition, anyMenuOpen }) => {
     const [rectangles, setRectangles] = useState([rect1to18]);
     const [rectIndex, setRectIndex] = useState(0);
 
     useEffect(() => {
-        if (!showTransition) {
+        if (!showTransition && !anyMenuOpen) {
             const rects = [rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect1to18, rect19, rect20, rect21, rect22];
             const interval = setInterval(() => {
                 setRectIndex((prevIndex) => {
@@ -28,7 +28,7 @@ const CardPNG = ({ card, currentID, showTransition }) => {
 
             return () => clearInterval(interval);
         }
-    }, [currentID, card.id, showTransition]);
+    }, [currentID, card.id, showTransition, anyMenuOpen]);
 
     useEffect(() => {
         if (currentID === card.id) {
