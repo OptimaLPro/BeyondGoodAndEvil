@@ -33,6 +33,7 @@ function Cards({ CardsData }) {
     const [lastCard, setLastCard] = useState(false);
     const [timer, setTimer] = useState(22);
     const [quitPopup, setQuitPopup] = useState(false);
+    const [numOfTransition, setNumOfTransition] = useState(1);
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -68,7 +69,16 @@ function Cards({ CardsData }) {
     }, [currentID]);
 
     useEffect(() => {
-        if (questionIndex % 6 === 0 && questionIndex <= cards.length) {
+        if (questionIndex === 6 && questionIndex <= cards.length) {
+            setNumOfTransition(1);
+            setShowTransition(true);
+        }
+        else if (questionIndex === 11 && questionIndex <= cards.length) {
+            setNumOfTransition(2);
+            setShowTransition(true);
+        }
+        else if (questionIndex === 16 && questionIndex <= cards.length) {
+            setNumOfTransition(3);
             setShowTransition(true);
         }
     }, [questionIndex]);
@@ -177,7 +187,7 @@ function Cards({ CardsData }) {
 
     return (
         <>
-            {showTransition && <TransitionSlide handleCloseTransition={handleCloseTransition} num={questionIndex / 6} />}
+            {showTransition && <TransitionSlide handleCloseTransition={handleCloseTransition} num={numOfTransition} />}
             <div className='flex flex-col w-full h-full h-screen-minus-74'>
                 <div className="flex flex-col">
                     <div className="mx-6 mt-[23px] mb-[23px] flex items-center">
