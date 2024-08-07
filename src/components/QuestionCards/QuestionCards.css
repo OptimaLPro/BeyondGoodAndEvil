@@ -6,8 +6,8 @@
 .touch-icon {
     position: absolute;
     bottom: 0;
-    width: 140px;
-    height: 140px;
+    /* width: 140px; */
+    height: 200px;
     z-index: 100;
 }
 

@@ -100,7 +100,7 @@ const QuestionCards = ({ CardsData }) => {
                                 />
                                 {!card ? (<>
                                     <div className="flex justify-center">
-                                        <img src={TouchIcon} alt="TouchIcon" className="touch-icon mx-auto w-fit mt-2 mb-[330px]" />
+                                        <img src={TouchIcon} alt="TouchIcon" className="touch-icon mx-auto mt-2 mb-[330px]" />
                                     </div>
                                     <span className="capitalize absolute bottom-0 left-0 text-[20px] bold-font w-[91px] mb-[220px] ml-[45px]">slide left for “no”</span>
                                     <span className="capitalize absolute bottom-0 right-0 text-[20px] bold-font w-[114px] text-right mb-[220px] mr-[45px]">slide right for “yes”</span>
