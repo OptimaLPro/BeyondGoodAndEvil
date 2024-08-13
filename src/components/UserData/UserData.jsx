@@ -128,7 +128,7 @@ const UserData = () => {
                     </div>
                     <div className="w-full flex mt-[50px] mb-[40px]">
                         <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer" onClick={() => checkForm()}>
-                            <span className="regular-font text-[18px] text-[#F6F3F1]">Submit</span>
+                            <span className="bold-font text-[18px] text-[#F6F3F1]">Submit</span>
                             <img src={FindOut} alt="Find Out" />
                         </div>
                     </div>

@@ -41,7 +41,7 @@ const ThankYou = () => {
             <div className="blue-gradient-bg">
                 <div className="flex flex-col">
                     <Navbar />
-                    <div className="flex flex-col gap-4 mt-[25px] px-[20px] w-[85%]">
+                    <div className="flex flex-col gap-4 mt-[25px] px-[20px] w-[72%]">
                         <span className="capitalize bold-font text-[28px] leading-[30px]">Thank you human n. 20895 for joining our global data</span>
                     </div>
                     <div className="mx-[20px] ">

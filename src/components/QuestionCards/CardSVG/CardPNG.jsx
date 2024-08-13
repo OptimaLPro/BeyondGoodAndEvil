@@ -73,7 +73,7 @@ const CardPNG = ({ card, currentID, showTransition, anyMenuOpen }) => {
                         {highlightText(card.text, card.bold_text)}
                         <div>
                             {card.subtext &&
-                                <div className='mt-[17px] text-[20px] text-black lowercase bold_font'>{card.subtext}</div>}
+                                <div className='mt-[17px] text-[20px] text-black lowercase bold-font'>{card.subtext}</div>}
                         </div>
                     </div>
                     <img src={card.gif} alt="Card GIF" className={`${card.class} mb-[45px] ml-[240px]`} />

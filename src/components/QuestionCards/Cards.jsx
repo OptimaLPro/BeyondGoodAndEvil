@@ -33,6 +33,7 @@ function Cards({ CardsData, isTouchOpen }) {
     const [quitPopup, setQuitPopup] = useState(false);
     const [numOfTransition, setNumOfTransition] = useState(1);
     const [anyMenuOpen, setAnyMenuOpen] = useState(true);
+    const [iconClicked, setIconClicked] = useState(false);
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -85,7 +86,6 @@ function Cards({ CardsData, isTouchOpen }) {
     useEffect(() => {
         if (!isTouchOpen) {
             setAnyMenuOpen(false);
-            console.log("isTouchOpen", isTouchOpen);
         }
     }, [isTouchOpen]);
 
@@ -192,6 +192,13 @@ function Cards({ CardsData, isTouchOpen }) {
         setAnyMenuOpen(true);
     }
 
+    const animateIcon = () => {
+        console.log(iconClicked);
+        swipe('right');
+        
+        console.log(iconClicked);
+    }
+
     return (
         <>
             {showTransition && <TransitionSlide handleCloseTransition={handleCloseTransition} num={numOfTransition} />}
@@ -246,7 +253,15 @@ function Cards({ CardsData, isTouchOpen }) {
                             <div className={!isDynamicCard ? 'flex justify-between w-full mx-5' : 'flex justify-around w-full mx-5'}>
                                 <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon" onClick={() => swipe('left')} />
                                 {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />}
-                                <img src={RightIcon} alt="Right Icon" className="cursor-pointer right-icon" onClick={() => swipe('right')} />
+                                <motion.img
+                                    src={RightIcon}
+                                    alt="Right Icon"
+                                    className="cursor-pointer right-icon"
+                                    onClick={() => animateIcon()}
+                                    animate={iconClicked ? { scale: [1, 2, 1] } : { scale: 1 }}
+                                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                                    onAnimationComplete={() => setIconClicked(false)}
+                                />
                             </div>
                         </div>
                     </div>)}

@@ -109,7 +109,7 @@ const QuestionCards = ({ CardsData }) => {
                                             className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer"
                                             onClick={() => setIsOpen(false)}
                                         >
-                                            <span className="regular-font text-[20px] text-[#F6F3F1]">Got It</span>
+                                            <span className="bold-font text-[20px] text-[#F6F3F1]">Got It</span>
                                             <img src={FindOut} alt="Find Out" />
                                         </div>
                                     </div>
