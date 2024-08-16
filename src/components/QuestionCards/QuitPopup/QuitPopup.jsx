@@ -6,6 +6,7 @@ import FindOut from "/icons/FindOutWhite.svg";
 import { AnimatePresence, motion } from "framer-motion";
 import SendQuestionWhite from "/icons/SendQuestionWhite.svg";
 import ShareCard from "/images/ShareCard.svg";
+import QuitCard from "/images/QuitCard.svg";
 import SendQuestion from "/icons/SendQuestion.svg";
 import "./QuitPopup.css";
 import "../QuestionCards.css";
@@ -74,7 +75,7 @@ const QuitPopup = ({ quitPopup, setQuitPopup, setAnyMenuOpen }) => {
                             animate="visible"
                             exit="exit"
                         >
-                            <img src={ShareCard} alt="CardPopup" className="w-full" />
+                            <img src={QuitCard} alt="CardPopup" className="w-full" />
                             <img
                                 src={ExitIcon}
                                 alt="ExitIcon"
