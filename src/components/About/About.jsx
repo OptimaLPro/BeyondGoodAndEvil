@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import "./About.css";
 import Card from "/about/Card.png";
-import SendQuestionWhite from "/icons/SendQuestionWhite.png";
+import SendQuestionWhite from "/icons/SendQuestionWhite.svg";
 
 const handleShare = () => {
     if (navigator.share) {

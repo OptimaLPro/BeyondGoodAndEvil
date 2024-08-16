@@ -1,4 +1,4 @@
-import ExitIcon from "/icons/Exit.png";
+import ExitIcon from "/icons/Exit.svg";
 import "./TransitionSlide.css";
 import GIF1 from "/transitionslide/1.gif";
 import GIF2 from "/transitionslide/2.gif";

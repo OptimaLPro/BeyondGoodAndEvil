@@ -1,12 +1,12 @@
 import React from 'react';
 import CardPopup from "/images/CardPopup.png";
 import TouchIcon from "/icons/TouchIcon.svg";
-import ExitIcon from "/icons/Exit.png";
+import ExitIcon from "/icons/Exit.svg";
 import FindOut from "/icons/FindOutWhite.svg";
 import { AnimatePresence, motion } from "framer-motion";
-import SendQuestionWhite from "/icons/SendQuestionWhite.png";
+import SendQuestionWhite from "/icons/SendQuestionWhite.svg";
 import ShareCard from "/images/ShareCard.svg";
-import SendQuestion from "/icons/SendQuestion.png";
+import SendQuestion from "/icons/SendQuestion.svg";
 import "./QuitPopup.css";
 import "../QuestionCards.css";
 import { Link } from 'react-router-dom';

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Cards from "./Cards";
 import "./QuestionCards.css";
-import ExitIcon from "/icons/Exit.png";
+import ExitIcon from "/icons/Exit.svg";
 import FindOut from "/icons/FindOutWhite.svg";
 import TouchIcon from "/icons/TouchIcon.gif";
 import CardPopup from "/images/CardPopup.png";

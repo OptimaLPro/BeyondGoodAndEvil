@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import FindOutBlack from "/icons/FindOutBlack.svg";
-import SendQuestionWhite from "/icons/SendQuestionWhite.png";
+import SendQuestionWhite from "/icons/SendQuestionWhite.svg";
 import Coin from "/thankyou/Coin.svg";
 import Deontology from "/thankyou/Deontology.svg";
 import Utilitarianism from "/thankyou/Utilitarianism.svg";

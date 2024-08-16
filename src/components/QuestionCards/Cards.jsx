@@ -10,7 +10,7 @@ import TransitionSlide from './TransitionSlides/TransitionSlide';
 import ExitIcon from "/icons/ExitIcon.png";
 import LeftIcon from "/icons/Left.svg";
 import RightIcon from "/icons/Right.svg";
-import SendQuestion from "/icons/SendQuestion.png";
+import SendQuestion from "/icons/SendQuestion.svg";
 import SkipIcon from "/icons/Skip.svg";
 import SkipVideo from "/video/CoinFlip.mp4"
 
@@ -222,10 +222,10 @@ function Cards({ CardsData, isTouchOpen }) {
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 }}
                                         className=''>
-                                        <span className='text-[16px] text-white bold-font mr-2'>Share</span>
+                                        <span className='text-[16px] text-white bold-font mr-0'>Share</span>
                                     </motion.div>)}
                                 <div>
-                                    <img src={SendQuestion} alt="SendQuestion" />
+                                    <img src={SendQuestion} alt="SendQuestion" className='w-[75px] h-[40px]' />
                                 </div>
                             </div>
                         </div>
@@ -238,6 +238,8 @@ function Cards({ CardsData, isTouchOpen }) {
                             className='swipe'
                             key={card.id}
                             preventSwipe={['up', 'down']}
+                            swipeRequirementType='position'
+                            swipeThreshold={1}
                             onSwipe={(dir) => swiped(dir, card.id, index)}
                             onCardLeftScreen={() => outOfFrame(card.id, index)}
                         >
