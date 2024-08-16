@@ -12,6 +12,7 @@ import LeftIcon from "/icons/Left.svg";
 import RightIcon from "/icons/Right.svg";
 import SendQuestion from "/icons/SendQuestion.png";
 import SkipIcon from "/icons/Skip.svg";
+import SkipVideo from "/video/CoinFlip.mp4"
 
 function Cards({ CardsData, isTouchOpen }) {
     const [cards, setCards] = useState(CardsData);
@@ -195,7 +196,7 @@ function Cards({ CardsData, isTouchOpen }) {
     const animateIcon = () => {
         console.log(iconClicked);
         swipe('right');
-        
+
         console.log(iconClicked);
     }
 
@@ -252,7 +253,10 @@ function Cards({ CardsData, isTouchOpen }) {
                         <div className='h-[74px] bg-[#F6F3F1] flex'>
                             <div className={!isDynamicCard ? 'flex justify-between w-full mx-5' : 'flex justify-around w-full mx-5'}>
                                 <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon" onClick={() => swipe('left')} />
-                                {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />}
+                                {/* {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />} */}
+                                {!isDynamicCard && <div className='flex flex-col items-center justify-center' onClick={() => swipe('up')} ><video autoPlay loop muted playsInline className="bg-vid-cards">
+                                    <source src={SkipVideo} type="video/mp4" />
+                                </video></div>}
                                 <motion.img
                                     src={RightIcon}
                                     alt="Right Icon"

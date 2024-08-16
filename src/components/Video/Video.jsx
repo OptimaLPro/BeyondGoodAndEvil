@@ -5,6 +5,7 @@ import FindOut from "/icons/FindOutWhite.svg";
 import { useEffect, useRef, useState } from "react";
 import SoundOn from "/video/SoundOn.svg";
 import SoundOff from "/video/SoundOff.svg";
+import OnboardingNew from "/video/OnboardingNew.mp4";
 
 const Video = () => {
     const [muted, setMuted] = useState(false);
@@ -29,9 +30,9 @@ const Video = () => {
     return (
         <>
             <video ref={videoRef} autoPlay loop muted playsInline className="bg-vid">
-                <source src={BgVideo} type="video/mp4" />
+                <source src={OnboardingNew} type="video/mp4" />
             </video>
-            <div className="h-screen">
+            <div className="h-screen bg-[#f5f3f1]">
                 <img src={muted ? SoundOff : SoundOn} alt="Sound" className="cursor-pointer w-[60px] h-[60px] z-[9999] absolute right-0 mr-1" onClick={toggleMute} />
 
                 <div className="flex flex-col h-full z-[9999]">
