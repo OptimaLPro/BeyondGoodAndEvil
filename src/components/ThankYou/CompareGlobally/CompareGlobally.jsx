@@ -11,11 +11,11 @@ const CompareGlobally = () => {
             <div className="mx-[14px]">
                 <div className="flex flex-col">
                     <span className="bold-font text-white text-[20px]">Compare Globally</span>
-                    <span className="regular-font text-white text-[14px] w-[220px]">See how your choices compare to others around the world</span>
+                    <span className="regular-font text-white text-[14px] w-[220px] leading-4">See how your choices compare to others around the world</span>
                 </div>
 
                 <Link to="/global-data" >
-                    <div className="bg-[#131313] w-fit p-[14px] flex gap-[8px] cursor-pointer mt-[20px]">
+                    <div className="bg-[#131313] w-fit p-[14px] flex gap-[8px] cursor-pointer mt-[15px]">
                         <span className="capitalize bold-font text-[14px] text-[#F6F3F1]">see global data</span>
                         <img src={FindOutWhite} alt="Find Out" />
                     </div>

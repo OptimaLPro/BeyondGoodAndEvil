@@ -26,11 +26,15 @@ const Video = () => {
         }
     }, [muted]);
 
+    const onEnded = () => {
+        console.log("Video ended");
+    }
+
 
     return (
         <>
-            <video ref={videoRef} autoPlay loop muted playsInline className="bg-vid">
-                <source src={OnboardingNew} type="video/mp4" />
+            <video ref={videoRef} autoPlay loop muted playsInline className="bg-vid" onEnded={onEnded}>
+                <source src={OnboardingNew} type="video/mp4"/>
             </video>
             <div className="h-screen bg-[#f5f3f1]">
                 <img src={muted ? SoundOff : SoundOn} alt="Sound" className="cursor-pointer w-[60px] h-[60px] z-[9999] absolute right-0 mr-1" onClick={toggleMute} />
