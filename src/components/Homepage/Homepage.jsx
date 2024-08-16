@@ -16,7 +16,7 @@ const Homepage = () => {
                     <Navbar />
                     <div>
                         <div className="flex flex-col gap-4 mt-[25px] px-[20px] w-[85%]">
-                            <span className="capitalize bold-font text-[20px]">dear Human n. 29348,</span>
+                            <span className="capitalize bold-font text-[20px]">dear Human n. 209348,</span>
                             <span className="testing-font ">Discover which ethical principles guide your choices</span>
                         </div>
                     </div>
