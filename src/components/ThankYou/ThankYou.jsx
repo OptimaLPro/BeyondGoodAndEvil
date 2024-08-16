@@ -41,8 +41,10 @@ const ThankYou = () => {
             <div className="blue-gradient-bg">
                 <div className="flex flex-col">
                     <Navbar />
-                    <div className="flex flex-col gap-4 mt-[25px] px-[20px] w-[72%]">
-                        <span className="capitalize bold-font text-[28px] leading-[30px]">Thank you human n. 20895 for joining our global data</span>
+                    <div className="flex flex-col gap-0 mt-[25px] pl-[20px] pb-[20px] mr-[55px]">
+                        <span className="capitalize bold-font text-[28px] leading-[30px]">Thank you human</span>
+                        <span className="capitalize bold-font text-[28px] leading-[30px]">n. 209348 for joining</span>
+                        <span className="capitalize bold-font text-[28px] leading-[30px] ">our global data</span>
                     </div>
                     <div className="mx-[20px] ">
                         <div className="bg-[#F6F3F1] flex flex-col justify-between pb-[5px] mt-[13px] w-full h-[345px]" style={{ backgroundImage: `url(${Background})` }}>
