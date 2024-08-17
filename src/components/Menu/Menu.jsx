@@ -60,7 +60,7 @@ const Menu = ({ darkMode }) => {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -100, opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute bg-black mr-[20px] mt-[12px] w-[251px] h-[268px] right-0 drop-shadow-lg"
+                        className="absolute bg-[#131313] mr-[20px] mt-[12px] w-[260px] h-[268px] right-0 drop-shadow-lg"
                         ref={menuRef}
                     >
                         <div className="flex flex-col divide-y-2 divide-white">
