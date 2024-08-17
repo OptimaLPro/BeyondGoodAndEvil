@@ -18,7 +18,7 @@ const FilterBox = ({ setPrecentUtilitarianism, setPrecentDeontology, setPrecentV
         if (currentGender !== "People" || currentAge !== "Of All Ages" || currentCountry !== "All Countries" || currentSituation !== "In Any Life Situation") {
             setModified(true);
         } else {
-            // console.log("reset");
+            setModified(false);
         }
 
         if (currentGender === "Men") {
@@ -68,6 +68,7 @@ const FilterBox = ({ setPrecentUtilitarianism, setPrecentDeontology, setPrecentV
         setCurrentAge("Of All Ages");
         setCurrentSituation("In Any Life Situation");
         setCurrentCountry("All Countries");
+        setModified(false);
     }
 
     return (
@@ -105,8 +106,8 @@ const FilterBox = ({ setPrecentUtilitarianism, setPrecentDeontology, setPrecentV
 
             </div>
             <div className="w-full text-right pb-2 mb-[15px]">
-                {!modified && <span className="text-[#131313] text-[12px] regular-font mr-[15px]">Click on text to filter</span>}
-                {modified && <span onClick={resetFilter} className=" underline text-[#131313] text-[12px] regular-font mr-[15px]">Reset filter</span>}
+                {!modified && <span className="text-[#F6F3F1] text-[12px] regular-font mr-[15px]">Click on any text line to filter</span>}
+                {modified && <span onClick={resetFilter} className=" underline text-[#F6F3F1] text-[12px] regular-font mr-[15px]">Reset filter</span>}
             </div>
         </div>
     )

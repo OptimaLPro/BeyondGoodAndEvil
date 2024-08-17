@@ -38,7 +38,6 @@ const GlobalData = () => {
                         </div>
                     </div>
                     {filterBy === "theory" && <>
-
                         <div>
                             <FilterBox setPrecentUtilitarianism={setPrecentUtilitarianism} setPrecentDeontology={setPrecentDeontology} setPrecentVirtue={setPrecentVirtue} setPrecentCoin={setPrecentCoin} setMenOrWomen={setMenOrWomen} />
                         </div>
