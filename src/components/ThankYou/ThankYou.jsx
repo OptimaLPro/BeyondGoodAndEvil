@@ -68,7 +68,7 @@ const ThankYou = () => {
                     </div>
                     <div className="fixed bottom-0 w-full z-[999]">
                         <div onClick={handleShare} className="flex h-[57px] mt-[50px] justify-center items-center w-full bg-[#DCECA1]">
-                            <img src={SendQuestionWhite} alt="Send Question White" className=" w-[83px] h-[29px]" />
+                            <img src={SendQuestionWhite} alt="Send Question White" className=" h-[45px]" />
                         </div>
                     </div>
                 </div>

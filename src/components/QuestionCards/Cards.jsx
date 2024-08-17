@@ -7,11 +7,10 @@ import CardPNG from './CardSVG/CardPNG';
 import QuitPopup from './QuitPopup/QuitPopup';
 import ShareQuestion from './ShareQuestion/ShareQuestion';
 import TransitionSlide from './TransitionSlides/TransitionSlide';
-import ExitIcon from "/icons/ExitIcon.png";
+import ExitIcon from "/icons/ExitWhite.svg";
 import LeftIcon from "/icons/Left.svg";
 import RightIcon from "/icons/Right.svg";
 import SendQuestion from "/icons/SendQuestion.svg";
-import SkipIcon from "/icons/Skip.svg";
 import SkipVideo from "/video/CoinFlip.mp4"
 
 function Cards({ CardsData, isTouchOpen }) {
@@ -215,7 +214,7 @@ function Cards({ CardsData, isTouchOpen }) {
                 <div className="flex flex-col">
                     <div className="mx-6 mt-[23px] mb-[23px] flex items-center">
                         <div className="w-1/3">
-                            <img src={ExitIcon} alt="Exit Icon" width={26} height={24} onClick={() => quitQuestion()} />
+                            <img src={ExitIcon} alt="Exit Icon" className='h-[25px]' onClick={() => quitQuestion()} />
                         </div>
                         <div className="flex justify-center w-1/3">
                             {!isDynamicCard && (<span className="tracking-widest text-white joystix-font">
@@ -230,10 +229,10 @@ function Cards({ CardsData, isTouchOpen }) {
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 }}
                                         className=''>
-                                        <span className='text-[16px] text-white bold-font mr-0'>Share</span>
+                                        <span className='text-[16px] text-white bold-font mr-2'>Share</span>
                                     </motion.div>)}
                                 <div>
-                                    <img src={SendQuestion} alt="SendQuestion" className='w-[75px] h-[40px]' />
+                                    <img src={SendQuestion} alt="SendQuestion" className='h-[45px]' />
                                 </div>
                             </div>
                         </div>
@@ -261,9 +260,9 @@ function Cards({ CardsData, isTouchOpen }) {
                 {!showTransition &&
                     (<div className='fixed bottom-0 flex flex-col justify-end flex-grow w-full'>
                         <div className='h-[74px] bg-[#F6F3F1] flex'>
-                            <div className={!isDynamicCard ? 'flex justify-between w-full mx-5' : 'flex justify-around w-full mx-5'}>
+                            <div className={!isDynamicCard ? 'flex justify-between w-full mx-5 items-center' : 'flex justify-around w-full mx-5'}>
                                 <div>
-                                    <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon mt-[3px] " onClick={() => swipe('left')} />
+                                    <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon " onClick={() => swipe('left')} />
                                 </div>
                                 {/* {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />} */}
                                 {!isDynamicCard && <div className='flex flex-col items-center justify-center' onClick={() => swipe('up')} >
@@ -277,17 +276,15 @@ function Cards({ CardsData, isTouchOpen }) {
                                         <source src={SkipVideo} type="video/mp4" />
                                     </video>
                                 </div>}
-                                <div className='mb-[10px]'>
-                                    <motion.img
-                                        src={RightIcon}
-                                        alt="Right Icon"
-                                        className="cursor-pointer right-icon mb-[10px]"
-                                        onClick={() => animateIcon()}
-                                        animate={iconClicked ? { scale: [1, 2, 1] } : { scale: 1 }}
-                                        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                                        onAnimationComplete={() => setIconClicked(false)}
-                                    />
-                                </div>
+                                <motion.img
+                                    src={RightIcon}
+                                    alt="Right Icon"
+                                    className="cursor-pointer right-icon"
+                                    onClick={() => animateIcon()}
+                                    animate={iconClicked ? { scale: [1, 2, 1] } : { scale: 1 }}
+                                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                                    onAnimationComplete={() => setIconClicked(false)}
+                                />
                             </div>
                         </div>
                     </div>)}

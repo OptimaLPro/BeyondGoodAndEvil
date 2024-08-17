@@ -69,7 +69,9 @@ const TS1 = ({ handleCloseTransition, gender, age, situation, country, gif, text
     return (
         <>
             <div className="h-screen bg-[#FA839F]" onClick={handleCloseTransition}>
-                <div className="flex flex-col" onClick={stopPropagation}>
+                <div className="flex flex-col"
+                // onClick={stopPropagation}
+                >
                     <div className="flex justify-end w-full p-3">
                         <img
                             src={ExitIcon}
@@ -109,7 +111,9 @@ const TS2 = ({ handleCloseTransition, value1, value2, value3, value4 }) => {
     return (
         <>
             <div className="h-screen bg-[#6CB9F1]" onClick={handleCloseTransition}>
-                <div className="flex flex-col" onClick={stopPropagation}>
+                <div className="flex flex-col"
+                //  onClick={stopPropagation}
+                >
                     <div className="flex justify-end w-full p-3">
                         <img
                             src={ExitIcon}
@@ -152,7 +156,9 @@ const TS3 = ({ handleCloseTransition, gender, age, situation, country, gif, text
     return (
         <>
             <div className="h-screen bg-[#FA839F]" onClick={handleCloseTransition}>
-                <div className="flex flex-col" onClick={stopPropagation}>
+                <div className="flex flex-col"
+                // onClick={stopPropagation}
+                >
                     <div className="flex justify-end w-full p-3">
                         <img
                             src={ExitIcon}
