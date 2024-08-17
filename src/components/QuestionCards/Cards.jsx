@@ -254,20 +254,24 @@ function Cards({ CardsData, isTouchOpen }) {
                     (<div className='fixed bottom-0 flex flex-col justify-end flex-grow w-full'>
                         <div className='h-[74px] bg-[#F6F3F1] flex'>
                             <div className={!isDynamicCard ? 'flex justify-between w-full mx-5' : 'flex justify-around w-full mx-5'}>
-                                <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon" onClick={() => swipe('left')} />
+                                <div>
+                                    <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon mt-[3px] " onClick={() => swipe('left')} />
+                                </div>
                                 {/* {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />} */}
-                                {!isDynamicCard && <div className='flex flex-col items-center justify-center' onClick={() => swipe('up')} ><video autoPlay loop muted playsInline className="bg-vid-cards">
+                                {!isDynamicCard && <div className='flex flex-col items-center justify-center' onClick={() => swipe('up')} ><video autoPlay muted playsInline className="bg-vid-cards">
                                     <source src={SkipVideo} type="video/mp4" />
                                 </video></div>}
-                                <motion.img
-                                    src={RightIcon}
-                                    alt="Right Icon"
-                                    className="cursor-pointer right-icon"
-                                    onClick={() => animateIcon()}
-                                    animate={iconClicked ? { scale: [1, 2, 1] } : { scale: 1 }}
-                                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                                    onAnimationComplete={() => setIconClicked(false)}
-                                />
+                                <div className='mb-[10px]'>
+                                    <motion.img
+                                        src={RightIcon}
+                                        alt="Right Icon"
+                                        className="cursor-pointer right-icon mb-[10px]"
+                                        onClick={() => animateIcon()}
+                                        animate={iconClicked ? { scale: [1, 2, 1] } : { scale: 1 }}
+                                        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                                        onAnimationComplete={() => setIconClicked(false)}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>)}

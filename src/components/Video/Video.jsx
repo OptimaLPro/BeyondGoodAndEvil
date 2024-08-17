@@ -6,8 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import SoundOn from "/video/SoundOn.svg";
 import SoundOff from "/video/SoundOff.svg";
 import OnboardingNew from "/video/OnboardingNew.mp4";
+import { useNavigate } from 'react-router-dom';
 
 const Video = () => {
+    const navigate = useNavigate();
     const [muted, setMuted] = useState(false);
     const videoRef = useRef(null);
 
@@ -27,13 +29,13 @@ const Video = () => {
     }, [muted]);
 
     const onEnded = () => {
-        console.log("Video ended");
+        navigate('/homepage');
     }
 
 
     return (
         <>
-            <video ref={videoRef} autoPlay loop muted playsInline className="bg-vid" onEnded={onEnded}>
+            <video ref={videoRef} autoPlay muted playsInline className="bg-vid" onEnded={onEnded}>
                 <source src={OnboardingNew} type="video/mp4"/>
             </video>
             <div className="h-screen bg-[#f5f3f1]">
