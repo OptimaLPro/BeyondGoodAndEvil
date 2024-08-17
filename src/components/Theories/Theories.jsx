@@ -152,9 +152,9 @@ const MainTheory = ({ theoryname, closeTheory, prevTheory, nextTheory }) => {
                         </div>
                     </div>
                     <div>
-                        <div className="flex justify-between px-[14px] mb-[13.5px]">
-                            <img src={theory.left} alt="Left" onClick={prevTheory} />
-                            <img src={theory.right} alt="Right" onClick={nextTheory} />
+                        <div className="flex justify-between px-[14px] mb-[17px]">
+                            <img src={theory.left} className="theory-right-left" alt="Left" onClick={prevTheory} />
+                            <img src={theory.right} className="theory-right-left" alt="Right" onClick={nextTheory} />
                         </div>
                     </div>
                 </div>
