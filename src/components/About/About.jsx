@@ -2,6 +2,8 @@ import Navbar from "../Navbar/Navbar";
 import "./About.css";
 import Card from "/about/Card.png";
 import SendQuestionWhite from "/icons/SendQuestionWhite.svg";
+import dog from "/about/dog.gif";
+import woman from "/about/woman.gif";
 
 const handleShare = () => {
     if (navigator.share) {
@@ -39,8 +41,10 @@ const About = () => {
                         <p className="mt-6">
                             Our goal is to encourage the development of critical thinking skills and self-awareness, enabling users to reflect on their moral choices.
                         </p>
-                        <div>
-                            <img src={Card} alt="Card" className="w-full mt-5" />
+                        <div className="flex items-end justify-center mt-[48px] mb-[48px]">
+                            {/* <img src={Card} alt="Card" className="w-full mt-5" />*/}
+                            <img src={woman} alt="ethics_subjective_end" className="h-[145px]" />
+                            <img src={dog} alt="tested_animals_dogs" className="h-[85px] ml-[-10px]" />
                         </div>
                         <div className="my-[31px]">
                             <div className="bg-[#6CB9F1] flex flex-col">
