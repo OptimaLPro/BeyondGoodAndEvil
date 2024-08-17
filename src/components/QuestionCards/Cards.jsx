@@ -35,6 +35,14 @@ function Cards({ CardsData, isTouchOpen }) {
     const [numOfTransition, setNumOfTransition] = useState(1);
     const [anyMenuOpen, setAnyMenuOpen] = useState(true);
     const [iconClicked, setIconClicked] = useState(false);
+    const videoRef = useRef(null);
+
+    const playVideo = () => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 1.5; // Set playback speed to 1.5x
+            videoRef.current.play();
+        }
+    };
 
     const childRefs = useMemo(() => {
         return Array(cards.length)
@@ -258,9 +266,17 @@ function Cards({ CardsData, isTouchOpen }) {
                                     <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon mt-[3px] " onClick={() => swipe('left')} />
                                 </div>
                                 {/* {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />} */}
-                                {!isDynamicCard && <div className='flex flex-col items-center justify-center' onClick={() => swipe('up')} ><video autoPlay muted playsInline className="bg-vid-cards">
-                                    <source src={SkipVideo} type="video/mp4" />
-                                </video></div>}
+                                {!isDynamicCard && <div className='flex flex-col items-center justify-center' onClick={() => swipe('up')} >
+                                    <video
+                                        ref={videoRef}
+                                        muted
+                                        playsInline
+                                        className="bg-vid-cards"
+                                        onClick={playVideo}
+                                    >
+                                        <source src={SkipVideo} type="video/mp4" />
+                                    </video>
+                                </div>}
                                 <div className='mb-[10px]'>
                                     <motion.img
                                         src={RightIcon}
