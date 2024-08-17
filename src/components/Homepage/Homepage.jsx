@@ -23,7 +23,7 @@ const Homepage = () => {
                     <div>
                         <Link to="/before-answering">
                             <div className="bg-[#131313] ml-[20px] mt-[19px] w-fit p-[14px] flex gap-4 cursor-pointer">
-                                <span className="onboarding text-[14px] text-[#F6F3F1]">Answer Questionary</span>
+                                <span className="onboarding text-[14px] text-[#F6F3F1]">Answer Questionnaire</span>
                                 <img src={FindOut} alt="Find Out" />
                             </div>
                         </Link>

@@ -72,7 +72,7 @@ const Menu = ({ darkMode }) => {
                             </Link>
                             <Link to="/before-answering">
                                 <div className="flex cursor-pointer p-[14px] flex-row-">
-                                    <div className="text-[#FD9DAF] bold-font ml-[30px]">Answer Questionary</div>
+                                    <div className="text-[#FD9DAF] bold-font ml-[30px]">Answer Questionnaire</div>
                                     <img src={PinkNext} alt="Pink Next Icon" className="ml-[19px]" />
                                 </div>
                             </Link>

@@ -108,7 +108,7 @@ const ShareQuestion = ({ isOpen, toggleShare, cardUrl, setAnyMenuOpen }) => {
                                     <span className="absolute bottom-0 left-0 text-[20px] bold-font w-[80%] mb-[150px] ml-[45px] leading-[22px]">Want a friend's perspective on this question? Share it now!</span>
                                     <div className="absolute z-[100] bottom-0 w-full flex ml-[45px] mb-[60px]">
                                         <div
-                                            className="bg-[#DCECA1] w-fit p-[14px] flex cursor-pointer border-black border-2"
+                                            className="bg-[#DCECA1] w-fit p-[14px] flex cursor-pointer border-black border-2 items-center"
                                             onClick={handleShare}
                                         >
                                             <span className="bold-font text-[14px] text-[#131313]">Share This Question</span>

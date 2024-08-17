@@ -33,7 +33,7 @@ function Cards({ CardsData, isTouchOpen }) {
     const [quitPopup, setQuitPopup] = useState(false);
     const [numOfTransition, setNumOfTransition] = useState(1);
     const [anyMenuOpen, setAnyMenuOpen] = useState(true);
-    const [iconClicked, setIconClicked] = useState(false);
+    const [animateSwipe, setAnimateSwipe] = useState(false);
     const videoRef = useRef(null);
 
     const playVideo = () => {
@@ -167,6 +167,7 @@ function Cards({ CardsData, isTouchOpen }) {
         setCurrentID(questionNumer[questionIndex]);
         setLastDirection(direction);
         updateCurrentIndex(index - 1);
+        setAnimateSwipe(false);
         setTimer(22);
     };
 
@@ -176,6 +177,8 @@ function Cards({ CardsData, isTouchOpen }) {
 
     const swipe = async (dir) => {
         if (canSwipe && currentIndex < cards.length) {
+            setAnimateSwipe(true); // Trigger the animation
+            setTimeout(() => setAnimateSwipe(false), 10000); // Reset the animation state after a short dela
             await childRefs[currentIndex].current.swipe(dir);
         }
     };
@@ -198,13 +201,6 @@ function Cards({ CardsData, isTouchOpen }) {
     const quitQuestion = () => {
         setQuitPopup(!quitPopup);
         setAnyMenuOpen(true);
-    }
-
-    const animateIcon = () => {
-        console.log(iconClicked);
-        swipe('right');
-
-        console.log(iconClicked);
     }
 
     return (
@@ -280,10 +276,9 @@ function Cards({ CardsData, isTouchOpen }) {
                                     src={RightIcon}
                                     alt="Right Icon"
                                     className="cursor-pointer right-icon"
-                                    onClick={() => animateIcon()}
-                                    animate={iconClicked ? { scale: [1, 2, 1] } : { scale: 1 }}
-                                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                                    onAnimationComplete={() => setIconClicked(false)}
+                                    onClick={() => swipe('right')}
+                                    animate={animateSwipe ? { scale: 1.2 } : { scale: 1 }}
+                                    transition={{ duration: 0.3 }}
                                 />
                             </div>
                         </div>
