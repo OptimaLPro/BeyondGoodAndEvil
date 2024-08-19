@@ -33,7 +33,8 @@ function Cards({ CardsData, isTouchOpen }) {
     const [quitPopup, setQuitPopup] = useState(false);
     const [numOfTransition, setNumOfTransition] = useState(1);
     const [anyMenuOpen, setAnyMenuOpen] = useState(true);
-    const [animateSwipe, setAnimateSwipe] = useState(false);
+    const animateSwipeRightRef = useRef(false);
+    const animateSwipeLeftRef = useRef(false);
     const videoRef = useRef(null);
 
     const playVideo = () => {
@@ -126,6 +127,16 @@ function Cards({ CardsData, isTouchOpen }) {
     const canSwipe = currentIndex >= 0;
 
     const swiped = (direction, cardID, index) => {
+        if (direction === "left") {
+            animateSwipeLeftRef.current = true;
+            setTimeout(() => animateSwipeLeftRef.current = false, 100); //
+        }
+        else {
+            animateSwipeRightRef.current = true;
+            setTimeout(() => animateSwipeRightRef.current = false, 100); // 
+        }
+
+        console.log("swiped", direction, cardID, index);
         var changed = false;
 
         cards.map((card) => {
@@ -167,8 +178,8 @@ function Cards({ CardsData, isTouchOpen }) {
         setCurrentID(questionNumer[questionIndex]);
         setLastDirection(direction);
         updateCurrentIndex(index - 1);
-        setAnimateSwipe(false);
         setTimer(22);
+
     };
 
     const outOfFrame = (name, idx) => {
@@ -177,8 +188,6 @@ function Cards({ CardsData, isTouchOpen }) {
 
     const swipe = async (dir) => {
         if (canSwipe && currentIndex < cards.length) {
-            setAnimateSwipe(true); // Trigger the animation
-            setTimeout(() => setAnimateSwipe(false), 10000); // Reset the animation state after a short dela
             await childRefs[currentIndex].current.swipe(dir);
         }
     };
@@ -258,7 +267,13 @@ function Cards({ CardsData, isTouchOpen }) {
                         <div className='h-[74px] bg-[#F6F3F1] flex'>
                             <div className={!isDynamicCard ? 'flex justify-between w-full mx-5 items-center' : 'flex justify-around w-full mx-5'}>
                                 <div>
-                                    <img src={LeftIcon} alt="Left Icon" className="cursor-pointer left-icon " onClick={() => swipe('left')} />
+                                    <motion.img src={LeftIcon}
+                                        alt="Left Icon"
+                                        className="cursor-pointer left-icon "
+                                        onClick={() => swipe('left')}
+                                        animate={animateSwipeLeftRef.current ? { scale: [1, 1.3, 1], y: [0, -20, 0] } : { scale: 1 }}
+                                        transition={{ duration: 0.5 }} />
+
                                 </div>
                                 {/* {!isDynamicCard && <img src={SkipIcon} alt="Skip Icon" className="cursor-pointer skip-icon" onClick={() => swipe('up')} />} */}
                                 {!isDynamicCard && <div className='flex flex-col items-center justify-center' onClick={() => swipe('up')} >
@@ -267,7 +282,7 @@ function Cards({ CardsData, isTouchOpen }) {
                                         muted
                                         playsInline
                                         className="bg-vid-cards"
-                                        onClick={playVideo}
+                                        onClick={playVideo} // This allows the user to replay it by clicking
                                     >
                                         <source src={SkipVideo} type="video/mp4" />
                                     </video>
@@ -277,8 +292,8 @@ function Cards({ CardsData, isTouchOpen }) {
                                     alt="Right Icon"
                                     className="cursor-pointer right-icon"
                                     onClick={() => swipe('right')}
-                                    animate={animateSwipe ? { scale: 1.2 } : { scale: 1 }}
-                                    transition={{ duration: 0.3 }}
+                                    animate={animateSwipeRightRef.current ? { scale: [1, 1.3, 1], y: [0, -20, 0] } : { scale: 1 }}
+                                    transition={{ duration: 0.5 }}
                                 />
                             </div>
                         </div>
