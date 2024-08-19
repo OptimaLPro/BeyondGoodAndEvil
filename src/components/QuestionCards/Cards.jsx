@@ -44,6 +44,13 @@ function Cards({ CardsData, isTouchOpen }) {
         }
     };
 
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.load();  // Load the video when the component mounts
+        }
+    }, [showTransition]);
+
     const childRefs = useMemo(() => {
         return Array(cards.length)
             .fill(0)
