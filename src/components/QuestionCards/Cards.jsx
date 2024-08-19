@@ -131,7 +131,7 @@ function Cards({ CardsData, isTouchOpen }) {
             animateSwipeLeftRef.current = true;
             setTimeout(() => animateSwipeLeftRef.current = false, 100); //
         }
-        else {
+        else if (direction === "right") {
             animateSwipeRightRef.current = true;
             setTimeout(() => animateSwipeRightRef.current = false, 100); // 
         }
