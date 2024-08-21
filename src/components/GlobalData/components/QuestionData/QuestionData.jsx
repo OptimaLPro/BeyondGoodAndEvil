@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import PopupMenu from "../../../UserData/PopupMenu/PopupMenu";
 import "./QuestionData.css";
 import { ImagesQuestions } from "./GlobalData";
-import Skip from "/icons/Skip.svg";
+import Skip from "/icons/Coin.png";
 import { motion } from "framer-motion";
 import MenuArrowDown from "/globaldata/MenuArrowDown.svg";
 import MenuArrowUp from "/globaldata/MenuArrowUp.svg";

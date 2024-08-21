@@ -143,7 +143,6 @@ function Cards({ CardsData, isTouchOpen }) {
             setTimeout(() => animateSwipeRightRef.current = false, 100); // 
         }
 
-        console.log("swiped", direction, cardID, index);
         var changed = false;
 
         cards.map((card) => {
