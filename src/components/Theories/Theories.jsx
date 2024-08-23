@@ -147,7 +147,7 @@ const MainTheory = ({ theoryname, closeTheory, prevTheory, nextTheory }) => {
                             <span className="bold-font text-[20px]">{theory.name}</span>
                             <img src={CloseIcon} alt="Close" className="close-icon" onClick={closeTheory} />
                         </div>
-                        <div className="px-[14px] mt-[22px]">
+                        <div className="px-[14px] mt-[14px]">
                             <p className="regular-font text-[20px] tracking-[0.5px] leading-[22px]">{highlightText(theory.description, theory.bold_description)}</p>
                         </div>
                     </div>
