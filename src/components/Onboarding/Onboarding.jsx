@@ -54,7 +54,7 @@ const Onboarding = () => {
                 <div className="flex flex-col h-full z-[9999]">
                     {/* <div className="flex flex-col justify-end h-[10%] ml-[26px]">
                 </div> */}
-                    <div className="absolute bottom-[208px] left-[20px]">
+                    <div className="absolute bottom-[140px] left-[20px]">
                         <Link to="/video">
                             <div className="bg-[#131313] w-fit p-[14px] flex gap-4 cursor-pointer">
                                 <span className="onboarding text-[20px] text-[#F6F3F1]">Find Out</span>
