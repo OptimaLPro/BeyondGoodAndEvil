@@ -35,7 +35,7 @@ const Video = () => {
 
     return (
         <>
-            <video ref={videoRef} autoPlay muted playsInline className="bg-vid" onEnded={onEnded}>
+            <video ref={videoRef} autoPlay muted playsInline className="bg-vid-video" onEnded={onEnded}>
                 <source src={OnboardingNew} type="video/mp4"/>
             </video>
             <div className="h-screen bg-[#f5f3f1]">

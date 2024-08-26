@@ -12,11 +12,13 @@ import Theories from "./src/components/Theories/Theories";
 import ThanksAnswering from "./src/components/ThanksAnswering/ThanksAnswering";
 import About from "./src/components/About/About";
 import GlobalData from "./src/components/GlobalData/GlobalData";
-import "./styles.css"
+import ScrollToTop from './src/components/hooks/ScrollToTop';
+import "./styles.css";
 
 const Router = () => {
     return (
         <>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Onboarding />} />
                 <Route path="/onboarding" element={<Onboarding />} />
