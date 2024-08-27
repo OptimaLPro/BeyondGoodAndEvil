@@ -13,6 +13,16 @@ const Video = () => {
     const [muted, setMuted] = useState(false);
     const videoRef = useRef(null);
 
+    useEffect(() => {
+        // Preload the SVGs
+        const preloadImage = (src) => {
+            const img = new Image();
+            img.src = src;
+        };
+        preloadImage(SoundOn);
+        preloadImage(SoundOff);
+    }, []);
+
     const toggleMute = () => {
         const video = videoRef.current;
         if (video) {
@@ -33,13 +43,19 @@ const Video = () => {
     }
 
 
+
     return (
         <>
             <video ref={videoRef} autoPlay muted playsInline className="bg-vid-video" onEnded={onEnded}>
-                <source src={OnboardingNew} type="video/mp4"/>
+                <source src={OnboardingNew} type="video/mp4" />
             </video>
             <div className="h-screen bg-[#f5f3f1]">
-                <img src={muted ? SoundOff : SoundOn} alt="Sound" className="cursor-pointer w-[60px] h-[60px] z-[9999] absolute right-0 mr-[15px] mt-[5px]" onClick={toggleMute} />
+                <img
+                    src={muted ? SoundOff : SoundOn}
+                    alt="Sound"
+                    className="cursor-pointer w-[60px] h-[60px] z-[9999] absolute right-0 mr-[15px] mt-[5px]"
+                    onClick={toggleMute}
+                />
 
                 <div className="flex flex-col h-full z-[9999]">
                     {/* <div className="flex flex-col justify-end h-[10%] ml-[26px]">
