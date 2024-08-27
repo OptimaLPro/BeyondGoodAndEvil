@@ -39,7 +39,7 @@ const Video = () => {
                 <source src={OnboardingNew} type="video/mp4"/>
             </video>
             <div className="h-screen bg-[#f5f3f1]">
-                <img src={muted ? SoundOff : SoundOn} alt="Sound" className="cursor-pointer w-[60px] h-[60px] z-[9999] absolute right-0 mr-1" onClick={toggleMute} />
+                <img src={muted ? SoundOff : SoundOn} alt="Sound" className="cursor-pointer w-[60px] h-[60px] z-[9999] absolute right-0 mr-[15px] mt-[5px]" onClick={toggleMute} />
 
                 <div className="flex flex-col h-full z-[9999]">
                     {/* <div className="flex flex-col justify-end h-[10%] ml-[26px]">
@@ -47,7 +47,7 @@ const Video = () => {
                     <div className="absolute bottom-0 right-0">
                         <Link to="/homepage" className="">
 
-                            <div className="bg-[#131313] w-fit p-[14px] mr-[20px] mb-[20px] flex gap-4 cursor-pointer">
+                            <div className="bg-[#131313] w-fit p-[14px] mr-[30px] mb-[30px] flex gap-4 cursor-pointer">
 
                                 <span className="onboarding text-[20px] text-[#F6F3F1]">Skip</span>
                                 <img src={FindOut} alt="Skip" />
