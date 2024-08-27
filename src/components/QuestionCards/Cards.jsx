@@ -193,8 +193,12 @@ function Cards({ CardsData, isTouchOpen }) {
     };
 
     const swipe = async (dir) => {
-        if (canSwipe && currentIndex < cards.length) {
-            await childRefs[currentIndex].current.swipe(dir);
+        if (timer <= 20) {
+            if (canSwipe && currentIndex < cards.length) {
+                await childRefs[currentIndex].current.swipe(dir);
+            }
+        } else {
+            console.log("Timer is under 2 seconds. Cannot swipe.");
         }
     };
 
