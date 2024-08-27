@@ -63,7 +63,7 @@ const Video = () => {
                     <div className="absolute bottom-0 right-0">
                         <Link to="/homepage" className="">
 
-                            <div className="bg-[#131313] w-fit p-[14px] mr-[30px] mb-[30px] flex gap-4 cursor-pointer">
+                            <div className="bg-[#131313] w-fit p-[14px] mr-[30px] mb-[40px] flex gap-4 cursor-pointer">
 
                                 <span className="onboarding text-[20px] text-[#F6F3F1]">Skip</span>
                                 <img src={FindOut} alt="Skip" />

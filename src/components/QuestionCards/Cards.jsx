@@ -107,19 +107,26 @@ function Cards({ CardsData, isTouchOpen }) {
 
     useEffect(() => {
         if (!showTransition && !anyMenuOpen) {
-            const timerId = setInterval(() => {
+            const timerId = setInterval(async () => {
                 setTimer((prevTimer) => {
                     if (prevTimer === 1) {
-                        swipe('up'); // Automatically skip the question
-                        return 23; // Reset timer for the next question
+                        return prevTimer; // Hold the timer until the swipe is completed
                     } else {
                         return prevTimer - 1;
                     }
                 });
+
+                // Only perform the swipe and reset the timer if the timer reaches 1
+                if (timer === 1) {
+                    await swipe('up'); // Ensure swipe completes before resetting timer
+                    setTimer(22); // Reset the timer to 23
+                }
             }, 1000);
-            return () => clearInterval(timerId); // Cleanup interval on component unmount or when question changes
+
+            return () => clearInterval(timerId);
         }
-    }, [currentID, showTransition, anyMenuOpen]);
+    }, [currentID, showTransition, anyMenuOpen, timer]); // Add `timer` to the dependency array
+
 
     const addHalfCard = (subquestion, cardID) => {
         setCards((prevCards) => {
@@ -142,6 +149,7 @@ function Cards({ CardsData, isTouchOpen }) {
             animateSwipeRightRef.current = true;
             setTimeout(() => animateSwipeRightRef.current = false, 100); // 
         }
+
 
         var changed = false;
 
@@ -171,7 +179,7 @@ function Cards({ CardsData, isTouchOpen }) {
                     } else if (direction === "up") {
                         changed = true;
                         setQuestionIndex(questionIndex + 2);
-                        setCurrentID(questionNumer[questionIndex]);
+                        setCurrentID(questionNumer[questionIndex + 1]);
                         updateCurrentIndex(index - 1);
                         return;
                     }
@@ -193,12 +201,12 @@ function Cards({ CardsData, isTouchOpen }) {
     };
 
     const swipe = async (dir) => {
-        if (timer <= 20) {
-            if (canSwipe && currentIndex < cards.length) {
-                await childRefs[currentIndex].current.swipe(dir);
-            }
-        } else {
-            console.log("Timer is under 2 seconds. Cannot swipe.");
+        if (timer > 20) {
+            return; // Prevent swiping
+        }
+
+        if (canSwipe && currentIndex < cards.length) {
+            await childRefs[currentIndex].current.swipe(dir);
         }
     };
 
