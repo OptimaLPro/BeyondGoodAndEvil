@@ -201,9 +201,9 @@ function Cards({ CardsData, isTouchOpen }) {
     };
 
     const swipe = async (dir) => {
-        if (timer > 20) {
-            return; // Prevent swiping
-        }
+        // if (timer > 20) {
+        //     return; // Prevent swiping
+        // }
 
         if (canSwipe && currentIndex < cards.length) {
             await childRefs[currentIndex].current.swipe(dir);
